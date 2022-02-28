@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BDD2DFF-FFCF-40E3-920F-45C1786DB42D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FKM_2022</RootNamespace>
+    <AssemblyName>FKM_2022</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls">
+      <HintPath>..\lib\RCWF\2022.1.118.40.Trial\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI">
+      <HintPath>..\lib\RCWF\2022.1.118.40.Trial\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon">
+      <HintPath>..\lib\RCWF\2022.1.118.40.Trial\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="crudAlgoClasses\crudMethodes.cs" />
+    <Compile Include="CRUDforms\ajouterBurauxPayeurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterBurauxPayeurs.Designer.cs">
+      <DependentUpon>ajouterBurauxPayeurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterCat.Designer.cs">
+      <DependentUpon>ajouterCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterContrat .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterContrat .Designer.cs">
+      <DependentUpon>ajouterContrat .cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterPerso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterPerso.Designer.cs">
+      <DependentUpon>ajouterPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\BonEssence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\BonEssence.Designer.cs">
+      <DependentUpon>BonEssence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\Comptabilité.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\Comptabilité.Designer.cs">
+      <DependentUpon>Comptabilité.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\ConsultationQuanzaine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\ConsultationQuanzaine.Designer.cs">
+      <DependentUpon>ConsultationQuanzaine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\DemandeRetrait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\DemandeRetrait.Designer.cs">
+      <DependentUpon>DemandeRetrait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\Operation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\Operation.Designer.cs">
+      <DependentUpon>Operation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\ValidationDemandeRetrait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\ValidationDemandeRetrait.Designer.cs">
+      <DependentUpon>ValidationDemandeRetrait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\ValidationQuanzaine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\ValidationQuanzaine.Designer.cs">
+      <DependentUpon>ValidationQuanzaine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exploitation\ValidationQuanzaineSuperieur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exploitation\ValidationQuanzaineSuperieur.Designer.cs">
+      <DependentUpon>ValidationQuanzaineSuperieur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="referntiel\BureauPayeur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\BureauPayeur.Designer.cs">
+      <DependentUpon>BureauPayeur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\CategoriePret.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\CategoriePret.Designer.cs">
+      <DependentUpon>CategoriePret.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\connection.Designer.cs">
+      <DependentUpon>connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\Contrat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\Contrat.Designer.cs">
+      <DependentUpon>Contrat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\JoursFériers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\JoursFériers.Designer.cs">
+      <DependentUpon>JoursFériers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\PersoFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\PersoFrom.Designer.cs">
+      <DependentUpon>PersoFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\Service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\Vehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\Vehicule.Designer.cs">
+      <DependentUpon>Vehicule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="selfmadecomp\customtextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="selfmadecomp\customtextbox.Designer.cs">
+      <DependentUpon>customtextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="selfmadecomp\RoundBtn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="CRUDforms\ajouterBurauxPayeurs.resx">
+      <DependentUpon>ajouterBurauxPayeurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDforms\ajouterCat.resx">
+      <DependentUpon>ajouterCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDforms\ajouterContrat .resx">
+      <DependentUpon>ajouterContrat .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDforms\ajouterPerso.resx">
+      <DependentUpon>ajouterPerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\BonEssence.resx">
+      <DependentUpon>BonEssence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\Comptabilité.resx">
+      <DependentUpon>Comptabilité.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\ConsultationQuanzaine.resx">
+      <DependentUpon>ConsultationQuanzaine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\DemandeRetrait.resx">
+      <DependentUpon>DemandeRetrait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\Operation.resx">
+      <DependentUpon>Operation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\ValidationDemandeRetrait.resx">
+      <DependentUpon>ValidationDemandeRetrait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\ValidationQuanzaine.resx">
+      <DependentUpon>ValidationQuanzaine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="referntiel\BureauPayeur.resx">
+      <DependentUpon>BureauPayeur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\CategoriePret.resx">
+      <DependentUpon>CategoriePret.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\connection.resx">
+      <DependentUpon>connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\Contrat.resx">
+      <DependentUpon>Contrat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\JoursFériers.resx">
+      <DependentUpon>JoursFériers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\PersoFrom.resx">
+      <DependentUpon>PersoFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\Service.resx">
+      <DependentUpon>Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\Vehicule.resx">
+      <DependentUpon>Vehicule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selfmadecomp\customtextbox.resx">
+      <DependentUpon>customtextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-connexion-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-SFBT-1070.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-arrow-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-group-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-supprimer-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-supprimer-pour-toujours-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-impression-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-excel-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rejouer-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-groupe-d&amp;#39%3butilisateurs-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-annuler-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ajouter-un-utilisateur-homme-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-documents-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-arrondi-48 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-impression-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-impression-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sauvegarder-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chercher-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-crayon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vue-statique-de-niveau-2-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-boîte-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-excel-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mettre-à-jour-la-rotation-à-gauche-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-importer-csv-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rendez-vous-périodique-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-société-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-classer-par-catégories-48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

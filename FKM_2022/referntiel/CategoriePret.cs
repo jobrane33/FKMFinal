@@ -107,6 +107,7 @@ namespace FKM_2022.referntiel
                 addingcat.observation = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
                 addingcat.libelle = dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
                 
+
             }
             }
 

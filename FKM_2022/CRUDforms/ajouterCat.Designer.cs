@@ -38,6 +38,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
             this.label12 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.customtextbox6 = new FKM_2022.selfmadecomp.customtextbox();
@@ -62,6 +63,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.customtextbox1 = new FKM_2022.selfmadecomp.customtextbox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -173,6 +176,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.roundBtn2);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.panel11);
             this.groupBox1.Controls.Add(this.panel8);
@@ -191,7 +195,26 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            
+            // 
+            // roundBtn2
+            // 
+            this.roundBtn2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn2.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn2.BorderRadius = 40;
+            this.roundBtn2.BorderSize = 0;
+            this.roundBtn2.Enabled = false;
+            this.roundBtn2.FlatAppearance.BorderSize = 0;
+            this.roundBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn2.ForeColor = System.Drawing.Color.White;
+            this.roundBtn2.Location = new System.Drawing.Point(139, 488);
+            this.roundBtn2.Name = "roundBtn2";
+            this.roundBtn2.Size = new System.Drawing.Size(92, 38);
+            this.roundBtn2.TabIndex = 21;
+            this.roundBtn2.Text = "modifier";
+            this.roundBtn2.TextColor = System.Drawing.Color.White;
+            this.roundBtn2.UseVisualStyleBackColor = false;
+            this.roundBtn2.Click += new System.EventHandler(this.roundBtn2_Click);
             // 
             // label12
             // 
@@ -291,10 +314,11 @@
             this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
             this.roundBtn1.BorderRadius = 40;
             this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.Enabled = false;
             this.roundBtn1.FlatAppearance.BorderSize = 0;
             this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(244, 488);
+            this.roundBtn1.Location = new System.Drawing.Point(252, 488);
             this.roundBtn1.Name = "roundBtn1";
             this.roundBtn1.Size = new System.Drawing.Size(92, 38);
             this.roundBtn1.TabIndex = 19;
@@ -389,7 +413,7 @@
             this.label6.Size = new System.Drawing.Size(83, 35);
             this.label6.TabIndex = 2;
             this.label6.Text = "montant Prét";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            
             // 
             // panel9
             // 
@@ -419,7 +443,7 @@
             this.customtextbox3.TabIndex = 4;
             this.customtextbox3.Texts = "";
             this.customtextbox3.UnderlinedStyle = true;
-            this.customtextbox3._TextChanged += new System.EventHandler(this.customtextbox3__TextChanged);
+            
             this.customtextbox3.Enter += new System.EventHandler(this.customtextbox3_Enter);
             this.customtextbox3.Leave += new System.EventHandler(this.customtextbox3_Leave);
             // 
@@ -439,7 +463,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(364, 53);
             this.panel7.TabIndex = 11;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            
             // 
             // customtextbox2
             // 
@@ -510,7 +534,25 @@
             this.label2.Size = new System.Drawing.Size(95, 36);
             this.label2.TabIndex = 1;
             this.label2.Text = "taux   réparation";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(627, 66);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 16);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "label13";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(368, 62);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 16);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "label14";
             // 
             // ajouterCat
             // 
@@ -519,6 +561,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(783, 651);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
@@ -541,6 +585,7 @@
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -582,6 +627,9 @@
         private System.Windows.Forms.Panel panel11;
         private selfmadecomp.customtextbox customtextbox6;
         private System.Windows.Forms.Label label9;
+        private selfmadecomp.RoundBtn roundBtn2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 
        

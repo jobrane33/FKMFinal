@@ -19,8 +19,12 @@ namespace FKM_2022.referntiel
             InitializeComponent();
             uperPannel.Hide();
         }
-        
-        
+
+       public void refresh()
+        {
+            DataTable dt = select();
+            dataGridView1.DataSource = dt;
+        }
         private DataTable select()
         {
             DataTable dt = new DataTable();
@@ -82,8 +86,7 @@ namespace FKM_2022.referntiel
                         ex.ToString();
                     }
                     finally { conn.Close();
-                        DataTable dt = select();
-                        dataGridView1.DataSource = dt;
+                        refresh();
                     }
 
                 }
@@ -96,9 +99,11 @@ namespace FKM_2022.referntiel
                 if(dataGridView1.Columns[e.ColumnIndex].HeaderText == "update")
             {
                 dataGridView1.Rows[0].Selected = true;
+                int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["code"].Value);
                 ajouterCat addingcat = new ajouterCat();
                 addingcat.Visible= true;
                 addingcat.groupbox = "update";
+                addingcat.button = true;
                 int rowIndex = e.RowIndex;
                 addingcat.tauxRep = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
                 addingcat.tauxCag = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
@@ -106,7 +111,7 @@ namespace FKM_2022.referntiel
                 addingcat.montantPret = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
                 addingcat.observation = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
                 addingcat.libelle = dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
-                
+                addingcat.getid = id.ToString();
 
             }
             }
@@ -155,7 +160,13 @@ namespace FKM_2022.referntiel
         private void panel7_Click(object sender, EventArgs e)
         {
             ajouterCat ac  = new ajouterCat();
-            ac.Show();                 
+            ac.Show();
+            ac.addbtn = true;
+        }
+
+        private void roundBtn4_Click(object sender, EventArgs e)
+        {
+            refresh();
         }
     }
 }

@@ -103,8 +103,7 @@ namespace FKM_2022.CRUDforms
 
         private void customtextbox1__TextChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Some text", "Some title",
-    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Some text", "Some title",MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void customtextbox1_Enter(object sender, EventArgs e)

@@ -76,5 +76,39 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
+        public bool ajoutPersonnels(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan,int codeTerr)
+        {
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	ajoutPersonnls @matricule = '" + matricule + "',@nom = '" + nom + "',@prenom = '" + prenom + "'',@compteFKM = '" + compteFKM + "',@comptenote = '" + compteNote + "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + "";
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@tr", tr);
+                //command.Parameters.AddWithValue("@tc", tc);
+                //command.Parameters.AddWithValue("@te", te);
+                //command.Parameters.AddWithValue("@montantpret", montantpret);
+                //command.Parameters.AddWithValue("@observation", observation);
+                //command.Parameters.AddWithValue("@libelle", libelle);
+                //command.Parameters.AddWithValue("@id", id);
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
     }
+       
 }

@@ -1,4 +1,6 @@
-﻿namespace FKM_2022.CRUDforms
+﻿using System.Data.SqlClient;
+
+namespace FKM_2022.CRUDforms
 {
     partial class ajouterPerso
     {
@@ -38,9 +40,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -155,9 +157,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.textBox5);
@@ -172,6 +174,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(135, 444);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(281, 24);
+            this.comboBox1.TabIndex = 10;
             // 
             // button1
             // 
@@ -193,17 +203,6 @@
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox9.Enter += new System.EventHandler(this.textBox9_Enter);
             this.textBox9.Leave += new System.EventHandler(this.textBox9_Leave);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(135, 445);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(281, 22);
-            this.textBox8.TabIndex = 7;
-            this.textBox8.Text = "code territoire";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
-            this.textBox8.Leave += new System.EventHandler(this.textBox8_Leave);
             // 
             // textBox7
             // 
@@ -320,7 +319,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -330,5 +328,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

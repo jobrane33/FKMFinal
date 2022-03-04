@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -60,8 +61,8 @@ namespace FKM_2022.CRUDforms
         }
         public string codeTerrTextBox
         {
-            get { return textBox8.Text; }
-            set { textBox8.Text = value; }
+            get { return comboBox1.Text; }
+            set { comboBox1.Text = value; }
         }
         public string designationTextBox
         {
@@ -82,15 +83,33 @@ namespace FKM_2022.CRUDforms
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
+            {
+                SqlCommand sqlCmd = new SqlCommand("SELECT code , designation FROM territoires", sqlConnection);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = sqlCmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                comboBox1.DataSource = dt;
+                comboBox1.DisplayMember = "designation";
+                comboBox1.ValueMember = "code";
+                sqlConnection.Open();
+                
+            }
 
         }
-        public void validerChamps()
+        public bool validerChamps()
         {
             if(textBox1.Text == "Matricule" || textBox2.Text == "Nom" || 
                 textBox3.Text== "Prenom" || textBox4.Text== "Compte FKM" || textBox5.Text== "compte note" || textBox6.Text== "compte rebourcement" ||
-                textBox7.Text== "compte cagnotte" || textBox8.Text== "code territoire" || textBox9.Text== "Designation")
+                textBox7.Text== "compte cagnotte"  || textBox9.Text== "Designation")
             {
+                return false;
                 MessageBox.Show("un des champs est vide", "erreur!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -213,21 +232,7 @@ namespace FKM_2022.CRUDforms
             }
         }
 
-        private void textBox8_Enter(object sender, EventArgs e)
-        {
-            if (textBox8.Text == "code territoire")
-            {
-                textBox8.Text = String.Empty;
-            }
-            
-        }
-        private void textBox8_Leave(object sender, EventArgs e)
-        {
-            if (textBox8.Text == String.Empty)
-            {
-                textBox8.Text = "code territoire";
-            }
-        }
+        
 
         private void textBox9_Enter(object sender, EventArgs e)
         {
@@ -249,13 +254,22 @@ namespace FKM_2022.CRUDforms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(button1.Text == "valider") { 
-            }
-            else
+            if (validerChamps())
             {
-
+                crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
+                string codeterri = comboBox1.SelectedValue.ToString();
+                int numcodeterri = Int32.Parse(codeterri);
+                bool res=cm.ajoutPersonnels(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text,numcodeterri);
+                if (res)
+                {
+                    MessageBox.Show("insertion complete", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Some text", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            validerChamps();
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -267,6 +281,8 @@ namespace FKM_2022.CRUDforms
         {
             
         }
+
+        
     }
     }
 

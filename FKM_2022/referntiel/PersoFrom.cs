@@ -123,7 +123,7 @@ namespace FKM_2022.referntiel
                 perso.compteNoteTextBox = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
                 perso.compteRebTextBox = dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
                 perso.compteCagnotteTextBox = dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
-                perso.codeTerrTextBox = dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
+                //perso.codeTerrTextBox = dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
                 perso.designationTextBox = dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
                 perso.button = "update";
 

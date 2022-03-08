@@ -31,22 +31,22 @@ namespace FKM_2022.referntiel
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.NFKMtext = new System.Windows.Forms.TextBox();
-            this.lineunderlogin = new System.Windows.Forms.Panel();
-            this.MATtext = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customtextbox2 = new FKM_2022.selfmadecomp.customtextbox();
+            this.customtextbox1 = new FKM_2022.selfmadecomp.customtextbox();
+            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -58,89 +58,6 @@ namespace FKM_2022.referntiel
             this.label1.Size = new System.Drawing.Size(281, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "se connecter";
-            // 
-            // NFKMtext
-            // 
-            this.NFKMtext.BackColor = System.Drawing.SystemColors.Control;
-            this.NFKMtext.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NFKMtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NFKMtext.Location = new System.Drawing.Point(39, 62);
-            this.NFKMtext.Multiline = true;
-            this.NFKMtext.Name = "NFKMtext";
-            this.NFKMtext.Size = new System.Drawing.Size(280, 44);
-            this.NFKMtext.TabIndex = 1;
-            this.NFKMtext.Text = "numero compte FKM";
-            this.NFKMtext.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.NFKMtext.Enter += new System.EventHandler(this.NFKMtext_Enter);
-            this.NFKMtext.Leave += new System.EventHandler(this.NFKMtext_Leave);
-            // 
-            // lineunderlogin
-            // 
-            this.lineunderlogin.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lineunderlogin.Location = new System.Drawing.Point(39, 200);
-            this.lineunderlogin.Name = "lineunderlogin";
-            this.lineunderlogin.Size = new System.Drawing.Size(280, 1);
-            this.lineunderlogin.TabIndex = 2;
-            // 
-            // MATtext
-            // 
-            this.MATtext.BackColor = System.Drawing.SystemColors.Control;
-            this.MATtext.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MATtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MATtext.Location = new System.Drawing.Point(39, 150);
-            this.MATtext.Multiline = true;
-            this.MATtext.Name = "MATtext";
-            this.MATtext.Size = new System.Drawing.Size(280, 44);
-            this.MATtext.TabIndex = 3;
-            this.MATtext.Text = "Matricule";
-            this.MATtext.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.MATtext.Enter += new System.EventHandler(this.MATtext_Enter);
-            this.MATtext.Leave += new System.EventHandler(this.MATtext_Leave);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Location = new System.Drawing.Point(39, 112);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 1);
-            this.panel1.TabIndex = 4;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.NFKMtext);
-            this.groupBox1.Controls.Add(this.lineunderlogin);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.MATtext);
-            this.groupBox1.Location = new System.Drawing.Point(94, 162);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 277);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "passez vos donnes";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::FKM_2022.Properties.Resources.icons8_connexion_48;
-            this.pictureBox2.Location = new System.Drawing.Point(312, 226);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 45);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(362, 445);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 44);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "effacer les champs";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -183,16 +100,119 @@ namespace FKM_2022.referntiel
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::FKM_2022.Properties.Resources.icons8_connexion_48;
+            this.pictureBox2.Location = new System.Drawing.Point(312, 226);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(52, 45);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.customtextbox2);
+            this.groupBox1.Controls.Add(this.customtextbox1);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Location = new System.Drawing.Point(94, 162);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(370, 277);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "passez vos donnes";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(39, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Mot de Passe";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 16);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "nom d\'utilisateur";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // customtextbox2
+            // 
+            this.customtextbox2.BackColor = System.Drawing.SystemColors.Window;
+            this.customtextbox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customtextbox2.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.customtextbox2.BorderSize = 2;
+            this.customtextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customtextbox2.ForeColor = System.Drawing.Color.DimGray;
+            this.customtextbox2.isfocused = false;
+            this.customtextbox2.Location = new System.Drawing.Point(39, 162);
+            this.customtextbox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customtextbox2.Multiline = false;
+            this.customtextbox2.Name = "customtextbox2";
+            this.customtextbox2.Padding = new System.Windows.Forms.Padding(7);
+            this.customtextbox2.PasswordChar = false;
+            this.customtextbox2.Size = new System.Drawing.Size(280, 35);
+            this.customtextbox2.TabIndex = 11;
+            this.customtextbox2.Texts = "";
+            this.customtextbox2.UnderlinedStyle = true;
+            // 
+            // customtextbox1
+            // 
+            this.customtextbox1.BackColor = System.Drawing.SystemColors.Window;
+            this.customtextbox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customtextbox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.customtextbox1.BorderSize = 2;
+            this.customtextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customtextbox1.ForeColor = System.Drawing.Color.DimGray;
+            this.customtextbox1.isfocused = false;
+            this.customtextbox1.Location = new System.Drawing.Point(39, 74);
+            this.customtextbox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customtextbox1.Multiline = false;
+            this.customtextbox1.Name = "customtextbox1";
+            this.customtextbox1.Padding = new System.Windows.Forms.Padding(7);
+            this.customtextbox1.PasswordChar = false;
+            this.customtextbox1.Size = new System.Drawing.Size(280, 35);
+            this.customtextbox1.TabIndex = 10;
+            this.customtextbox1.Texts = "";
+            this.customtextbox1.UnderlinedStyle = true;
+            // 
+            // roundBtn1
+            // 
+            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BorderRadius = 40;
+            this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.FlatAppearance.BorderSize = 0;
+            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn1.ForeColor = System.Drawing.Color.White;
+            this.roundBtn1.Location = new System.Drawing.Point(366, 445);
+            this.roundBtn1.Name = "roundBtn1";
+            this.roundBtn1.Size = new System.Drawing.Size(98, 48);
+            this.roundBtn1.TabIndex = 12;
+            this.roundBtn1.Text = "effacer les champs";
+            this.roundBtn1.TextColor = System.Drawing.Color.White;
+            this.roundBtn1.UseVisualStyleBackColor = false;
+            // 
             // connection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(566, 574);
+            this.Controls.Add(this.roundBtn1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -200,13 +220,13 @@ namespace FKM_2022.referntiel
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FKM";
             this.Load += new System.EventHandler(this.personnel_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,16 +235,16 @@ namespace FKM_2022.referntiel
         #endregion
 
         private Label label1;
-        private TextBox NFKMtext;
-        private Panel lineunderlogin;
-        private TextBox MATtext;
-        private Panel panel1;
-        private GroupBox groupBox1;
-        private Button button2;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Label label2;
         private Panel panel2;
         private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private GroupBox groupBox1;
+        private Label label3;
+        private selfmadecomp.customtextbox customtextbox2;
+        private selfmadecomp.customtextbox customtextbox1;
+        private Label label4;
+        private selfmadecomp.RoundBtn roundBtn1;
     }
 }

@@ -16,10 +16,16 @@ namespace FKM_2022.CRUDforms
         {
             InitializeComponent();
         }
+         ~ajouterBurauxPayeurs()
+        {
+           this.Close();
+           
+        }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
     }
 }

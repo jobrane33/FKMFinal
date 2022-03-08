@@ -282,7 +282,10 @@ namespace FKM_2022.CRUDforms
             
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

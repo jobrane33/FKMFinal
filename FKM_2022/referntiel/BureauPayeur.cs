@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,10 +14,16 @@ namespace FKM_2022.referntiel
 {
     public partial class BureauPayeur : Form
     {
+
+        
         public BureauPayeur()
         {
+           
             InitializeComponent();
             uperPannel.Hide();
+           
+            
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

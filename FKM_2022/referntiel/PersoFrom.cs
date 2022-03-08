@@ -1,4 +1,5 @@
-﻿using FKM_2022.CRUDforms;
+﻿using FKM_2022.crudAlgoClasses;
+using FKM_2022.CRUDforms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,31 +24,7 @@ namespace FKM_2022.referntiel
             
         }
 
-        private DataTable select()
-        {
-            DataTable dt = new DataTable();
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True");
-            try
-            {
-
-                String sql = "select * from personnels";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
-                conn.Open();
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return dt;
-
-        }
+        
         private void panel6_MouseClick(object sender, MouseEventArgs e)
         {
             ajouterPerso perso = new ajouterPerso();
@@ -88,7 +65,8 @@ namespace FKM_2022.referntiel
 
         private void PersoFrom_Load(object sender, EventArgs e)
         {
-            DataTable dt = select();
+            crudMethodes cm = new crudAlgoClasses.crudMethodes();
+            DataTable dt = cm.selectPersonnels();
             dataGridView1.DataSource = dt;
         }
 
@@ -99,7 +77,22 @@ namespace FKM_2022.referntiel
                 DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("attention", "ce champ va etre deteruit", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Error);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    string mat = dataGridView1.Rows[e.RowIndex].Cells["mat"].Value.ToString();
+                    crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
+                    bool res =cm.archiverPersonnel(mat);
+                    if (res)
+                    {
+                        MessageBox.Show("insertion complete", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        DataTable dt = cm.selectPersonnels();
+                        dataGridView1.DataSource = dt;
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("erreur", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -132,21 +125,10 @@ namespace FKM_2022.referntiel
 
         private void roundBtn4_Click(object sender, EventArgs e)
         {
-            DialogResult d;
-            
-            Timer t = new Timer();
-            t.Interval = 100;
-            if (!t.Enabled)
-            {
-                 d = MessageBox.Show("refreshing pease wait ", "wait", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DataTable dt = select();
-                dataGridView1.DataSource = dt;
-            }
-            else
-            {
-                Close();
-            }
-            
+            crudMethodes cm = new crudAlgoClasses.crudMethodes();
+            DataTable dt = cm.selectPersonnels();
+            dataGridView1.DataSource = dt;
+
         }
 
         private void roundBtn7_Click(object sender, EventArgs e)
@@ -159,6 +141,11 @@ namespace FKM_2022.referntiel
            DialogResult res = openFileDialog1.ShowDialog();
 
            
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

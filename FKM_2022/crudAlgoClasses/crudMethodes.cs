@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace FKM_2022.crudAlgoClasses
     internal class crudMethodes
     {
         string conString = "Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True";
-        public bool InsertCategorie( float tr,float tc, float te, float montantpret , string observation ,string libelle)
+        //insertion d'une categorie
+        public bool InsertCategorie(float tr, float tc, float te, float montantpret, string observation, string libelle)
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(conString);
@@ -43,7 +45,8 @@ namespace FKM_2022.crudAlgoClasses
             return isSuccess;
 
         }
-        public bool updateCategorie (int id ,float tr,float tc, float te, float montantpret, string observation,string libelle)
+        //missajour d'une categorie 
+        public bool updateCategorie(int id, float tr, float tc, float te, float montantpret, string observation, string libelle)
         {
             bool success = false;
             SqlConnection con = new SqlConnection(conString);
@@ -62,27 +65,31 @@ namespace FKM_2022.crudAlgoClasses
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
                 {
-                   success = true;
+                    success = true;
                 }
                 else
                 {
-                   success = false;
+                    success = false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-               ex.ToString();
+                ex.ToString();
             }
             finally { con.Close(); }
             return success;
         }
-        public bool ajoutPersonnels(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan,int codeTerr)
+        //ajout personnels 
+        public bool ajoutPersonnels(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan, int codeTerr)
         {
             bool success = false;
             SqlConnection con = new SqlConnection(conString);
             try
             {
-                string sql = "EXEC	ajoutPersonnls @matricule = '" + matricule + "',@nom = '" + nom + "',@prenom = '" + prenom + "'',@compteFKM = '" + compteFKM + "',@comptenote = '" + compteNote + "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + "";
+                string sql = "EXEC	ajoutPersonnls @matricule = '" + matricule +
+                "',@nom = '" + nom + "',@prenom = '" + prenom +
+                "',@compteFKM = '" + compteFKM + "',@comptenote = '" + compteNote +
+                "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + "";
                 SqlCommand command = new SqlCommand(sql, con);
                 //command.Parameters.AddWithValue("@tr", tr);
                 //command.Parameters.AddWithValue("@tc", tc);
@@ -91,6 +98,7 @@ namespace FKM_2022.crudAlgoClasses
                 //command.Parameters.AddWithValue("@observation", observation);
                 //command.Parameters.AddWithValue("@libelle", libelle);
                 //command.Parameters.AddWithValue("@id", id);
+                MessageBox.Show(sql);
                 con.Open();
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
@@ -109,6 +117,59 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
+        //archiver personnels
+        public bool archiverPersonnel(string  mat)
+        {
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "UPDATE [dbo].[personnels] SET archive = 0 WHERE  matricule='" + mat + "'";
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@mat", mat);
+               
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public DataTable selectPersonnels()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True");
+            try
+            {
+
+                String sql = "SELECT [matricule],[nom],[prenom],[compteFKM],[compteNote],[compteRemboursement],[compteCagnotte],[codeTerritoire]FROM [FKM].[dbo].[personnels] where [archive]=1";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
     }
-       
 }

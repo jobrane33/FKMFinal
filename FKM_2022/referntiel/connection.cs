@@ -33,50 +33,7 @@ namespace FKM_2022.referntiel
 
         }
 
-        private void NFKMtext_Enter(object sender, EventArgs e)
-        {
-            if (NFKMtext.Text == "numero compte FKM" )
-            {
-                NFKMtext.Text = String.Empty;
-                NFKMtext.ForeColor = Color.WhiteSmoke;
-            }
-           
-        }
-
-        private void MATtext_Enter(object sender, EventArgs e)
-        {
-            if (MATtext.Text== "Matricule")
-            {
-                MATtext.Text = String.Empty;
-                MATtext.ForeColor = Color.WhiteSmoke;
-            }
-        }
-
-        private void MATtext_Leave(object sender, EventArgs e)
-        {
-            if (MATtext.Text == String.Empty)
-            {
-                MATtext.Text = "Matricule";
-                MATtext.ForeColor = Color.Black;
-            }
-        }
-
-        private void NFKMtext_Leave(object sender, EventArgs e)
-        {
-            if (NFKMtext.Text == String.Empty)
-            {
-                NFKMtext.Text = "numero compte FKM";
-                NFKMtext.ForeColor = Color.Black;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            NFKMtext.Text = "numero compte FKM";
-            MATtext.Text = "Matricule";
-            NFKMtext.ForeColor = Color.Black;
-            MATtext.ForeColor = Color.Black;
-        }
+       
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -92,6 +49,16 @@ namespace FKM_2022.referntiel
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

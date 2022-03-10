@@ -253,6 +253,16 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_marqueur_de_plan_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-marqueur-de-plan-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menu_arrondi_48__2_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-menu-arrondi-48 (2)", resourceCulture);

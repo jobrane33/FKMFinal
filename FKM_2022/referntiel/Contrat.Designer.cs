@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -57,10 +58,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lib = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matricule = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compteRemboursement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.exporterPDF = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -399,26 +400,32 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.code,
             this.lib,
-            this.statut,
-            this.docName,
+            this.matricule,
             this.perso,
             this.compteRemboursement,
+            this.docName,
             this.supprimer,
             this.update,
             this.exporterPDF});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 184);
             this.dataGridView1.Name = "dataGridView1";
@@ -427,9 +434,11 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1441, 807);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // code
             // 
+            this.code.DataPropertyName = "code";
             this.code.HeaderText = "code";
             this.code.MinimumWidth = 6;
             this.code.Name = "code";
@@ -438,44 +447,48 @@
             // 
             // lib
             // 
+            this.lib.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lib.DataPropertyName = "libelle";
             this.lib.HeaderText = "Libellé";
             this.lib.MinimumWidth = 6;
             this.lib.Name = "lib";
             this.lib.ReadOnly = true;
-            this.lib.Width = 125;
             // 
-            // statut
+            // matricule
             // 
-            this.statut.HeaderText = "statut";
-            this.statut.MinimumWidth = 6;
-            this.statut.Name = "statut";
-            this.statut.ReadOnly = true;
-            this.statut.Width = 125;
-            // 
-            // docName
-            // 
-            this.docName.HeaderText = "Nom du Document";
-            this.docName.MinimumWidth = 6;
-            this.docName.Name = "docName";
-            this.docName.ReadOnly = true;
-            this.docName.Width = 125;
+            this.matricule.DataPropertyName = "matricule";
+            this.matricule.HeaderText = "matricule";
+            this.matricule.MinimumWidth = 6;
+            this.matricule.Name = "matricule";
+            this.matricule.ReadOnly = true;
+            this.matricule.Width = 125;
             // 
             // perso
             // 
+            this.perso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.perso.DataPropertyName = "Personnel";
             this.perso.HeaderText = "Personnel";
             this.perso.MinimumWidth = 6;
             this.perso.Name = "perso";
             this.perso.ReadOnly = true;
-            this.perso.Width = 125;
             // 
             // compteRemboursement
             // 
-            this.compteRemboursement.DataPropertyName = "compteRemboursement";
+            this.compteRemboursement.DataPropertyName = "libelle_categorie";
             this.compteRemboursement.HeaderText = "catégorie Prets";
             this.compteRemboursement.MinimumWidth = 6;
             this.compteRemboursement.Name = "compteRemboursement";
             this.compteRemboursement.ReadOnly = true;
             this.compteRemboursement.Width = 125;
+            // 
+            // docName
+            // 
+            this.docName.DataPropertyName = "NomFichier";
+            this.docName.HeaderText = "Nom du Document";
+            this.docName.MinimumWidth = 6;
+            this.docName.Name = "docName";
+            this.docName.ReadOnly = true;
+            this.docName.Width = 125;
             // 
             // supprimer
             // 
@@ -499,11 +512,11 @@
             // 
             // exporterPDF
             // 
+            this.exporterPDF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.exporterPDF.HeaderText = "afficher PDF";
             this.exporterPDF.MinimumWidth = 6;
             this.exporterPDF.Name = "exporterPDF";
             this.exporterPDF.ReadOnly = true;
-            this.exporterPDF.Width = 125;
             // 
             // Contrat
             // 
@@ -514,6 +527,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Contrat";
             this.Text = "PersoFrom";
+            this.Load += new System.EventHandler(this.Contrat_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -565,10 +579,10 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn lib;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn docName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matricule;
         private System.Windows.Forms.DataGridViewTextBoxColumn perso;
         private System.Windows.Forms.DataGridViewTextBoxColumn compteRemboursement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn docName;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn update;
         private System.Windows.Forms.DataGridViewButtonColumn exporterPDF;

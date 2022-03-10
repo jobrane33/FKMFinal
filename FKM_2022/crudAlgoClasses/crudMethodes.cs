@@ -36,7 +36,7 @@ namespace FKM_2022.crudAlgoClasses
             }
             catch (Exception ex)
             {
-
+                ex.ToString();
             }
             finally
             {
@@ -61,6 +61,7 @@ namespace FKM_2022.crudAlgoClasses
                 command.Parameters.AddWithValue("@observation", observation);
                 command.Parameters.AddWithValue("@libelle", libelle);
                 command.Parameters.AddWithValue("@id", id);
+                MessageBox.Show(sql);
                 con.Open();
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
@@ -86,8 +87,7 @@ namespace FKM_2022.crudAlgoClasses
             SqlConnection con = new SqlConnection(conString);
             try
             {
-                string sql = "EXEC	ajoutPersonnls @matricule = '" + matricule +
-                "',@nom = '" + nom + "',@prenom = '" + prenom +
+                string sql = "EXEC	ajoutPersonnls @matricule ='" + matricule + "' ,@nom = '" + nom + "',@prenom = '" + prenom +
                 "',@compteFKM = '" + compteFKM + "',@comptenote = '" + compteNote +
                 "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + "";
                 SqlCommand command = new SqlCommand(sql, con);
@@ -118,7 +118,7 @@ namespace FKM_2022.crudAlgoClasses
             return success;
         }
         //archiver personnels
-        public bool archiverPersonnel(string  mat)
+        public bool archiverPersonnel(string mat)
         {
             bool success = false;
             SqlConnection con = new SqlConnection(conString);
@@ -127,7 +127,7 @@ namespace FKM_2022.crudAlgoClasses
                 string sql = "UPDATE [dbo].[personnels] SET archive = 0 WHERE  matricule='" + mat + "'";
                 SqlCommand command = new SqlCommand(sql, con);
                 //command.Parameters.AddWithValue("@mat", mat);
-               
+
                 con.Open();
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
@@ -146,14 +146,14 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
-        public DataTable selectPersonnels()
+        public DataTable selectPersonnels(int archive )
         {
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True");
             try
             {
 
-                String sql = "SELECT [matricule],[nom],[prenom],[compteFKM],[compteNote],[compteRemboursement],[compteCagnotte],[codeTerritoire]FROM [FKM].[dbo].[personnels] where [archive]=1";
+                String sql = "SELECT [matricule],[nom],[prenom],[compteFKM],[compteNote],[compteRemboursement],[compteCagnotte],[codeTerritoire],[designation] FROM [FKM].[dbo].[personnels] where [archive]="+archive+"";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -170,6 +170,126 @@ namespace FKM_2022.crudAlgoClasses
             }
             return dt;
         }
+        public bool updaterPersonnel(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan, int codeTerr)
+        {
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	[dbo].[updatePersonnel] @matricule = '" + matricule + "',@nom = '" + nom + "',@prenom = '" + prenom + "',@compteFKM = '" + compteFKM + "',@comptenote ='" + compteNote + "',@compteRem ='" + compteRemb + "',@compteCang ='" + comptecan + "',@codeterr = " + codeTerr + "";
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@mat", matricule);
+                //command.Parameters.AddWithValue("@name", nom);
+                //command.Parameters.AddWithValue("@secondname", prenom);
+                //command.Parameters.AddWithValue("@cFKM", compteFKM);
+                //command.Parameters.AddWithValue("@cnote", compteNote);
+                //command.Parameters.AddWithValue("@crem", compteRemb);
+                //command.Parameters.AddWithValue("@cCang", comptecan);
+                //command.Parameters.AddWithValue("@codeTR", codeTerr);
+                con.Open();
+                MessageBox.Show(sql);
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public DataTable filtrePerso(string comboBoxvalue, string textBoxinput,int archive)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True");
+            try
+            {
 
+                String sql = "select [matricule],[nom],[prenom],[compteFKM],[compteNote],[compteRemboursement],[compteCagnotte],[codeTerritoire],[designation]from personnels where " + comboBoxvalue + " like '%" + textBoxinput + "%'  AND [archive]="+archive+"  ";
+               // MessageBox.Show(sql);
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable selectContrat()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+                String sql = "EXEC [dbo].[afficheContrat]";
+                // MessageBox.Show(sql);
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+
+        }
+        public bool ajoutContrat(string mat,int code )
+        {
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	 [dbo].[stockcontrat] @mat = '"+mat+"', @codeCat = "+code+ ", @nomdoc = NUll";
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@mat", matricule);
+                //command.Parameters.AddWithValue("@name", nom);
+                //command.Parameters.AddWithValue("@secondname", prenom);
+                //command.Parameters.AddWithValue("@cFKM", compteFKM);
+                //command.Parameters.AddWithValue("@cnote", compteNote);
+                //command.Parameters.AddWithValue("@crem", compteRemb);
+                //command.Parameters.AddWithValue("@cCang", comptecan);
+                //command.Parameters.AddWithValue("@codeTR", codeTerr);
+                con.Open();
+                MessageBox.Show(sql);
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
     }
 }

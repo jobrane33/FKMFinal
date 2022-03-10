@@ -537,5 +537,10 @@ namespace FKM_2022.referntiel
         {
             
         }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            openSildperso(new Territoires());
+        }
     }
 }

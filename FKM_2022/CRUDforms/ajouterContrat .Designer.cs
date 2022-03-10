@@ -38,23 +38,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.customtextbox4 = new FKM_2022.selfmadecomp.customtextbox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.customtextbox3 = new FKM_2022.selfmadecomp.customtextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.customtextbox2 = new FKM_2022.selfmadecomp.customtextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.customtextbox1 = new FKM_2022.selfmadecomp.customtextbox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.customtextbox3 = new FKM_2022.selfmadecomp.customtextbox();
+            this.customtextbox2 = new FKM_2022.selfmadecomp.customtextbox();
+            this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -65,7 +62,6 @@
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // exitBtn
@@ -164,51 +160,20 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.roundBtn2);
             this.groupBox1.Controls.Add(this.roundBtn1);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.panel10);
             this.groupBox1.Controls.Add(this.panel9);
             this.groupBox1.Controls.Add(this.panel7);
-            this.groupBox1.Controls.Add(this.panel6);
             this.groupBox1.Location = new System.Drawing.Point(211, 85);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(525, 532);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter";
-            // 
-            // roundBtn1
-            // 
-            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BorderRadius = 40;
-            this.roundBtn1.BorderSize = 0;
-            this.roundBtn1.FlatAppearance.BorderSize = 0;
-            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(238, 473);
-            this.roundBtn1.Name = "roundBtn1";
-            this.roundBtn1.Size = new System.Drawing.Size(92, 38);
-            this.roundBtn1.TabIndex = 19;
-            this.roundBtn1.Text = "Valider";
-            this.roundBtn1.TextColor = System.Drawing.Color.White;
-            this.roundBtn1.UseVisualStyleBackColor = false;
-            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
-            // 
-            // label11
-            // 
-            this.label11.AllowDrop = true;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(412, 375);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 20);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "*";
             // 
             // label10
             // 
@@ -248,34 +213,12 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.customtextbox4);
+            this.panel10.Controls.Add(this.comboBox1);
             this.panel10.Controls.Add(this.label6);
-            this.panel10.Location = new System.Drawing.Point(42, 375);
+            this.panel10.Location = new System.Drawing.Point(42, 192);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(364, 53);
             this.panel10.TabIndex = 12;
-            // 
-            // customtextbox4
-            // 
-            this.customtextbox4.BackColor = System.Drawing.SystemColors.Window;
-            this.customtextbox4.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customtextbox4.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customtextbox4.BorderSize = 2;
-            this.customtextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customtextbox4.ForeColor = System.Drawing.Color.DimGray;
-            this.customtextbox4.isfocused = false;
-            this.customtextbox4.Location = new System.Drawing.Point(97, 4);
-            this.customtextbox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customtextbox4.Multiline = false;
-            this.customtextbox4.Name = "customtextbox4";
-            this.customtextbox4.Padding = new System.Windows.Forms.Padding(7);
-            this.customtextbox4.PasswordChar = false;
-            this.customtextbox4.Size = new System.Drawing.Size(250, 35);
-            this.customtextbox4.TabIndex = 3;
-            this.customtextbox4.Texts = "";
-            this.customtextbox4.UnderlinedStyle = true;
-            this.customtextbox4.Enter += new System.EventHandler(this.customtextbox4_Enter);
-            this.customtextbox4.Leave += new System.EventHandler(this.customtextbox4_Leave);
             // 
             // label6
             // 
@@ -290,10 +233,55 @@
             // 
             this.panel9.Controls.Add(this.customtextbox3);
             this.panel9.Controls.Add(this.label5);
-            this.panel9.Location = new System.Drawing.Point(42, 282);
+            this.panel9.Location = new System.Drawing.Point(42, 112);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(364, 53);
             this.panel9.TabIndex = 11;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(3, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 35);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "matricule personelle";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.customtextbox2);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Location = new System.Drawing.Point(42, 282);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(370, 53);
+            this.panel7.TabIndex = 11;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "nom du document";
+            // 
+            // roundBtn1
+            // 
+            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BorderRadius = 40;
+            this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.FlatAppearance.BorderSize = 0;
+            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn1.ForeColor = System.Drawing.Color.White;
+            this.roundBtn1.Location = new System.Drawing.Point(250, 365);
+            this.roundBtn1.Name = "roundBtn1";
+            this.roundBtn1.Size = new System.Drawing.Size(92, 38);
+            this.roundBtn1.TabIndex = 19;
+            this.roundBtn1.Text = "Valider";
+            this.roundBtn1.TextColor = System.Drawing.Color.White;
+            this.roundBtn1.UseVisualStyleBackColor = false;
+            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
             // 
             // customtextbox3
             // 
@@ -318,24 +306,6 @@
             this.customtextbox3.Enter += new System.EventHandler(this.customtextbox3_Enter);
             this.customtextbox3.Leave += new System.EventHandler(this.customtextbox3_Leave);
             // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(3, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 35);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "matricule personelle";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.customtextbox2);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Location = new System.Drawing.Point(42, 193);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(364, 53);
-            this.panel7.TabIndex = 11;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
             // customtextbox2
             // 
             this.customtextbox2.BackColor = System.Drawing.SystemColors.Window;
@@ -358,54 +328,30 @@
             this.customtextbox2.Enter += new System.EventHandler(this.customtextbox2_Enter);
             this.customtextbox2.Leave += new System.EventHandler(this.customtextbox2_Leave);
             // 
-            // label3
+            // roundBtn2
             // 
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "nom du document";
+            this.roundBtn2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn2.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn2.BorderRadius = 40;
+            this.roundBtn2.BorderSize = 0;
+            this.roundBtn2.FlatAppearance.BorderSize = 0;
+            this.roundBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn2.ForeColor = System.Drawing.Color.White;
+            this.roundBtn2.Location = new System.Drawing.Point(139, 365);
+            this.roundBtn2.Name = "roundBtn2";
+            this.roundBtn2.Size = new System.Drawing.Size(92, 38);
+            this.roundBtn2.TabIndex = 20;
+            this.roundBtn2.Text = "modifer";
+            this.roundBtn2.TextColor = System.Drawing.Color.White;
+            this.roundBtn2.UseVisualStyleBackColor = false;
             // 
-            // panel6
+            // comboBox1
             // 
-            this.panel6.Controls.Add(this.customtextbox1);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(42, 112);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(364, 53);
-            this.panel6.TabIndex = 10;
-            // 
-            // customtextbox1
-            // 
-            this.customtextbox1.BackColor = System.Drawing.SystemColors.Window;
-            this.customtextbox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customtextbox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customtextbox1.BorderSize = 2;
-            this.customtextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customtextbox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customtextbox1.isfocused = false;
-            this.customtextbox1.Location = new System.Drawing.Point(97, 4);
-            this.customtextbox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customtextbox1.Multiline = false;
-            this.customtextbox1.Name = "customtextbox1";
-            this.customtextbox1.Padding = new System.Windows.Forms.Padding(7);
-            this.customtextbox1.PasswordChar = false;
-            this.customtextbox1.Size = new System.Drawing.Size(250, 35);
-            this.customtextbox1.TabIndex = 2;
-            this.customtextbox1.Texts = "";
-            this.customtextbox1.UnderlinedStyle = true;
-            this.customtextbox1._TextChanged += new System.EventHandler(this.customtextbox1__TextChanged);
-            this.customtextbox1.Enter += new System.EventHandler(this.customtextbox1_Enter);
-            this.customtextbox1.Leave += new System.EventHandler(this.customtextbox1_Leave);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "libellé";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(97, 15);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(250, 24);
+            this.comboBox1.TabIndex = 3;
             // 
             // ajouterContrat
             // 
@@ -432,8 +378,6 @@
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -455,20 +399,17 @@
        
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label6;
         
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private selfmadecomp.RoundBtn roundBtn1;
-        private selfmadecomp.customtextbox customtextbox1;
-        private selfmadecomp.customtextbox customtextbox4;
         private selfmadecomp.customtextbox customtextbox3;
         private selfmadecomp.customtextbox customtextbox2;
+        private selfmadecomp.RoundBtn roundBtn2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 
       

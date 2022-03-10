@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace FKM_2022.CRUDforms
 {
     public partial class ajouterPerso : Form
     {
+        crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
        (
@@ -64,20 +66,21 @@ namespace FKM_2022.CRUDforms
             get { return comboBox1.Text; }
             set { comboBox1.Text = value; }
         }
-        public string designationTextBox
-        {
-            get { return textBox9.Text; }
-            set { textBox9.Text = value; }
-        }
+       
         public string groupboxText
         {
             get { return groupBox1.Text; }
             set { groupBox1.Text = value; }
         }
-        public string button
+        public bool buttonvalider
         {
-            
-            set { button1.Text = value; }
+            get { return button1.Enabled;}
+            set { button1.Enabled=value; }
+        }
+        public bool buttonmodifier
+        {
+            get { return button2.Enabled; }
+            set { button2.Enabled = value; }
         }
         public ajouterPerso()
         {
@@ -98,14 +101,28 @@ namespace FKM_2022.CRUDforms
             }
 
         }
-        public bool validerChamps()
+        private bool testNum(string text)
         {
-            if(textBox1.Text == "Matricule" || textBox2.Text == "Nom" || 
-                textBox3.Text== "Prenom" || textBox4.Text== "Compte FKM" || textBox5.Text== "compte note" || textBox6.Text== "compte rebourcement" ||
-                textBox7.Text== "compte cagnotte"  || textBox9.Text== "Designation")
+            Regex regex = new Regex(@"^-?[0-9][0-9,\.]+$");
+            string res = regex.Matches(text).ToString();
+            if (res.Equals("True")){
+                return true;
+            }
+            else
             {
                 return false;
+            }
+        }
+        public bool validerChamps()
+        {
+           
+            if ((textBox1.Text == "Matricule" || textBox2.Text == "Nom" || 
+                textBox3.Text== "Prenom" || textBox4.Text== "Compte FKM" || textBox5.Text== "compte note" || textBox6.Text== "compte rebourcement" ||
+                textBox7.Text== "compte cagnotte") && !testNum(textBox1.Text))
+            {
+                
                 MessageBox.Show("un des champs est vide", "erreur!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
             {
@@ -234,23 +251,7 @@ namespace FKM_2022.CRUDforms
 
         
 
-        private void textBox9_Enter(object sender, EventArgs e)
-        {
-            if (textBox9.Text == "Designation")
-            {
-                textBox9.Text = String.Empty;
-            }
-            
-        }
-
-        private void textBox9_Leave(object sender, EventArgs e)
-        {
-            if (textBox9.Text == String.Empty)
-            {
-                textBox9.Text = "Designation";
-            }
-
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -262,11 +263,11 @@ namespace FKM_2022.CRUDforms
                 bool res=cm.ajoutPersonnels(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text,numcodeterri);
                 if (res)
                 {
-                    MessageBox.Show("insertion complete", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("insertion valider", "valide", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Some text", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("matricule non valide", "erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             
@@ -284,8 +285,25 @@ namespace FKM_2022.CRUDforms
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-        }
+            if (validerChamps())
+            {
+                string codeterri = comboBox1.SelectedValue.ToString();
+                int numcodeterri = Int32.Parse(codeterri);
+                bool res = cm.updaterPersonnel(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, numcodeterri);
+                if (res)
+                {
+                    MessageBox.Show("insertion complete", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Some text", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                return;
+            }
+            }
     }
     }
 

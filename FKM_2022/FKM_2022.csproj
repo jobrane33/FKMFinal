@@ -75,6 +75,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -122,6 +123,12 @@
     </Compile>
     <Compile Include="CRUDforms\ajouterPerso.Designer.cs">
       <DependentUpon>ajouterPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterTerritoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDforms\ajouterTerritoire.Designer.cs">
+      <DependentUpon>ajouterTerritoire.cs</DependentUpon>
     </Compile>
     <Compile Include="exploitation\BonEssence.cs">
       <SubType>Form</SubType>
@@ -221,6 +228,12 @@
     <Compile Include="referntiel\Service.Designer.cs">
       <DependentUpon>Service.cs</DependentUpon>
     </Compile>
+    <Compile Include="referntiel\Territoires.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\Territoires.Designer.cs">
+      <DependentUpon>Territoires.cs</DependentUpon>
+    </Compile>
     <Compile Include="referntiel\Vehicule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CRUDforms\ajouterPerso.resx">
       <DependentUpon>ajouterPerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDforms\ajouterTerritoire.resx">
+      <DependentUpon>ajouterTerritoire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="exploitation\BonEssence.resx">
       <DependentUpon>BonEssence.cs</DependentUpon>
@@ -303,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="referntiel\Service.resx">
       <DependentUpon>Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\Territoires.resx">
+      <DependentUpon>Territoires.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="referntiel\Vehicule.resx">
       <DependentUpon>Vehicule.cs</DependentUpon>
@@ -450,6 +469,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-classer-par-catégories-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marqueur-de-plan-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using FKM_2022.crudAlgoClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -14,6 +16,37 @@ namespace FKM_2022.CRUDforms
     
     public partial class ajouterContrat : Form
     {
+        public string matTextBox
+        {
+            get { return customtextbox3.Texts; }
+            set { customtextbox3.Texts = value; }
+        }
+        public string categorieComboBox
+        {
+            get { return comboBox1.Text; }
+            set { comboBox1.Text = value; }
+        }
+        public string nomDocument
+        {
+            get { return customtextbox2.Texts;}
+            set { customtextbox2.Texts = value; }
+        }
+        public string groupBoxSetter
+        {
+            get { return groupBox1.Text; }
+            set { groupBox1.Text = value; }
+        }
+        public bool btnValider
+        {
+            get { return roundBtn1.Enabled; }
+            set { roundBtn1.Enabled= value; }
+        }
+        public bool btnModifier
+        {
+            get { return roundBtn2.Enabled; }
+            set { roundBtn2.Enabled= value; }
+        }
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
        (
@@ -28,6 +61,19 @@ namespace FKM_2022.CRUDforms
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
+            {
+                SqlCommand sqlCmd = new SqlCommand("SELECT code , libelle FROM categories", sqlConnection);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = sqlCmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                comboBox1.DataSource = dt;
+                comboBox1.DisplayMember = "libelle";
+                comboBox1.ValueMember = "code";
+                sqlConnection.Open();
+
+            }
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -41,22 +87,9 @@ namespace FKM_2022.CRUDforms
     MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void customtextbox1_Enter(object sender, EventArgs e)
-        {
-            customtextbox1.BorderColor = Color.Green;
-            label7.Hide();
-            //customtextbox1.isfocused = true;
-        }
+        
 
-        private void customtextbox1_Leave(object sender, EventArgs e)
-        {
-            if (customtextbox1.Texts == string.Empty)
-            {
-                customtextbox1.BorderColor = Color.Red;
-                label7.Show();
-            }
-            
-        }
+        
 
         private void customtextbox2_Enter(object sender, EventArgs e)
         {
@@ -88,26 +121,29 @@ namespace FKM_2022.CRUDforms
             }
         }
 
-        private void customtextbox4_Enter(object sender, EventArgs e)
-        {
-            customtextbox4.BorderColor = Color.Green;
-            label11.Hide();
-        }
-
-        private void customtextbox4_Leave(object sender, EventArgs e)
-        {
-            if (customtextbox4.Texts == string.Empty)
-            {
-                customtextbox4.BorderColor = Color.Red;
-                label11.Show();
-            }
-        }
+       
 
         private void roundBtn1_Click(object sender, EventArgs e)
         {
-            if(customtextbox1.Texts==String.Empty || customtextbox2.Texts == String.Empty || customtextbox3.Texts == String.Empty || customtextbox4.Texts == String.Empty)
+            if(  customtextbox3.Texts == String.Empty )
             {
                 MessageBox.Show("voudriez-vous svp remplir toutes les zones de texte", "champ vide !",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string codecat = comboBox1.SelectedValue.ToString();
+                int numcodecat = Int32.Parse(codecat);
+                crudMethodes cm = new crudMethodes();
+               bool test = cm.ajoutContrat(customtextbox3.Texts, numcodecat);
+                if (test)
+                {
+                    MessageBox.Show("suecess", "bien fait !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("erreur d'insertion", "erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
         }
@@ -129,6 +165,11 @@ namespace FKM_2022.CRUDforms
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
         {
 
         }

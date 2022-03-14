@@ -48,26 +48,25 @@
             this.uperPannel = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.roundBtn6 = new FKM_2022.selfmadecomp.RoundBtn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.filledPanel = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.te = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.roundBtn6 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn4 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.filledPanel = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.te = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -274,6 +273,24 @@
             this.pictureBox8.TabIndex = 20;
             this.pictureBox8.TabStop = false;
             // 
+            // roundBtn6
+            // 
+            this.roundBtn6.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn6.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn6.BorderRadius = 40;
+            this.roundBtn6.BorderSize = 0;
+            this.roundBtn6.FlatAppearance.BorderSize = 0;
+            this.roundBtn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn6.ForeColor = System.Drawing.Color.White;
+            this.roundBtn6.Location = new System.Drawing.Point(953, 23);
+            this.roundBtn6.Name = "roundBtn6";
+            this.roundBtn6.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn6.TabIndex = 12;
+            this.roundBtn6.Text = "importer CSV";
+            this.roundBtn6.TextColor = System.Drawing.Color.White;
+            this.roundBtn6.UseVisualStyleBackColor = false;
+            this.roundBtn6.Click += new System.EventHandler(this.roundBtn6_Click);
+            // 
             // panel6
             // 
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -293,6 +310,17 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(99, 89);
             this.panel7.TabIndex = 18;
+            // 
+            // panel8
+            // 
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(99, 89);
+            this.panel8.TabIndex = 18;
+            this.panel8.Click += new System.EventHandler(this.panel8_Click);
             // 
             // pictureBox7
             // 
@@ -333,144 +361,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
-            // 
-            // filledPanel
-            // 
-            this.filledPanel.AutoScroll = true;
-            this.filledPanel.Controls.Add(this.dataGridView1);
-            this.filledPanel.Controls.Add(this.uperPannel);
-            this.filledPanel.Controls.Add(this.panel1);
-            this.filledPanel.Controls.Add(this.panel4);
-            this.filledPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filledPanel.Location = new System.Drawing.Point(0, 0);
-            this.filledPanel.Name = "filledPanel";
-            this.filledPanel.Size = new System.Drawing.Size(1441, 1018);
-            this.filledPanel.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.code,
-            this.te,
-            this.mp,
-            this.supprimer,
-            this.update});
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 184);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1441, 807);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // panel8
-            // 
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(99, 89);
-            this.panel8.TabIndex = 18;
-            this.panel8.Click += new System.EventHandler(this.panel8_Click);
-            // 
-            // code
-            // 
-            this.code.DataPropertyName = "code";
-            this.code.HeaderText = "code";
-            this.code.MinimumWidth = 6;
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            this.code.Width = 125;
-            // 
-            // te
-            // 
-            this.te.DataPropertyName = "designation";
-            this.te.HeaderText = "designation";
-            this.te.MinimumWidth = 6;
-            this.te.Name = "te";
-            this.te.ReadOnly = true;
-            this.te.Width = 125;
-            // 
-            // mp
-            // 
-            this.mp.DataPropertyName = "logo";
-            this.mp.HeaderText = "logo";
-            this.mp.MinimumWidth = 6;
-            this.mp.Name = "mp";
-            this.mp.ReadOnly = true;
-            this.mp.Width = 125;
-            // 
-            // supprimer
-            // 
-            this.supprimer.HeaderText = "supprimer";
-            this.supprimer.MinimumWidth = 6;
-            this.supprimer.Name = "supprimer";
-            this.supprimer.ReadOnly = true;
-            this.supprimer.Text = "supprimer";
-            this.supprimer.UseColumnTextForButtonValue = true;
-            this.supprimer.Width = 125;
-            // 
-            // update
-            // 
-            this.update.HeaderText = "update";
-            this.update.MinimumWidth = 6;
-            this.update.Name = "update";
-            this.update.ReadOnly = true;
-            this.update.Text = "update";
-            this.update.UseColumnTextForButtonValue = true;
-            this.update.Width = 125;
-            // 
-            // roundBtn6
-            // 
-            this.roundBtn6.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn6.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn6.BorderRadius = 40;
-            this.roundBtn6.BorderSize = 0;
-            this.roundBtn6.FlatAppearance.BorderSize = 0;
-            this.roundBtn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn6.ForeColor = System.Drawing.Color.White;
-            this.roundBtn6.Location = new System.Drawing.Point(953, 23);
-            this.roundBtn6.Name = "roundBtn6";
-            this.roundBtn6.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn6.TabIndex = 12;
-            this.roundBtn6.Text = "importer CSV";
-            this.roundBtn6.TextColor = System.Drawing.Color.White;
-            this.roundBtn6.UseVisualStyleBackColor = false;
-            this.roundBtn6.Click += new System.EventHandler(this.roundBtn6_Click);
             // 
             // roundBtn7
             // 
@@ -542,6 +432,106 @@
             this.roundBtn2.TextColor = System.Drawing.Color.White;
             this.roundBtn2.UseVisualStyleBackColor = false;
             // 
+            // filledPanel
+            // 
+            this.filledPanel.AutoScroll = true;
+            this.filledPanel.Controls.Add(this.dataGridView1);
+            this.filledPanel.Controls.Add(this.uperPannel);
+            this.filledPanel.Controls.Add(this.panel1);
+            this.filledPanel.Controls.Add(this.panel4);
+            this.filledPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filledPanel.Location = new System.Drawing.Point(0, 0);
+            this.filledPanel.Name = "filledPanel";
+            this.filledPanel.Size = new System.Drawing.Size(1441, 1018);
+            this.filledPanel.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.code,
+            this.te,
+            this.supprimer,
+            this.update});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 184);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1441, 807);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // code
+            // 
+            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "code";
+            this.code.MinimumWidth = 6;
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // te
+            // 
+            this.te.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.te.DataPropertyName = "designation";
+            this.te.HeaderText = "designation";
+            this.te.MinimumWidth = 6;
+            this.te.Name = "te";
+            this.te.ReadOnly = true;
+            // 
+            // supprimer
+            // 
+            this.supprimer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.supprimer.HeaderText = "supprimer";
+            this.supprimer.MinimumWidth = 6;
+            this.supprimer.Name = "supprimer";
+            this.supprimer.ReadOnly = true;
+            this.supprimer.Text = "supprimer";
+            this.supprimer.UseColumnTextForButtonValue = true;
+            // 
+            // update
+            // 
+            this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.update.HeaderText = "update";
+            this.update.MinimumWidth = 6;
+            this.update.Name = "update";
+            this.update.ReadOnly = true;
+            this.update.Text = "update";
+            this.update.UseColumnTextForButtonValue = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Territoires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -551,6 +541,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Territoires";
             this.Text = "PersoFrom";
+            this.Load += new System.EventHandler(this.Territoires_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -610,7 +601,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn te;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mp;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn update;
     }

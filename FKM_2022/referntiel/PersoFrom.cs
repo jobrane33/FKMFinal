@@ -24,7 +24,9 @@ namespace FKM_2022.referntiel
             InitializeComponent();
             uperPannel.Hide();
             comboBox1.Text = "matricule";
-            
+            disablearchive();
+
+
         }
 
         
@@ -38,7 +40,16 @@ namespace FKM_2022.referntiel
             perso.buttonvalider = true;
             perso.buttonmodifier = false;
         }
-
+        private void disablearchive()
+        {
+            if (checkBox1.Checked) {
+                dataGridView1.Columns["supprimer"].Visible = false;
+            }
+            else
+            {
+                dataGridView1.Columns["supprimer"].Visible = true;
+            }
+        }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             if (!uperPannel.Visible)
@@ -101,7 +112,7 @@ namespace FKM_2022.referntiel
                     }
                     else
                     {
-                        MessageBox.Show("erreur", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("erreur", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     
                 }
@@ -160,10 +171,7 @@ namespace FKM_2022.referntiel
            
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
         //pour filtrer les personnels
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -206,11 +214,16 @@ namespace FKM_2022.referntiel
         {
             int archive;
             if (checkBox1.Checked)
+            {
+                disablearchive();
                 archive = 0;
-            else archive = 1;
-            crudMethodes cm = new crudAlgoClasses.crudMethodes();
+            }
+            else { archive = 1; }
+            disablearchive();
+            crudMethodes cm = new crudMethodes();
             DataTable dt = cm.selectPersonnels(archive);
             dataGridView1.DataSource = dt;
+            
         }
     }
 }

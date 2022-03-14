@@ -38,15 +38,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.customtextbox1 = new FKM_2022.selfmadecomp.customtextbox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -54,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,7 +154,6 @@
             this.groupBox1.Controls.Add(this.roundBtn2);
             this.groupBox1.Controls.Add(this.roundBtn1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.panel7);
             this.groupBox1.Controls.Add(this.panel6);
             this.groupBox1.Location = new System.Drawing.Point(211, 95);
             this.groupBox1.Name = "groupBox1";
@@ -165,6 +161,36 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter";
+            // 
+            // label7
+            // 
+            this.label7.AllowDrop = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(412, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 20);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "*";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.customtextbox1);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Location = new System.Drawing.Point(42, 171);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(364, 53);
+            this.panel6.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 36);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "designation";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // roundBtn2
             // 
@@ -182,6 +208,7 @@
             this.roundBtn2.Text = "modifier";
             this.roundBtn2.TextColor = System.Drawing.Color.White;
             this.roundBtn2.UseVisualStyleBackColor = false;
+            this.roundBtn2.Click += new System.EventHandler(this.roundBtn2_Click);
             // 
             // roundBtn1
             // 
@@ -199,54 +226,7 @@
             this.roundBtn1.Text = "Valider";
             this.roundBtn1.TextColor = System.Drawing.Color.White;
             this.roundBtn1.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AllowDrop = true;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(412, 171);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "*";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.button1);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Location = new System.Drawing.Point(42, 255);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(364, 53);
-            this.panel7.TabIndex = 11;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(97, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ajouter une image";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "logo";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.customtextbox1);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(42, 171);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(364, 53);
-            this.panel6.TabIndex = 10;
+            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
             // 
             // customtextbox1
             // 
@@ -267,18 +247,17 @@
             this.customtextbox1.TabIndex = 2;
             this.customtextbox1.Texts = "";
             this.customtextbox1.UnderlinedStyle = true;
-            this.customtextbox1._TextChanged += new System.EventHandler(this.customtextbox1__TextChanged);
             this.customtextbox1.Enter += new System.EventHandler(this.customtextbox1_Enter);
             this.customtextbox1.Leave += new System.EventHandler(this.customtextbox1_Leave);
             // 
-            // label2
+            // label3
             // 
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 36);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "designation";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(427, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "label3";
             // 
             // ajouterTerritoire
             // 
@@ -287,6 +266,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(661, 560);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
@@ -302,9 +282,9 @@
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -320,9 +300,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button exitBtn;
-
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
 
@@ -330,7 +307,7 @@
         private selfmadecomp.RoundBtn roundBtn1;
         private selfmadecomp.customtextbox customtextbox1;
         private selfmadecomp.RoundBtn roundBtn2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 
         

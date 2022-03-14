@@ -173,5 +173,33 @@ namespace FKM_2022.CRUDforms
         {
 
         }
+
+        private void customtextbox2__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundBtn2_Click(object sender, EventArgs e)
+        {
+            if (customtextbox3.Texts == String.Empty)
+            {
+                MessageBox.Show("voudriez-vous svp remplir toutes les zones de texte", "champ vide !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string codecat = comboBox1.SelectedValue.ToString();
+                int numcodecat = Int32.Parse(codecat);
+                crudMethodes cm = new crudMethodes();
+                bool test = cm.updateContrat(customtextbox3.Texts, numcodecat);
+                if (test)
+                {
+                    MessageBox.Show("suecess", "bien fait !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("erreur d'insertion", "erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

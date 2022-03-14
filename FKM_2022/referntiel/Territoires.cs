@@ -18,7 +18,8 @@ namespace FKM_2022.referntiel
             InitializeComponent();
             uperPannel.Hide();
         }
-
+       
+       
         private void roundBtn3_Click(object sender, EventArgs e)
         {
 
@@ -65,6 +66,47 @@ namespace FKM_2022.referntiel
         {
             ajouterTerritoire at = new ajouterTerritoire();
             at.Show();
+        }
+
+        private void Territoires_Load(object sender, EventArgs e)
+        {
+            crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
+            DataTable dt = cm.selectTerritoire();
+            dataGridView1.DataSource = dt; 
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "supprimer")
+            {
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("attention", "ce champ va etre deteruit", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Error);
+                if (dialogResult == DialogResult.Yes)
+                {
+                   
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "update")
+            {
+                dataGridView1.Rows[0].Selected = true;
+                int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["code"].Value);
+                ajouterTerritoire at = new ajouterTerritoire();
+                at.Visible = true;
+                at.titreGroup = "update";
+                at.buttonValider = false;
+                int rowIndex = e.RowIndex;
+                at.getDesignation = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                at.getid=id.ToString();
+                
+
+
+
+            }
         }
     }
 }

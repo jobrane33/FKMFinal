@@ -63,6 +63,16 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconPDF {
+            get {
+                object obj = ResourceManager.GetObject("iconPDF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-64", resourceCulture);
@@ -396,6 +406,26 @@ namespace FKM_2022.Properties {
         internal static System.Drawing.Bitmap Logo_SFBT_1070 {
             get {
                 object obj = ResourceManager.GetObject("Logo-SFBT-1070", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PDF {
+            get {
+                object obj = ResourceManager.GetObject("PDF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PDF2 {
+            get {
+                object obj = ResourceManager.GetObject("PDF2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

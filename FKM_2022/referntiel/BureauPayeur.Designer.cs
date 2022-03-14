@@ -59,11 +59,11 @@
             this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compteCagnotte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -458,47 +458,47 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // code
             // 
+            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.code.DataPropertyName = "compteRemboursement";
             this.code.HeaderText = "code";
             this.code.MinimumWidth = 6;
             this.code.Name = "code";
             this.code.ReadOnly = true;
-            this.code.Width = 125;
             // 
             // compteCagnotte
             // 
+            this.compteCagnotte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.compteCagnotte.DataPropertyName = "compteCagnotte";
             this.compteCagnotte.HeaderText = "Bureaux Payeurs";
             this.compteCagnotte.MinimumWidth = 6;
             this.compteCagnotte.Name = "compteCagnotte";
             this.compteCagnotte.ReadOnly = true;
-            this.compteCagnotte.Width = 125;
             // 
             // supprimer
             // 
+            this.supprimer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.supprimer.HeaderText = "supprimer";
             this.supprimer.MinimumWidth = 6;
             this.supprimer.Name = "supprimer";
             this.supprimer.ReadOnly = true;
             this.supprimer.Text = "supprimer";
             this.supprimer.UseColumnTextForButtonValue = true;
-            this.supprimer.Width = 125;
             // 
             // update
             // 
+            this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.update.HeaderText = "update";
             this.update.MinimumWidth = 6;
             this.update.Name = "update";
             this.update.ReadOnly = true;
             this.update.Text = "update";
             this.update.UseColumnTextForButtonValue = true;
-            this.update.Width = 125;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // BureauPayeur
             // 
@@ -562,10 +562,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn compteCagnotte;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn update;
-        private System.Windows.Forms.Label label4;
     }
 }

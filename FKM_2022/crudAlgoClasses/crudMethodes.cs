@@ -61,7 +61,7 @@ namespace FKM_2022.crudAlgoClasses
                 command.Parameters.AddWithValue("@observation", observation);
                 command.Parameters.AddWithValue("@libelle", libelle);
                 command.Parameters.AddWithValue("@id", id);
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 con.Open();
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
@@ -91,14 +91,7 @@ namespace FKM_2022.crudAlgoClasses
                 "',@compteFKM = '" + compteFKM + "',@comptenote = '" + compteNote +
                 "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + "";
                 SqlCommand command = new SqlCommand(sql, con);
-                //command.Parameters.AddWithValue("@tr", tr);
-                //command.Parameters.AddWithValue("@tc", tc);
-                //command.Parameters.AddWithValue("@te", te);
-                //command.Parameters.AddWithValue("@montantpret", montantpret);
-                //command.Parameters.AddWithValue("@observation", observation);
-                //command.Parameters.AddWithValue("@libelle", libelle);
-                //command.Parameters.AddWithValue("@id", id);
-                MessageBox.Show(sql);
+                
                 con.Open();
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
@@ -178,16 +171,9 @@ namespace FKM_2022.crudAlgoClasses
             {
                 string sql = "EXEC	[dbo].[updatePersonnel] @matricule = '" + matricule + "',@nom = '" + nom + "',@prenom = '" + prenom + "',@compteFKM = '" + compteFKM + "',@comptenote ='" + compteNote + "',@compteRem ='" + compteRemb + "',@compteCang ='" + comptecan + "',@codeterr = " + codeTerr + "";
                 SqlCommand command = new SqlCommand(sql, con);
-                //command.Parameters.AddWithValue("@mat", matricule);
-                //command.Parameters.AddWithValue("@name", nom);
-                //command.Parameters.AddWithValue("@secondname", prenom);
-                //command.Parameters.AddWithValue("@cFKM", compteFKM);
-                //command.Parameters.AddWithValue("@cnote", compteNote);
-                //command.Parameters.AddWithValue("@crem", compteRemb);
-                //command.Parameters.AddWithValue("@cCang", comptecan);
-                //command.Parameters.AddWithValue("@codeTR", codeTerr);
+                
                 con.Open();
-                MessageBox.Show(sql);
+               // MessageBox.Show(sql);
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
                 {
@@ -273,7 +259,7 @@ namespace FKM_2022.crudAlgoClasses
                 //command.Parameters.AddWithValue("@cCang", comptecan);
                 //command.Parameters.AddWithValue("@codeTR", codeTerr);
                 con.Open();
-                MessageBox.Show(sql);
+               // MessageBox.Show(sql);
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
                 {
@@ -291,5 +277,161 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
+        public bool updateContrat(string mat,int codecat)
+        {
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	 [dbo].[updateContrat] @mat = '" + mat + "' ,@codeCat = " + codecat + " ,@nomdoc = NULL";
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@mat", mat);
+
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public bool deleteContrat(int code)
+        {
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "UPDATE contratsVoitures set actif=0 where code ="+code+"";
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@mat", mat);
+
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public bool ajouterTerritoire(string designation, string user_id)
+        {
+            bool success = false;
+            user_id = "null";
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	 [dbo].[stockTerritoires]@designation = '"+designation+ "', @user =  " + user_id + "";
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@mat", matricule);
+                //command.Parameters.AddWithValue("@name", nom);
+                //command.Parameters.AddWithValue("@secondname", prenom);
+                //command.Parameters.AddWithValue("@cFKM", compteFKM);
+                //command.Parameters.AddWithValue("@cnote", compteNote);
+                //command.Parameters.AddWithValue("@crem", compteRemb);
+                //command.Parameters.AddWithValue("@cCang", comptecan);
+                //command.Parameters.AddWithValue("@codeTR", codeTerr);
+                con.Open();
+                //MessageBox.Show(sql);
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public DataTable selectTerritoire()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+                String sql = "EXEC[dbo].[afficherTerritoires]";
+                // MessageBox.Show(sql);
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public bool updateTerritoires(int code, string newDesignation)
+        {
+
+            bool success = false;
+            
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	 [dbo].[updateTerritoire] @code = "+code+ ", @newDesignation = '" + newDesignation + "'";
+
+                SqlCommand command = new SqlCommand(sql, con);
+                //command.Parameters.AddWithValue("@mat", matricule);
+                //command.Parameters.AddWithValue("@name", nom);
+                //command.Parameters.AddWithValue("@secondname", prenom);
+                //command.Parameters.AddWithValue("@cFKM", compteFKM);
+                //command.Parameters.AddWithValue("@cnote", compteNote);
+                //command.Parameters.AddWithValue("@crem", compteRemb);
+                //command.Parameters.AddWithValue("@cCang", comptecan);
+                //command.Parameters.AddWithValue("@codeTR", codeTerr);
+                con.Open();
+                //MessageBox.Show(sql);
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+
     }
 }

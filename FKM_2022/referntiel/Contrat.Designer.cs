@@ -64,7 +64,6 @@
             this.docName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.exporterPDF = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -296,6 +295,7 @@
             this.roundBtn7.Text = "imprimer";
             this.roundBtn7.TextColor = System.Drawing.Color.White;
             this.roundBtn7.UseVisualStyleBackColor = false;
+            this.roundBtn7.Click += new System.EventHandler(this.roundBtn7_Click);
             // 
             // roundBtn6
             // 
@@ -415,8 +415,7 @@
             this.compteRemboursement,
             this.docName,
             this.supprimer,
-            this.update,
-            this.exporterPDF});
+            this.update});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
@@ -510,14 +509,6 @@
             this.update.UseColumnTextForButtonValue = true;
             this.update.Width = 125;
             // 
-            // exporterPDF
-            // 
-            this.exporterPDF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.exporterPDF.HeaderText = "afficher PDF";
-            this.exporterPDF.MinimumWidth = 6;
-            this.exporterPDF.Name = "exporterPDF";
-            this.exporterPDF.ReadOnly = true;
-            // 
             // Contrat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -585,7 +576,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn docName;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn update;
-        private System.Windows.Forms.DataGridViewButtonColumn exporterPDF;
     }
 
         

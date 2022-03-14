@@ -473,5 +473,14 @@
   <ItemGroup>
     <None Include="Resources\icons8-marqueur-de-plan-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPDF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDF2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

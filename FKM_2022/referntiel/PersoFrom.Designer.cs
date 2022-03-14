@@ -307,7 +307,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(99, 89);
             this.panel6.TabIndex = 17;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             this.panel6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseClick);
             // 
             // pictureBox7
@@ -488,104 +487,104 @@
             // 
             // mat
             // 
+            this.mat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.mat.DataPropertyName = "matricule";
             this.mat.HeaderText = "matricule";
             this.mat.MinimumWidth = 6;
             this.mat.Name = "mat";
             this.mat.ReadOnly = true;
-            this.mat.Width = 125;
             // 
             // nom
             // 
+            this.nom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nom.DataPropertyName = "nom";
             this.nom.HeaderText = "nom";
             this.nom.MinimumWidth = 6;
             this.nom.Name = "nom";
             this.nom.ReadOnly = true;
-            this.nom.Width = 125;
             // 
             // prenom
             // 
+            this.prenom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.prenom.DataPropertyName = "prenom";
             this.prenom.HeaderText = "prenom";
             this.prenom.MinimumWidth = 6;
             this.prenom.Name = "prenom";
             this.prenom.ReadOnly = true;
-            this.prenom.Width = 125;
             // 
             // compteFKM
             // 
+            this.compteFKM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.compteFKM.DataPropertyName = "compteFKM";
             this.compteFKM.HeaderText = "compte FKM";
             this.compteFKM.MinimumWidth = 6;
             this.compteFKM.Name = "compteFKM";
             this.compteFKM.ReadOnly = true;
-            this.compteFKM.Width = 125;
             // 
             // compteNote
             // 
+            this.compteNote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.compteNote.DataPropertyName = "compteNote";
             this.compteNote.HeaderText = "compte Note";
             this.compteNote.MinimumWidth = 6;
             this.compteNote.Name = "compteNote";
             this.compteNote.ReadOnly = true;
-            this.compteNote.Width = 125;
             // 
             // compteRemboursement
             // 
+            this.compteRemboursement.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.compteRemboursement.DataPropertyName = "compteRemboursement";
             this.compteRemboursement.HeaderText = "compte Remboursement";
             this.compteRemboursement.MinimumWidth = 6;
             this.compteRemboursement.Name = "compteRemboursement";
             this.compteRemboursement.ReadOnly = true;
-            this.compteRemboursement.Width = 125;
             // 
             // compteCagnotte
             // 
+            this.compteCagnotte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.compteCagnotte.DataPropertyName = "compteCagnotte";
             this.compteCagnotte.HeaderText = "compte Cagnotte";
             this.compteCagnotte.MinimumWidth = 6;
             this.compteCagnotte.Name = "compteCagnotte";
             this.compteCagnotte.ReadOnly = true;
-            this.compteCagnotte.Width = 125;
             // 
             // codeTerritoire
             // 
+            this.codeTerritoire.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.codeTerritoire.DataPropertyName = "codeTerritoire";
             this.codeTerritoire.HeaderText = "code Territoire";
             this.codeTerritoire.MinimumWidth = 6;
             this.codeTerritoire.Name = "codeTerritoire";
             this.codeTerritoire.ReadOnly = true;
-            this.codeTerritoire.Width = 125;
             // 
             // designation
             // 
+            this.designation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.designation.DataPropertyName = "designation";
             this.designation.HeaderText = "designation";
             this.designation.MinimumWidth = 6;
             this.designation.Name = "designation";
             this.designation.ReadOnly = true;
-            this.designation.Width = 125;
             // 
             // supprimer
             // 
+            this.supprimer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.supprimer.HeaderText = "supprimer";
             this.supprimer.MinimumWidth = 6;
             this.supprimer.Name = "supprimer";
             this.supprimer.ReadOnly = true;
             this.supprimer.Text = "supprimer";
             this.supprimer.UseColumnTextForButtonValue = true;
-            this.supprimer.Width = 125;
             // 
             // update
             // 
+            this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.update.HeaderText = "update";
             this.update.MinimumWidth = 6;
             this.update.Name = "update";
             this.update.ReadOnly = true;
             this.update.Text = "update";
             this.update.UseColumnTextForButtonValue = true;
-            this.update.Width = 125;
             // 
             // openFileDialog1
             // 
@@ -641,17 +640,6 @@
         private System.Windows.Forms.Panel uperPannel;
         private System.Windows.Forms.Panel filledPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compteFKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compteNote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compteRemboursement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compteCagnotte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeTerritoire;
-        private System.Windows.Forms.DataGridViewTextBoxColumn designation;
-        private System.Windows.Forms.DataGridViewButtonColumn supprimer;
-        private System.Windows.Forms.DataGridViewButtonColumn update;
         private selfmadecomp.RoundBtn roundBtn4;
         private selfmadecomp.RoundBtn roundBtn3;
         private selfmadecomp.RoundBtn roundBtn2;
@@ -665,6 +653,17 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn compteFKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn compteNote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn compteRemboursement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn compteCagnotte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeTerritoire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn designation;
+        private System.Windows.Forms.DataGridViewButtonColumn supprimer;
+        private System.Windows.Forms.DataGridViewButtonColumn update;
     }
 
 }

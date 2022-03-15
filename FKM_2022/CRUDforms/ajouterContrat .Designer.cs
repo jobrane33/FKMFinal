@@ -50,7 +50,7 @@
             this.customtextbox3 = new FKM_2022.selfmadecomp.customtextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.customtextbox2 = new FKM_2022.selfmadecomp.customtextbox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,6 +62,7 @@
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -184,7 +185,7 @@
             this.roundBtn2.FlatAppearance.BorderSize = 0;
             this.roundBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundBtn2.ForeColor = System.Drawing.Color.White;
-            this.roundBtn2.Location = new System.Drawing.Point(139, 365);
+            this.roundBtn2.Location = new System.Drawing.Point(139, 412);
             this.roundBtn2.Name = "roundBtn2";
             this.roundBtn2.Size = new System.Drawing.Size(92, 38);
             this.roundBtn2.TabIndex = 20;
@@ -202,7 +203,7 @@
             this.roundBtn1.FlatAppearance.BorderSize = 0;
             this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(250, 365);
+            this.roundBtn1.Location = new System.Drawing.Point(248, 412);
             this.roundBtn1.Name = "roundBtn1";
             this.roundBtn1.Size = new System.Drawing.Size(92, 38);
             this.roundBtn1.TabIndex = 19;
@@ -316,36 +317,25 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.customtextbox2);
+            this.panel7.Controls.Add(this.pictureBox3);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Location = new System.Drawing.Point(42, 282);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(370, 53);
+            this.panel7.Size = new System.Drawing.Size(364, 80);
             this.panel7.TabIndex = 11;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
-            // customtextbox2
+            // pictureBox3
             // 
-            this.customtextbox2.BackColor = System.Drawing.SystemColors.Window;
-            this.customtextbox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customtextbox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customtextbox2.BorderSize = 2;
-            this.customtextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customtextbox2.ForeColor = System.Drawing.Color.DimGray;
-            this.customtextbox2.isfocused = false;
-            this.customtextbox2.Location = new System.Drawing.Point(97, 4);
-            this.customtextbox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customtextbox2.Multiline = false;
-            this.customtextbox2.Name = "customtextbox2";
-            this.customtextbox2.Padding = new System.Windows.Forms.Padding(7);
-            this.customtextbox2.PasswordChar = false;
-            this.customtextbox2.Size = new System.Drawing.Size(250, 35);
-            this.customtextbox2.TabIndex = 3;
-            this.customtextbox2.Texts = "";
-            this.customtextbox2.UnderlinedStyle = true;
-            this.customtextbox2._TextChanged += new System.EventHandler(this.customtextbox2__TextChanged);
-            this.customtextbox2.Enter += new System.EventHandler(this.customtextbox2_Enter);
-            this.customtextbox2.Leave += new System.EventHandler(this.customtextbox2_Leave);
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::FKM_2022.Properties.Resources.icons8_import_pdf_100;
+            this.pictureBox3.Location = new System.Drawing.Point(139, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(127, 74);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label3
             // 
@@ -353,7 +343,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 32);
             this.label3.TabIndex = 2;
-            this.label3.Text = "nom du document";
+            this.label3.Text = "importer PDF";
             // 
             // ajouterContrat
             // 
@@ -380,6 +370,7 @@
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,9 +400,9 @@
         private System.Windows.Forms.Label label8;
         private selfmadecomp.RoundBtn roundBtn1;
         private selfmadecomp.customtextbox customtextbox3;
-        private selfmadecomp.customtextbox customtextbox2;
         private selfmadecomp.RoundBtn roundBtn2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 
       

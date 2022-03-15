@@ -223,6 +223,16 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_import_pdf_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-import-pdf-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_importer_csv_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-importer-csv-24", resourceCulture);

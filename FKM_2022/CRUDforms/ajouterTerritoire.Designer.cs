@@ -38,12 +38,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.customtextbox1 = new FKM_2022.selfmadecomp.customtextbox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -162,36 +162,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ajouter";
             // 
-            // label7
-            // 
-            this.label7.AllowDrop = true;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(412, 171);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "*";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.customtextbox1);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(42, 171);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(364, 53);
-            this.panel6.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 36);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "designation";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // roundBtn2
             // 
             this.roundBtn2.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -228,6 +198,27 @@
             this.roundBtn1.UseVisualStyleBackColor = false;
             this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
             // 
+            // label7
+            // 
+            this.label7.AllowDrop = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(412, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 20);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "*";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.customtextbox1);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Location = new System.Drawing.Point(42, 171);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(364, 53);
+            this.panel6.TabIndex = 10;
+            // 
             // customtextbox1
             // 
             this.customtextbox1.BackColor = System.Drawing.SystemColors.Window;
@@ -249,6 +240,15 @@
             this.customtextbox1.UnderlinedStyle = true;
             this.customtextbox1.Enter += new System.EventHandler(this.customtextbox1_Enter);
             this.customtextbox1.Leave += new System.EventHandler(this.customtextbox1_Leave);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 36);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "designation";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 

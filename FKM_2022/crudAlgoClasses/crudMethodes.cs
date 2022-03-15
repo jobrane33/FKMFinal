@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -242,15 +243,19 @@ namespace FKM_2022.crudAlgoClasses
             return dt;
 
         }
-        public bool ajoutContrat(string mat,int code )
+        public bool ajoutContrat(string mat,int code,string Fname )
         {
             bool success = false;
             SqlConnection con = new SqlConnection(conString);
+            FileStream fStream= File.OpenRead(Fname);
+            byte[] contents = new byte[fStream.Length];
+            fStream.Read(contents, 0,(int)fStream.Length);
+            fStream.Close();
             try
             {
-                string sql = "EXEC	 [dbo].[stockcontrat] @mat = '"+mat+"', @codeCat = "+code+ ", @nomdoc = NUll";
+                string sql = "EXEC	 [dbo].[stockcontrat] @mat = '"+mat+"', @codeCat = "+code+ ", @nomdoc = @content";
                 SqlCommand command = new SqlCommand(sql, con);
-                //command.Parameters.AddWithValue("@mat", matricule);
+                command.Parameters.AddWithValue("@content", contents);
                 //command.Parameters.AddWithValue("@name", nom);
                 //command.Parameters.AddWithValue("@secondname", prenom);
                 //command.Parameters.AddWithValue("@cFKM", compteFKM);
@@ -259,7 +264,7 @@ namespace FKM_2022.crudAlgoClasses
                 //command.Parameters.AddWithValue("@cCang", comptecan);
                 //command.Parameters.AddWithValue("@codeTR", codeTerr);
                 con.Open();
-               // MessageBox.Show(sql);
+                MessageBox.Show(sql);
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
                 {
@@ -432,6 +437,43 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
+        public void telechargerPDF(string file ,int code)
+        {
+            
+            bool res=false;
+            SqlConnection con = new SqlConnection(conString);
+            con.Open();
+            bool result = false;
+            using(SqlCommand command = new SqlCommand("select Documents from contratsVoitures where code=@id", con)){
+            command.Parameters.AddWithValue("@id", code);
+               using(SqlDataReader  Reader = command.ExecuteReader(CommandBehavior.Default))
+                {
+                    if (Reader.Read())
+                    {
+                        res = true;
+                        byte[] filedata = (byte[])Reader.GetValue(0);
+                        using(FileStream fs = new FileStream(file, FileMode.Create, FileAccess.ReadWrite))
+                        {
+                            using(BinaryWriter bw = new BinaryWriter(fs))
+                            {
+                               bw.Write(filedata);
+                               bw.Close();
+                            }
+                        }
+                        MessageBox.Show("done","done",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    if (res == false)
+                    {
+                        MessageBox.Show("erreur", "erreur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    Reader.Close();
+                }
+                con.Close();
+            }
+            //Response.Clear();
+
+        }
+        
 
     }
 }

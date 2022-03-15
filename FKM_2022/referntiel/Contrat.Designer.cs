@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -61,7 +61,7 @@
             this.matricule = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compteRemboursement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -365,6 +365,7 @@
             this.roundBtn3.Text = "Visualiser";
             this.roundBtn3.TextColor = System.Drawing.Color.White;
             this.roundBtn3.UseVisualStyleBackColor = false;
+            this.roundBtn3.Click += new System.EventHandler(this.roundBtn3_Click);
             // 
             // roundBtn2
             // 
@@ -400,8 +401,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -417,14 +418,14 @@
             this.supprimer,
             this.update});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 184);
             this.dataGridView1.Name = "dataGridView1";
@@ -483,10 +484,12 @@
             // docName
             // 
             this.docName.DataPropertyName = "NomFichier";
-            this.docName.HeaderText = "Nom du Document";
+            this.docName.HeaderText = "selectionner pour affichage";
             this.docName.MinimumWidth = 6;
             this.docName.Name = "docName";
             this.docName.ReadOnly = true;
+            this.docName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.docName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.docName.Width = 125;
             // 
             // supprimer
@@ -573,7 +576,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn matricule;
         private System.Windows.Forms.DataGridViewTextBoxColumn perso;
         private System.Windows.Forms.DataGridViewTextBoxColumn compteRemboursement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn docName;
+        private System.Windows.Forms.DataGridViewButtonColumn docName;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn update;
     }

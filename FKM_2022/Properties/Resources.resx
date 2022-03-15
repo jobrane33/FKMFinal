@@ -142,9 +142,6 @@
   <data name="icons8-search-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-search-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-impression-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-impression-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-mettre-à-jour-la-rotation-à-gauche-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-mettre-à-jour-la-rotation-à-gauche-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,6 +190,12 @@
   <data name="iconPDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconPDF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PDF2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDF2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-groupe-d&amp;#39;utilisateurs-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>"..\Resources\icons8-groupe-d&amp;#39;utilisateurs-48.png";System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-group-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-group-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,8 +205,8 @@
   <data name="icons8-rendez-vous-périodique-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-rendez-vous-périodique-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-groupe-d&amp;#39;utilisateurs-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>"..\Resources\icons8-groupe-d&amp;#39;utilisateurs-48.png";System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-impression-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-impression-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-classer-par-catégories-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-classer-par-catégories-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,7 +229,7 @@
   <data name="icons8-importer-csv-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-importer-csv-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PDF2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PDF2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-import-pdf-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-import-pdf-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

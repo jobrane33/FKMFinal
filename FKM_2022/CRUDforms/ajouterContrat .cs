@@ -16,6 +16,7 @@ namespace FKM_2022.CRUDforms
     
     public partial class ajouterContrat : Form
     {
+        private string filename = "";
         public string matTextBox
         {
             get { return customtextbox3.Texts; }
@@ -26,11 +27,11 @@ namespace FKM_2022.CRUDforms
             get { return comboBox1.Text; }
             set { comboBox1.Text = value; }
         }
-        public string nomDocument
-        {
-            get { return customtextbox2.Texts;}
-            set { customtextbox2.Texts = value; }
-        }
+        //public string nomDocument
+        //{
+        //    get { return customtextbox2.Texts;}
+        //    set { customtextbox2.Texts = value; }
+        //}
         public string groupBoxSetter
         {
             get { return groupBox1.Text; }
@@ -91,20 +92,7 @@ namespace FKM_2022.CRUDforms
 
         
 
-        private void customtextbox2_Enter(object sender, EventArgs e)
-        {
-            customtextbox2.BorderColor = Color.Green;
-            label8.Hide();
-        }
-
-        private void customtextbox2_Leave(object sender, EventArgs e)
-        {
-            if (customtextbox2.Texts == string.Empty)
-            {
-                customtextbox2.BorderColor = Color.Red;
-                label8.Show();
-            }
-        }
+        
 
         private void customtextbox3_Enter(object sender, EventArgs e)
         {
@@ -134,7 +122,7 @@ namespace FKM_2022.CRUDforms
                 string codecat = comboBox1.SelectedValue.ToString();
                 int numcodecat = Int32.Parse(codecat);
                 crudMethodes cm = new crudMethodes();
-               bool test = cm.ajoutContrat(customtextbox3.Texts, numcodecat);
+               bool test = cm.ajoutContrat(customtextbox3.Texts, numcodecat,filename);
                 if (test)
                 {
                     MessageBox.Show("suecess", "bien fait !", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -198,6 +186,26 @@ namespace FKM_2022.CRUDforms
                 else
                 {
                     MessageBox.Show("erreur d'insertion", "erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            using( OpenFileDialog dig = new OpenFileDialog() { Filter = "PDF Documents(*.pdf)|*.pdf" ,ValidateNames = true })
+            {
+                if(dig.ShowDialog() == DialogResult.OK)
+                {
+                    DialogResult result = MessageBox.Show("êtes-vous sûr de vouloir télécharger ce fichier ?","verifier", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        filename=dig.FileName;
+                        
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
             }
         }

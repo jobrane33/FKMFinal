@@ -282,15 +282,19 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
-        public bool updateContrat(string mat,int codecat)
+        public bool updateContrat(string mat,int codecat,string Fname)
         {
             bool success = false;
             SqlConnection con = new SqlConnection(conString);
+            FileStream fStream = File.OpenRead(Fname);
+            byte[] contents = new byte[fStream.Length];
+            fStream.Read(contents, 0, (int)fStream.Length);
+            fStream.Close();
             try
             {
-                string sql = "EXEC	 [dbo].[updateContrat] @mat = '" + mat + "' ,@codeCat = " + codecat + " ,@nomdoc = NULL";
+                string sql = "EXEC	 [dbo].[updateContrat] @mat = '" + mat + "' ,@codeCat = " + codecat + " ,@nomdoc = @content";
                 SqlCommand command = new SqlCommand(sql, con);
-                //command.Parameters.AddWithValue("@mat", mat);
+                command.Parameters.AddWithValue("@content", contents);
 
                 con.Open();
                 int rows = command.ExecuteNonQuery();

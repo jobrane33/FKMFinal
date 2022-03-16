@@ -178,7 +178,7 @@ namespace FKM_2022.CRUDforms
                 string codecat = comboBox1.SelectedValue.ToString();
                 int numcodecat = Int32.Parse(codecat);
                 crudMethodes cm = new crudMethodes();
-                bool test = cm.updateContrat(customtextbox3.Texts, numcodecat);
+                bool test = cm.updateContrat(customtextbox3.Texts, numcodecat, filename);
                 if (test)
                 {
                     MessageBox.Show("suecess", "bien fait !", MessageBoxButtons.OK, MessageBoxIcon.Information);

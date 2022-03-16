@@ -19,14 +19,14 @@ namespace FKM_2022.referntiel
         public static int CodeforPDF
         {
             get { return codeforPDF; }
-            set { codeforPDF= value; }
+            set { codeforPDF = value; }
         }
         public Contrat()
         {
             InitializeComponent();
             uperPannel.Hide();
             imageColumn();
-            
+            dataGridView1.RowTemplate.Height = 40;
 
             //optMenu.Hide();
         }
@@ -40,7 +40,7 @@ namespace FKM_2022.referntiel
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             Image image = Properties.Resources.PDF2;
-            img.Image= image;
+            img.Image = image;
             dataGridView1.Columns.Add(img);
             img.HeaderText = " télecharger PDF";
             img.Name = "PDF";
@@ -62,12 +62,12 @@ namespace FKM_2022.referntiel
 
         private void roundBtn6_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void panel6_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace FKM_2022.referntiel
                 string pdfstring = dataGridView1.Rows[e.RowIndex].Cells["code"].Value.ToString();
                 int codepdf = int.Parse(pdfstring);
                 codeforPDF = codepdf;
-                
+
             }
 
             if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "supprimer")
@@ -98,20 +98,20 @@ namespace FKM_2022.referntiel
                     string codestring = dataGridView1.Rows[e.RowIndex].Cells["code"].Value.ToString();
                     int code = int.Parse(codestring);
                     codeforPDF = code;
-                    
-                    bool res =cm.deleteContrat(code);
+
+                    bool res = cm.deleteContrat(code);
                     if (res)
                     {
                         MessageBox.Show("archive !", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        dataGridView1.DataSource= cm.selectContrat();
+
+                        dataGridView1.DataSource = cm.selectContrat();
                     }
                     else
                         MessageBox.Show("arreur!", "!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                    return;  
+                    return;
                 }
 
             }
@@ -124,8 +124,8 @@ namespace FKM_2022.referntiel
                 ac.groupBoxSetter = "modifer";
                 ac.btnValider = false;
                 int rowIndex = e.RowIndex;
-                ac.matTextBox = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
-                ac.categorieComboBox = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
+                ac.matTextBox = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
+                ac.categorieComboBox = dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
                 //ac.nomDocument = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();              
             }
             if (dataGridView1.Columns[e.ColumnIndex].HeaderText == " télecharger PDF")
@@ -133,7 +133,7 @@ namespace FKM_2022.referntiel
                 crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
                 string codestring = dataGridView1.Rows[e.RowIndex].Cells["code"].Value.ToString();
                 int code = int.Parse(codestring);
-                
+
                 using (SaveFileDialog dig = new SaveFileDialog() { Filter = "PDF Documents(*.pdf)|*.pdf", ValidateNames = true })
                 {
                     if (dig.ShowDialog() == DialogResult.OK)
@@ -141,8 +141,8 @@ namespace FKM_2022.referntiel
                         DialogResult result = MessageBox.Show("êtes-vous sûr de vouloir télécharger ce fichier ?", "verifier", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
-                             filename = dig.FileName;
-                            cm.telechargerPDF(filename,code) ;
+                            filename = dig.FileName;
+                            cm.telechargerPDF(filename, code);
                         }
                         else
                         {
@@ -162,14 +162,39 @@ namespace FKM_2022.referntiel
 
         private void roundBtn7_Click(object sender, EventArgs e)
         {
-            
+            PrintDialog printdatagrid = new PrintDialog();
+            printdatagrid.Document = printDocument1;
+            printdatagrid.UseEXDialog = true;
+            DialogResult result = printdatagrid.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                printDocument1.DocumentName = "print";
+                printDocument1.Print();
+            }
+
         }
 
         private void roundBtn3_Click(object sender, EventArgs e)
         {
-            ContratPDFViewer cpdfv = new ContratPDFViewer();
-            cpdfv.Show();
-            
+            if (codeforPDF == 0)
+            {
+                MessageBox.Show("erreur", "selectionner un contrat!");
+            }
+            else
+            {
+                ContratPDFViewer cpdfv = new ContratPDFViewer();
+                cpdfv.Show();
+                cpdfv.StartPosition = FormStartPosition.CenterScreen;
+                cpdfv.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void printDocument1_PrintPage_1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap printdatagridBitmap = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+            dataGridView1.DrawToBitmap(printdatagridBitmap, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+            e.Graphics.DrawImage(printdatagridBitmap, 0, 0);
+
         }
     }
 }

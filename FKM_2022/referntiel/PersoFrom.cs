@@ -25,7 +25,7 @@ namespace FKM_2022.referntiel
             uperPannel.Hide();
             comboBox1.Text = "matricule";
             disablearchive();
-
+            dataGridView1.RowTemplate.Height = 40;
 
         }
 
@@ -139,11 +139,6 @@ namespace FKM_2022.referntiel
                 perso.compteNoteTextBox = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
                 perso.compteRebTextBox = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
                 perso.compteCagnotteTextBox = dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
-                
-
-
-
-
             }
         }
 
@@ -161,12 +156,21 @@ namespace FKM_2022.referntiel
 
         private void roundBtn7_Click(object sender, EventArgs e)
         {
-           // DGVPrinter printer = new DGVPrinter();
+            PrintDialog printdatagrid = new PrintDialog();
+            printdatagrid.Document = printDocument1;
+            printdatagrid.UseEXDialog = true;
+            DialogResult result = printdatagrid.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                printDocument1.DocumentName = "print";
+                printDocument1.Print();
+            }
+
         }
 
         private void roundBtn6_Click(object sender, EventArgs e)
         {
-           DialogResult res = openFileDialog1.ShowDialog();
+           
 
            
         }
@@ -224,6 +228,14 @@ namespace FKM_2022.referntiel
             DataTable dt = cm.selectPersonnels(archive);
             dataGridView1.DataSource = dt;
             
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap printdatagridBitmap = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+            dataGridView1.DrawToBitmap(printdatagridBitmap, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+            e.Graphics.DrawImage(printdatagridBitmap, 0, 0);
+
         }
     }
 }

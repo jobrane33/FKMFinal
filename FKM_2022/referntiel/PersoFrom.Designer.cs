@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersoFrom));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -48,16 +48,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.uperPannel = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.roundBtn6 = new FKM_2022.selfmadecomp.RoundBtn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn4 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +66,12 @@
             this.designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.roundBtn6 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.roundBtn4 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -280,24 +280,6 @@
             this.pictureBox8.TabIndex = 19;
             this.pictureBox8.TabStop = false;
             // 
-            // roundBtn6
-            // 
-            this.roundBtn6.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn6.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn6.BorderRadius = 40;
-            this.roundBtn6.BorderSize = 0;
-            this.roundBtn6.FlatAppearance.BorderSize = 0;
-            this.roundBtn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn6.ForeColor = System.Drawing.Color.White;
-            this.roundBtn6.Location = new System.Drawing.Point(953, 23);
-            this.roundBtn6.Name = "roundBtn6";
-            this.roundBtn6.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn6.TabIndex = 12;
-            this.roundBtn6.Text = "importer CSV";
-            this.roundBtn6.TextColor = System.Drawing.Color.White;
-            this.roundBtn6.UseVisualStyleBackColor = false;
-            this.roundBtn6.Click += new System.EventHandler(this.roundBtn6_Click);
-            // 
             // panel6
             // 
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
@@ -349,77 +331,6 @@
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
-            // roundBtn7
-            // 
-            this.roundBtn7.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn7.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn7.BorderRadius = 40;
-            this.roundBtn7.BorderSize = 0;
-            this.roundBtn7.FlatAppearance.BorderSize = 0;
-            this.roundBtn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn7.ForeColor = System.Drawing.Color.White;
-            this.roundBtn7.Location = new System.Drawing.Point(715, 23);
-            this.roundBtn7.Name = "roundBtn7";
-            this.roundBtn7.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn7.TabIndex = 12;
-            this.roundBtn7.Text = "imprimer";
-            this.roundBtn7.TextColor = System.Drawing.Color.White;
-            this.roundBtn7.UseVisualStyleBackColor = false;
-            this.roundBtn7.Click += new System.EventHandler(this.roundBtn7_Click);
-            // 
-            // roundBtn4
-            // 
-            this.roundBtn4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn4.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn4.BorderRadius = 40;
-            this.roundBtn4.BorderSize = 0;
-            this.roundBtn4.FlatAppearance.BorderSize = 0;
-            this.roundBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn4.ForeColor = System.Drawing.Color.White;
-            this.roundBtn4.Location = new System.Drawing.Point(475, 23);
-            this.roundBtn4.Name = "roundBtn4";
-            this.roundBtn4.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn4.TabIndex = 9;
-            this.roundBtn4.Text = "refresh";
-            this.roundBtn4.TextColor = System.Drawing.Color.White;
-            this.roundBtn4.UseVisualStyleBackColor = false;
-            this.roundBtn4.Click += new System.EventHandler(this.roundBtn4_Click);
-            // 
-            // roundBtn3
-            // 
-            this.roundBtn3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BorderRadius = 40;
-            this.roundBtn3.BorderSize = 0;
-            this.roundBtn3.FlatAppearance.BorderSize = 0;
-            this.roundBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn3.ForeColor = System.Drawing.Color.White;
-            this.roundBtn3.Location = new System.Drawing.Point(249, 23);
-            this.roundBtn3.Name = "roundBtn3";
-            this.roundBtn3.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn3.TabIndex = 8;
-            this.roundBtn3.Text = "Export";
-            this.roundBtn3.TextColor = System.Drawing.Color.White;
-            this.roundBtn3.UseVisualStyleBackColor = false;
-            this.roundBtn3.Click += new System.EventHandler(this.roundBtn3_Click);
-            // 
-            // roundBtn2
-            // 
-            this.roundBtn2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn2.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn2.BorderRadius = 40;
-            this.roundBtn2.BorderSize = 0;
-            this.roundBtn2.FlatAppearance.BorderSize = 0;
-            this.roundBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn2.ForeColor = System.Drawing.Color.White;
-            this.roundBtn2.Location = new System.Drawing.Point(34, 23);
-            this.roundBtn2.Name = "roundBtn2";
-            this.roundBtn2.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn2.TabIndex = 7;
-            this.roundBtn2.Text = "enregistrer";
-            this.roundBtn2.TextColor = System.Drawing.Color.White;
-            this.roundBtn2.UseVisualStyleBackColor = false;
-            // 
             // filledPanel
             // 
             this.filledPanel.AutoScroll = true;
@@ -437,8 +348,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -456,28 +367,28 @@
             this.supprimer,
             this.update});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(0, 184);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -586,9 +497,98 @@
             this.update.Text = "update";
             this.update.UseColumnTextForButtonValue = true;
             // 
-            // openFileDialog1
+            // roundBtn6
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.roundBtn6.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn6.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn6.BorderRadius = 40;
+            this.roundBtn6.BorderSize = 0;
+            this.roundBtn6.FlatAppearance.BorderSize = 0;
+            this.roundBtn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn6.ForeColor = System.Drawing.Color.White;
+            this.roundBtn6.Location = new System.Drawing.Point(953, 23);
+            this.roundBtn6.Name = "roundBtn6";
+            this.roundBtn6.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn6.TabIndex = 12;
+            this.roundBtn6.Text = "importer CSV";
+            this.roundBtn6.TextColor = System.Drawing.Color.White;
+            this.roundBtn6.UseVisualStyleBackColor = false;
+            this.roundBtn6.Click += new System.EventHandler(this.roundBtn6_Click);
+            // 
+            // roundBtn7
+            // 
+            this.roundBtn7.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn7.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn7.BorderRadius = 40;
+            this.roundBtn7.BorderSize = 0;
+            this.roundBtn7.FlatAppearance.BorderSize = 0;
+            this.roundBtn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn7.ForeColor = System.Drawing.Color.White;
+            this.roundBtn7.Location = new System.Drawing.Point(715, 23);
+            this.roundBtn7.Name = "roundBtn7";
+            this.roundBtn7.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn7.TabIndex = 12;
+            this.roundBtn7.Text = "imprimer";
+            this.roundBtn7.TextColor = System.Drawing.Color.White;
+            this.roundBtn7.UseVisualStyleBackColor = false;
+            this.roundBtn7.Click += new System.EventHandler(this.roundBtn7_Click);
+            // 
+            // roundBtn4
+            // 
+            this.roundBtn4.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn4.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn4.BorderRadius = 40;
+            this.roundBtn4.BorderSize = 0;
+            this.roundBtn4.FlatAppearance.BorderSize = 0;
+            this.roundBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn4.ForeColor = System.Drawing.Color.White;
+            this.roundBtn4.Location = new System.Drawing.Point(475, 23);
+            this.roundBtn4.Name = "roundBtn4";
+            this.roundBtn4.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn4.TabIndex = 9;
+            this.roundBtn4.Text = "refresh";
+            this.roundBtn4.TextColor = System.Drawing.Color.White;
+            this.roundBtn4.UseVisualStyleBackColor = false;
+            this.roundBtn4.Click += new System.EventHandler(this.roundBtn4_Click);
+            // 
+            // roundBtn3
+            // 
+            this.roundBtn3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn3.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn3.BorderRadius = 40;
+            this.roundBtn3.BorderSize = 0;
+            this.roundBtn3.FlatAppearance.BorderSize = 0;
+            this.roundBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn3.ForeColor = System.Drawing.Color.White;
+            this.roundBtn3.Location = new System.Drawing.Point(249, 23);
+            this.roundBtn3.Name = "roundBtn3";
+            this.roundBtn3.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn3.TabIndex = 8;
+            this.roundBtn3.Text = "Export";
+            this.roundBtn3.TextColor = System.Drawing.Color.White;
+            this.roundBtn3.UseVisualStyleBackColor = false;
+            this.roundBtn3.Click += new System.EventHandler(this.roundBtn3_Click);
+            // 
+            // roundBtn2
+            // 
+            this.roundBtn2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn2.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn2.BorderRadius = 40;
+            this.roundBtn2.BorderSize = 0;
+            this.roundBtn2.FlatAppearance.BorderSize = 0;
+            this.roundBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn2.ForeColor = System.Drawing.Color.White;
+            this.roundBtn2.Location = new System.Drawing.Point(34, 23);
+            this.roundBtn2.Name = "roundBtn2";
+            this.roundBtn2.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn2.TabIndex = 7;
+            this.roundBtn2.Text = "enregistrer";
+            this.roundBtn2.TextColor = System.Drawing.Color.White;
+            this.roundBtn2.UseVisualStyleBackColor = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // PersoFrom
             // 
@@ -651,7 +651,6 @@
         private System.Windows.Forms.Panel panel6;
         private selfmadecomp.RoundBtn roundBtn6;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn mat;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
@@ -664,6 +663,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn designation;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn update;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 
 }

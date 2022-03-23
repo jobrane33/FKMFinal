@@ -27,8 +27,8 @@ namespace FKM_2022.PDF_viewers
             bool res = false;
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True");
             con.Open();
-            string test = code.ToString();
-            MessageBox.Show(test);
+            
+            //MessageBox.Show(test);
             using (SqlCommand command = new SqlCommand("select Documents from contratsVoitures where code="+code+"", con))
             {
 

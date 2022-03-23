@@ -15,6 +15,7 @@ namespace FKM_2022.CRUDforms
 {
     public partial class ajouterPerso : Form
     {
+        
         crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn

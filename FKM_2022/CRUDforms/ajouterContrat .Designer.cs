@@ -272,7 +272,6 @@
             this.label6.Size = new System.Drawing.Size(83, 35);
             this.label6.TabIndex = 2;
             this.label6.Text = "catégorie Prét";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel9
             // 
@@ -282,7 +281,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(364, 53);
             this.panel9.TabIndex = 11;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // customtextbox3
             // 
@@ -303,7 +301,6 @@
             this.customtextbox3.TabIndex = 4;
             this.customtextbox3.Texts = "";
             this.customtextbox3.UnderlinedStyle = true;
-            this.customtextbox3._TextChanged += new System.EventHandler(this.customtextbox3__TextChanged);
             this.customtextbox3.Enter += new System.EventHandler(this.customtextbox3_Enter);
             this.customtextbox3.Leave += new System.EventHandler(this.customtextbox3_Leave);
             // 
@@ -323,7 +320,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(364, 80);
             this.panel7.TabIndex = 11;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // pictureBox3
             // 

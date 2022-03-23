@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FKM_2022.PDF_viewers;
+using FKM_2022.crudAlgoClasses;
 
 namespace FKM_2022.referntiel
 {
     public partial class Contrat : Form
     {
+        crudMethodes cm = new crudMethodes();
         private string filename = "";
         private static int codeforPDF = 0;
         public static int CodeforPDF
@@ -26,9 +28,22 @@ namespace FKM_2022.referntiel
             InitializeComponent();
             uperPannel.Hide();
             imageColumn();
+            disablearchive();
             dataGridView1.RowTemplate.Height = 40;
+            comboBox1.Text = "matricule";
 
             //optMenu.Hide();
+        }
+        private void disablearchive()
+        {
+            if (checkBox1.Checked)
+            {
+                dataGridView1.Columns["supprimer"].Visible = false;
+            }
+            else
+            {
+                dataGridView1.Columns["supprimer"].Visible = true;
+            }
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -104,7 +119,7 @@ namespace FKM_2022.referntiel
                     {
                         MessageBox.Show("archive !", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        dataGridView1.DataSource = cm.selectContrat();
+                        dataGridView1.DataSource = cm.selectContrat(1);
                     }
                     else
                         MessageBox.Show("arreur!", "!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -157,7 +172,11 @@ namespace FKM_2022.referntiel
         private void Contrat_Load(object sender, EventArgs e)
         {
             crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
-            dataGridView1.DataSource = cm.selectContrat();
+            int archive;
+            if (checkBox1.Checked)
+                archive = 0;
+            else archive = 1;
+            dataGridView1.DataSource = cm.selectContrat(archive);
         }
 
         private void roundBtn7_Click(object sender, EventArgs e)
@@ -195,6 +214,57 @@ namespace FKM_2022.referntiel
             dataGridView1.DrawToBitmap(printdatagridBitmap, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
             e.Graphics.DrawImage(printdatagridBitmap, 0, 0);
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            var archive = 0;
+            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
+            if (textBox2.Text != string.Empty)
+            {
+                if (checkBox1.Checked)
+                {
+                    archive = 0;
+                }
+                else
+                {
+                    archive = 1;
+                }
+                dt = cm.filtreContrat(comboBox1.Text, textBox2.Text, archive);
+
+                //MessageBox.Show(dt.ToString());
+                dataGridView1.DataSource = dt;
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("introuvable", "vide", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox2.Text = String.Empty;
+                    dt2 = cm.selectContrat(archive);
+                    dataGridView1.DataSource = dt2;
+                }
+
+
+            }
+            else
+            {
+                dt = cm.selectContrat(archive);
+                dataGridView1.DataSource = dt;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            int archive;
+            if (checkBox1.Checked)
+            {
+                disablearchive();
+                archive = 0;
+            }
+            else { archive = 1; }
+            disablearchive();
+            crudMethodes cm = new crudMethodes();
+            DataTable dt = cm.selectContrat(archive);
+            dataGridView1.DataSource = dt;
         }
     }
 }

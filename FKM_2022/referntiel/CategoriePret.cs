@@ -18,6 +18,7 @@ namespace FKM_2022.referntiel
         {
             InitializeComponent();
             uperPannel.Hide();
+            dataGridView1.RowTemplate.Height = 40;
         }
 
        public void refresh()

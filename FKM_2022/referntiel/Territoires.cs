@@ -17,6 +17,7 @@ namespace FKM_2022.referntiel
         {
             InitializeComponent();
             uperPannel.Hide();
+            dataGridView1.RowTemplate.Height = 40;
         }
        
        
@@ -66,6 +67,7 @@ namespace FKM_2022.referntiel
         {
             ajouterTerritoire at = new ajouterTerritoire();
             at.Show();
+            
         }
 
         private void Territoires_Load(object sender, EventArgs e)
@@ -102,10 +104,6 @@ namespace FKM_2022.referntiel
                 int rowIndex = e.RowIndex;
                 at.getDesignation = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
                 at.getid=id.ToString();
-                
-
-
-
             }
         }
     }

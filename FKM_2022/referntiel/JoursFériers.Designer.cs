@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // monthCalendar1
+            // dateTimePicker1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(265, 103);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.dateTimePicker1.Location = new System.Drawing.Point(260, 135);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // JoursFériers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.dateTimePicker1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "JoursFériers";
             this.Text = "JoursFériers";
@@ -54,6 +54,6 @@
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

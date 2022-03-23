@@ -142,31 +142,7 @@ namespace FKM_2022.CRUDforms
     MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void customtextbox3__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void customtextbox2__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void roundBtn2_Click(object sender, EventArgs e)
         {
             if (customtextbox3.Texts == String.Empty)

@@ -92,7 +92,7 @@ namespace FKM_2022.crudAlgoClasses
                 "',@compteFKM = '" + compteFKM + "',@comptenote = '" + compteNote +
                 "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + "";
                 SqlCommand command = new SqlCommand(sql, con);
-
+                MessageBox.Show(sql);
                 con.Open();
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
@@ -593,9 +593,39 @@ namespace FKM_2022.crudAlgoClasses
                 }
                 con.Close();
             }
+          
+        }
+        public bool archiveVehicule(int code)
+        {
+            bool success = false;
 
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	 [dbo].[archiveVehicule] @code = @var";
 
+                SqlCommand command = new SqlCommand(sql, con);
+                command.Parameters.AddWithValue("@var", code);
 
+                con.Open();
+                //MessageBox.Show(sql);
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
         }
     }
+    
 }

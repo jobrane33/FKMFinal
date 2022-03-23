@@ -77,7 +77,6 @@ namespace FKM_2022.referntiel
             this.label2.Size = new System.Drawing.Size(334, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "© 2022 SOCIÉTÉ INFORMATIQUE  ET TELEMATIQUE";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -125,7 +124,6 @@ namespace FKM_2022.referntiel
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "passez vos donnes";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label4
             // 
@@ -144,7 +142,6 @@ namespace FKM_2022.referntiel
             this.label3.Size = new System.Drawing.Size(103, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "nom d\'utilisateur";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // customtextbox2
             // 
@@ -219,7 +216,6 @@ namespace FKM_2022.referntiel
             this.Name = "connection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FKM";
-            this.Load += new System.EventHandler(this.personnel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

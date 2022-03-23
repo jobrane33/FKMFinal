@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn6 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn4 = new FKM_2022.selfmadecomp.RoundBtn();
@@ -71,6 +71,9 @@
             this.DMEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Montantdachat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valeurKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatetMiseEnExploitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatetMiseHorsExploitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -111,6 +114,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1441, 95);
             this.panel1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(781, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "label4";
             // 
             // panel5
             // 
@@ -359,6 +371,9 @@
             this.DMEC,
             this.Montantdachat,
             this.contract,
+            this.valeurKM,
+            this.DatetMiseEnExploitation,
+            this.DatetMiseHorsExploitation,
             this.supprimer,
             this.update});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -392,15 +407,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1441, 807);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(781, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
             // 
             // roundBtn7
             // 
@@ -499,12 +505,13 @@
             // 
             // Immatriculation
             // 
-            this.Immatriculation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Immatriculation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Immatriculation.DataPropertyName = "Immatriculation";
             this.Immatriculation.HeaderText = "Immatriculation";
             this.Immatriculation.MinimumWidth = 6;
             this.Immatriculation.Name = "Immatriculation";
             this.Immatriculation.ReadOnly = true;
+            this.Immatriculation.Width = 125;
             // 
             // MontantPret
             // 
@@ -587,6 +594,35 @@
             this.contract.Name = "contract";
             this.contract.ReadOnly = true;
             this.contract.Width = 83;
+            // 
+            // valeurKM
+            // 
+            this.valeurKM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.valeurKM.DataPropertyName = "ValeurInitKilometrage";
+            this.valeurKM.HeaderText = "Valeur Initale Kilometrage";
+            this.valeurKM.MinimumWidth = 6;
+            this.valeurKM.Name = "valeurKM";
+            this.valeurKM.ReadOnly = true;
+            // 
+            // DatetMiseEnExploitation
+            // 
+            this.DatetMiseEnExploitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DatetMiseEnExploitation.DataPropertyName = "DatetMiseEnExploitation";
+            this.DatetMiseEnExploitation.HeaderText = "DatetMiseEnExploitation";
+            this.DatetMiseEnExploitation.MinimumWidth = 6;
+            this.DatetMiseEnExploitation.Name = "DatetMiseEnExploitation";
+            this.DatetMiseEnExploitation.ReadOnly = true;
+            this.DatetMiseEnExploitation.Width = 182;
+            // 
+            // DatetMiseHorsExploitation
+            // 
+            this.DatetMiseHorsExploitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DatetMiseHorsExploitation.DataPropertyName = "DatetMiseHorsExploitation";
+            this.DatetMiseHorsExploitation.HeaderText = "DatetMiseHorsExploitation";
+            this.DatetMiseHorsExploitation.MinimumWidth = 6;
+            this.DatetMiseHorsExploitation.Name = "DatetMiseHorsExploitation";
+            this.DatetMiseHorsExploitation.ReadOnly = true;
+            this.DatetMiseHorsExploitation.Width = 195;
             // 
             // supprimer
             // 
@@ -681,6 +717,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DMEC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Montantdachat;
         private System.Windows.Forms.DataGridViewTextBoxColumn contract;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valeurKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatetMiseEnExploitation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatetMiseHorsExploitation;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn update;
     }

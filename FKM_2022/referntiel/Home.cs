@@ -13,14 +13,27 @@ using System.Windows.Forms;
 namespace FKM_2022.referntiel
 {
     public partial class Home : Form
-    {
+    {   connection con= new connection();
+        string type = connection.gettypeuser;
         public Home()
         {
             InitializeComponent();
             CustomeDisigne();
             fullScreen();
             openSildperso(new PersoFrom());
+            userInterfaceSittings();
             button2.BackColor = System.Drawing.SystemColors.ControlDark;
+        }
+        public void userInterfaceSittings()
+        {
+            MessageBox.Show(type);
+            if (type.Equals("superieur herchique"))
+            {
+                this.button1.Hide();
+                openSildperso(new ValidationQuanzaine());
+            }
+            
+            
         }
         public void openSildperso(object Form)
         {
@@ -37,7 +50,6 @@ namespace FKM_2022.referntiel
                 f.Show();
             
         }
-      
         public void fullScreen()
         {
             //int w = Screen.PrimaryScreen.Bounds.Width;

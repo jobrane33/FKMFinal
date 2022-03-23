@@ -102,7 +102,7 @@ namespace FKM_2022.referntiel
             if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "update")
             {
 
-               
+
                 ajouterVehicule av = new ajouterVehicule();
                 av.Visible = true;
                 av.validButton = false;
@@ -114,14 +114,42 @@ namespace FKM_2022.referntiel
                 av.dateAchat = Convert.ToDateTime(dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["Datedachat"].Index].Value.ToString());
                 av.Puissance = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
                 av.Marque = dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["Marque"].Index].Value.ToString();
-                av.Modele = dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["model"].Index].Value.ToString();
+                av.Modele = dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["modele"].Index].Value.ToString();
                 av.montantAchat = dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["Montantdachat"].Index].Value.ToString();
                 av.DateMiseEnCirculation = Convert.ToDateTime(dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["DMEC"].Index].Value.ToString());
-                av.ValeurInitialeKilometrage = dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["Montantdachat"].Index].Value.ToString();
+                av.ValeurInitialeKilometrage = dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["valeurKM"].Index].Value.ToString();
+                av.datemiseEnExploitation = Convert.ToDateTime(dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["DatetMiseEnExploitation"].Index].Value.ToString());
+                av.datemiseHorsExploitation = Convert.ToDateTime(dataGridView1.Rows[rowIndex].Cells[dataGridView1.Columns["DatetMiseHorsExploitation"].Index].Value.ToString());
                 //ac.nomDocument = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
             }
-        }
+            if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "supprimer")
+            {
 
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("attention", "ce champ va etre deteruit", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Error);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
+                    string codestring = dataGridView1.Rows[e.RowIndex].Cells["code"].Value.ToString();
+                    int code = int.Parse(codestring);
+                    
+
+                    bool res = cm.archiveVehicule(code);
+                    if (res)
+                    {
+                        MessageBox.Show("archive !", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        dataGridView1.DataSource = cm.selectVehicule();
+                    }
+                    else
+                        MessageBox.Show("arreur!", "!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
+            }
+        }
        
 
         private void panel6_Click(object sender, EventArgs e)

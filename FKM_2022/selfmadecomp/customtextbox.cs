@@ -211,7 +211,10 @@ namespace FKM_2022.selfmadecomp
             isFocused = false;
             this.Invalidate();
         }
+        private void textBox1_keyDown(object sender, EventArgs e)
+        {
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_keyDown);
+        }
 
-
-    }
+        }
 }

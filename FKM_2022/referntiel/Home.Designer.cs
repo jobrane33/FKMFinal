@@ -48,6 +48,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.refpanel = new System.Windows.Forms.Panel();
+            this.button20 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -59,10 +60,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.childPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button20 = new System.Windows.Forms.Button();
+            this.childPanel = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.sidepanel.SuspendLayout();
@@ -71,8 +73,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.childPanel.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -341,6 +343,21 @@
             this.refpanel.Size = new System.Drawing.Size(247, 229);
             this.refpanel.TabIndex = 3;
             // 
+            // button20
+            // 
+            this.button20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button20.FlatAppearance.BorderSize = 0;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Location = new System.Drawing.Point(0, 182);
+            this.button20.Name = "button20";
+            this.button20.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button20.Size = new System.Drawing.Size(247, 26);
+            this.button20.TabIndex = 9;
+            this.button20.Text = "territoires";
+            this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // button8
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -487,6 +504,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.childPanel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(247, 37);
@@ -494,10 +512,40 @@
             this.panel2.Size = new System.Drawing.Size(1441, 1018);
             this.panel2.TabIndex = 2;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 984);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1441, 34);
+            this.panel4.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(339, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "© 2022 SOCIÉTÉ INFORMATIQUE  ET TELEMATIQUE";
+            this.label2.UseCompatibleTextRendering = true;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // childPanel
             // 
             this.childPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.childPanel.Controls.Add(this.panel4);
             this.childPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.childPanel.Location = new System.Drawing.Point(0, 0);
             this.childPanel.Name = "childPanel";
@@ -505,39 +553,14 @@
             this.childPanel.TabIndex = 2;
             this.childPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
-            // panel4
+            // panel5
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 984);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1441, 34);
-            this.panel4.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(334, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "© 2022 SOCIÉTÉ INFORMATIQUE  ET TELEMATIQUE";
-            // 
-            // button20
-            // 
-            this.button20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Location = new System.Drawing.Point(0, 182);
-            this.button20.Name = "button20";
-            this.button20.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button20.Size = new System.Drawing.Size(247, 26);
-            this.button20.TabIndex = 9;
-            this.button20.Text = "territoires";
-            this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(1022, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(419, 34);
+            this.panel5.TabIndex = 12;
             // 
             // Home
             // 
@@ -562,9 +585,10 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.childPanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -607,5 +631,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel5;
     }
 }

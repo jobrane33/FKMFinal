@@ -15,6 +15,7 @@ namespace FKM_2022.referntiel
     public partial class Home : Form
     {   connection con= new connection();
         string type = connection.gettypeuser;
+        string nomPrenom = connection.getNomPrenom;
         public Home()
         {
             InitializeComponent();
@@ -23,10 +24,11 @@ namespace FKM_2022.referntiel
             openSildperso(new PersoFrom());
             userInterfaceSittings();
             button2.BackColor = System.Drawing.SystemColors.ControlDark;
+            label1.Text = "utilisateur "+nomPrenom +" date et temps du connection " + DateTime.Now.ToString("h:mm:ss tt"); 
         }
         public void userInterfaceSittings()
         {
-            MessageBox.Show(type);
+            
             if (type.Equals("superieur herchique"))
             {
                 this.button1.Hide();
@@ -553,6 +555,11 @@ namespace FKM_2022.referntiel
         private void button20_Click(object sender, EventArgs e)
         {
             openSildperso(new Territoires());
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

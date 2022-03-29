@@ -133,6 +133,26 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_case_cochée_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-case-cochée-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_case_cochée_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-case-cochée-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_chercher_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-chercher-24", resourceCulture);
@@ -303,6 +323,16 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_planificateur_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-planificateur-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_rejouer_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-rejouer-48", resourceCulture);
@@ -386,6 +416,16 @@ namespace FKM_2022.Properties {
         internal static System.Drawing.Bitmap icons8_supprimer_pour_toujours_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-supprimer-pour-toujours-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_tick_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-tick-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -14,11 +14,12 @@ namespace FKM_2022.crudAlgoClasses
         private string conString = "Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True";
         public bool loginuser(string userName ,string passWord)
         {
-            string sql = "SELECT COUNT(*) FROM CompteFKM WHERE nomDutilisateur=@username and mot_de_pass =@password ";
+            string sql = "SELECT COUNT(*) FROM CompteFKM WHERE nomDutilisateur=@username and mot_de_pass =HASHBYTES('MD5',@password)";
             SqlConnection con = new SqlConnection(conString); // making connection
             SqlCommand command = new SqlCommand(sql, con);
             command.Parameters.AddWithValue("@username", userName);
-            command.Parameters.AddWithValue("@password", passWord);
+            command.Parameters.Add("@password", SqlDbType.VarChar).Value = passWord;
+            //MessageBox.Show(sql);
             SqlDataAdapter sda = new SqlDataAdapter(command);
             DataTable dt = new DataTable(); //this is creating a virtual table  
             sda.Fill(dt);
@@ -26,16 +27,21 @@ namespace FKM_2022.crudAlgoClasses
             {
                 return true;
             }
+            else if(userName==String.Empty || passWord==string.Empty)
+            {
+                MessageBox.Show("un des champs est vide ! ","erreur",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return false;
+            }
             else
             {
-                MessageBox.Show("Invalid username or password");
+                MessageBox.Show("nom d'utilisateuro mot de pass invalide ", "erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
         }
         public string usertype(string userName, string passWord)
         {
-            string sql = "SELECT type_utilisateur FROM CompteFKM WHERE nomDutilisateur=@username and mot_de_pass =@password ";
+            string sql = "SELECT type_utilisateur FROM CompteFKM WHERE nomDutilisateur=@username and mot_de_pass =HASHBYTES('MD5','" + passWord + "') ";
             SqlConnection con = new SqlConnection(conString); // making connection
             SqlCommand command = new SqlCommand(sql, con);
             command.Parameters.AddWithValue("@username", userName);
@@ -46,6 +52,20 @@ namespace FKM_2022.crudAlgoClasses
             
             return dt.Rows[0][0].ToString();
            
+
+        }
+        public string nomPrenomUser(string userName)
+        {
+            string sql = "select concat (nom,' ',prenom,' ',matricule) as nomPrenom  from personnels p , CompteFKM c where p.matricule = c.matriculePersonnel and c.nomDutilisateur=@username";
+            SqlConnection con = new SqlConnection(conString); // making connection
+            SqlCommand command = new SqlCommand(sql, con);
+            command.Parameters.AddWithValue("@username", userName);
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataTable dt = new DataTable(); //this is creating a virtual table  
+            sda.Fill(dt);
+
+            return dt.Rows[0][0].ToString();
+
 
         }
     }

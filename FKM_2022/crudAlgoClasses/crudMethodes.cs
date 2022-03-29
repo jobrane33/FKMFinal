@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FKM_2022.referntiel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,6 +12,7 @@ namespace FKM_2022.crudAlgoClasses
 {
     internal class crudMethodes
     {
+        string nomPrenom = connection.getNomPrenom;
         string conString = "Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True";
         //insertion d'une categorie
         public bool InsertCategorie(float tr, float tc, float te, float montantpret, string observation, string libelle)
@@ -246,6 +248,7 @@ namespace FKM_2022.crudAlgoClasses
         public bool ajoutContrat(string mat, int code, string Fname)
         {
             bool success = false;
+            MessageBox.Show(nomPrenom);
             SqlConnection con = new SqlConnection(conString);
             FileStream fStream = File.OpenRead(Fname);
             byte[] contents = new byte[fStream.Length];
@@ -253,7 +256,7 @@ namespace FKM_2022.crudAlgoClasses
             fStream.Close();
             try
             {
-                string sql = "EXEC	 [dbo].[stockcontrat] @mat = '" + mat + "', @codeCat = " + code + ", @nomdoc = @content";
+                string sql = "EXEC	 [dbo].[stockcontrat] @mat = '" + mat + "', @codeCat = " + code + ", @nomdoc = @content, @user = '" + nomPrenom + "' ";
                 SqlCommand command = new SqlCommand(sql, con);
                 command.Parameters.AddWithValue("@content", contents);
                 con.Open();

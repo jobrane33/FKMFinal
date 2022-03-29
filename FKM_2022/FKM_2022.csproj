@@ -99,6 +99,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="benifinciere\signlePageForms\AjouterQuizaines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="benifinciere\signlePageForms\AjouterQuizaines.Designer.cs">
+      <DependentUpon>AjouterQuizaines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="benifinciere\userHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="benifinciere\userHome.Designer.cs">
+      <DependentUpon>userHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="crudAlgoClasses\crudMethodes.cs" />
     <Compile Include="crudAlgoClasses\login.cs" />
     <Compile Include="CRUDforms\ajouterBurauxPayeurs.cs">
@@ -262,6 +274,12 @@
     <Compile Include="selfmadecomp\RoundBtn.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="benifinciere\signlePageForms\AjouterQuizaines.resx">
+      <DependentUpon>AjouterQuizaines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="benifinciere\userHome.resx">
+      <DependentUpon>userHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRUDforms\ajouterBurauxPayeurs.resx">
       <DependentUpon>ajouterBurauxPayeurs.cs</DependentUpon>
     </EmbeddedResource>
@@ -537,6 +555,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-import-pdf-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-planificateur-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tick-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-case-cochée-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-case-cochée-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

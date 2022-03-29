@@ -39,9 +39,9 @@ namespace FKM_2022.referntiel
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             this.customtextbox2 = new FKM_2022.selfmadecomp.customtextbox();
             this.customtextbox1 = new FKM_2022.selfmadecomp.customtextbox();
-            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -109,7 +109,7 @@ namespace FKM_2022.referntiel
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // groupBox1
             // 
@@ -143,6 +143,23 @@ namespace FKM_2022.referntiel
             this.label3.TabIndex = 12;
             this.label3.Text = "nom d\'utilisateur";
             // 
+            // roundBtn1
+            // 
+            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BorderRadius = 40;
+            this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.FlatAppearance.BorderSize = 0;
+            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn1.ForeColor = System.Drawing.Color.White;
+            this.roundBtn1.Location = new System.Drawing.Point(366, 445);
+            this.roundBtn1.Name = "roundBtn1";
+            this.roundBtn1.Size = new System.Drawing.Size(98, 48);
+            this.roundBtn1.TabIndex = 12;
+            this.roundBtn1.Text = "effacer les champs";
+            this.roundBtn1.TextColor = System.Drawing.Color.White;
+            this.roundBtn1.UseVisualStyleBackColor = false;
+            // 
             // customtextbox2
             // 
             this.customtextbox2.BackColor = System.Drawing.SystemColors.Window;
@@ -157,7 +174,7 @@ namespace FKM_2022.referntiel
             this.customtextbox2.Multiline = false;
             this.customtextbox2.Name = "customtextbox2";
             this.customtextbox2.Padding = new System.Windows.Forms.Padding(7);
-            this.customtextbox2.PasswordChar = false;
+            this.customtextbox2.PasswordChar = true;
             this.customtextbox2.Size = new System.Drawing.Size(280, 35);
             this.customtextbox2.TabIndex = 11;
             this.customtextbox2.Texts = "";
@@ -182,23 +199,6 @@ namespace FKM_2022.referntiel
             this.customtextbox1.TabIndex = 10;
             this.customtextbox1.Texts = "";
             this.customtextbox1.UnderlinedStyle = true;
-            // 
-            // roundBtn1
-            // 
-            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BorderRadius = 40;
-            this.roundBtn1.BorderSize = 0;
-            this.roundBtn1.FlatAppearance.BorderSize = 0;
-            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(366, 445);
-            this.roundBtn1.Name = "roundBtn1";
-            this.roundBtn1.Size = new System.Drawing.Size(98, 48);
-            this.roundBtn1.TabIndex = 12;
-            this.roundBtn1.Text = "effacer les champs";
-            this.roundBtn1.TextColor = System.Drawing.Color.White;
-            this.roundBtn1.UseVisualStyleBackColor = false;
             // 
             // connection
             // 

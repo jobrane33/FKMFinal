@@ -105,6 +105,12 @@
     <Compile Include="benifinciere\signlePageForms\AjouterQuizaines.Designer.cs">
       <DependentUpon>AjouterQuizaines.cs</DependentUpon>
     </Compile>
+    <Compile Include="benifinciere\signlePageForms\ConsultationQuinzaines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="benifinciere\signlePageForms\ConsultationQuinzaines.Designer.cs">
+      <DependentUpon>ConsultationQuinzaines.cs</DependentUpon>
+    </Compile>
     <Compile Include="benifinciere\userHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,7 @@
       <DependentUpon>userHome.cs</DependentUpon>
     </Compile>
     <Compile Include="crudAlgoClasses\crudMethodes.cs" />
+    <Compile Include="crudAlgoClasses\crudUser.cs" />
     <Compile Include="crudAlgoClasses\login.cs" />
     <Compile Include="CRUDforms\ajouterBurauxPayeurs.cs">
       <SubType>Form</SubType>
@@ -276,6 +283,9 @@
     </Compile>
     <EmbeddedResource Include="benifinciere\signlePageForms\AjouterQuizaines.resx">
       <DependentUpon>AjouterQuizaines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="benifinciere\signlePageForms\ConsultationQuinzaines.resx">
+      <DependentUpon>ConsultationQuinzaines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="benifinciere\userHome.resx">
       <DependentUpon>userHome.cs</DependentUpon>

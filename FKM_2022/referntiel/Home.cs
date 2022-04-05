@@ -41,7 +41,6 @@ namespace FKM_2022.referntiel
         {
             if (this.childPanel.Controls.Count > 0)
             {
-
                 this.childPanel.Controls.RemoveAt(0);
             }
                 Form f = Form as Form;

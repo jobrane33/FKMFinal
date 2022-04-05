@@ -17,6 +17,7 @@ namespace FKM_2022.referntiel
 
         public static string type = String.Empty;
         public static string nomPrenom = String.Empty;
+        public static string matricule = String.Empty;
         public connection()
         {
             InitializeComponent();
@@ -32,7 +33,11 @@ namespace FKM_2022.referntiel
             get { return nomPrenom; }
             set { type = value; }
         }
-        
+        public static string getMatricule
+        {
+            get { return matricule; }
+            set { type = value; }
+        }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -49,6 +54,7 @@ namespace FKM_2022.referntiel
             {
                 type = login.usertype(customtextbox1.Texts, customtextbox2.Texts);
                 nomPrenom = login.nomPrenomUser(customtextbox1.Texts);
+                matricule = login.matricule(customtextbox1.Texts);
                 if (type.Equals("benifisiere"))
                 {
                     benifinciere.userHome user = new benifinciere.userHome();

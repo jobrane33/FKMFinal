@@ -68,6 +68,21 @@ namespace FKM_2022.crudAlgoClasses
 
 
         }
+        public string matricule(string userName)
+        {
+            string sql = "select matricule  from personnels p , CompteFKM c where p.matricule = c.matriculePersonnel and c.nomDutilisateur=@username";
+            SqlConnection con = new SqlConnection(conString); // making connection
+            SqlCommand command = new SqlCommand(sql, con);
+            command.Parameters.AddWithValue("@username", userName);
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataTable dt = new DataTable(); //this is creating a virtual table  
+            sda.Fill(dt);
+
+            return dt.Rows[0][0].ToString();
+
+
+        }
     }
+
     
 }

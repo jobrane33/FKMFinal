@@ -1,4 +1,5 @@
 ﻿using FKM_2022.benifinciere.signlePageForms;
+using FKM_2022.referntiel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,12 @@ namespace FKM_2022.benifinciere
 {
     public partial class userHome : Form
     {
+        private string matricule = connection.getMatricule;
         public userHome()
         {
             InitializeComponent();
             fullScreen();
+            label1.Text = matricule;
 
         }
         private void fullScreen()

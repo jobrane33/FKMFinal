@@ -191,6 +191,7 @@
             this.button10.Text = "Consultation Quanzaine";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button18
             // 
@@ -313,6 +314,7 @@
             this.Name = "userHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FKM";
+            this.Load += new System.EventHandler(this.userHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

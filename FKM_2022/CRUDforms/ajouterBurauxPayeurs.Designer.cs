@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.exitBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,29 +45,17 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.exitBtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.BackgroundImage = global::FKM_2022.Properties.Resources.icons8_annuler_48;
-            this.exitBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exitBtn.FlatAppearance.BorderSize = 0;
-            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Location = new System.Drawing.Point(522, 0);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(56, 59);
-            this.exitBtn.TabIndex = 1;
-            this.exitBtn.UseVisualStyleBackColor = true;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // panel1
             // 
@@ -84,16 +69,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 651);
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FKM_2022.Properties.Resources.icons8_ajouter_un_utilisateur_homme_48;
-            this.pictureBox2.Location = new System.Drawing.Point(49, 303);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(88, 76);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
             // 
             // panel4
             // 
@@ -131,17 +106,6 @@
             this.panel2.Size = new System.Drawing.Size(205, 105);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::FKM_2022.Properties.Resources.Logo_SFBT_1070;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.exitBtn);
@@ -172,7 +136,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(444, 489);
+            this.button1.Location = new System.Drawing.Point(244, 509);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -181,7 +145,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(135, 489);
+            this.textBox9.Location = new System.Drawing.Point(135, 457);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(281, 22);
             this.textBox9.TabIndex = 8;
@@ -190,7 +154,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(135, 445);
+            this.textBox8.Location = new System.Drawing.Point(135, 409);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(281, 22);
             this.textBox8.TabIndex = 7;
@@ -199,7 +163,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(135, 396);
+            this.textBox7.Location = new System.Drawing.Point(135, 358);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(281, 22);
             this.textBox7.TabIndex = 6;
@@ -208,7 +172,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(135, 340);
+            this.textBox6.Location = new System.Drawing.Point(135, 304);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(281, 22);
             this.textBox6.TabIndex = 5;
@@ -217,7 +181,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(135, 287);
+            this.textBox5.Location = new System.Drawing.Point(135, 256);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(281, 22);
             this.textBox5.TabIndex = 4;
@@ -226,7 +190,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(135, 233);
+            this.textBox4.Location = new System.Drawing.Point(135, 208);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(281, 22);
             this.textBox4.TabIndex = 3;
@@ -235,7 +199,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(135, 179);
+            this.textBox3.Location = new System.Drawing.Point(135, 161);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 22);
             this.textBox3.TabIndex = 2;
@@ -244,7 +208,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 125);
+            this.textBox2.Location = new System.Drawing.Point(135, 112);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(281, 22);
             this.textBox2.TabIndex = 1;
@@ -259,6 +223,42 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Matricule";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackgroundImage = global::FKM_2022.Properties.Resources.icons8_annuler_48;
+            this.exitBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exitBtn.FlatAppearance.BorderSize = 0;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Location = new System.Drawing.Point(522, 0);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(56, 59);
+            this.exitBtn.TabIndex = 1;
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FKM_2022.Properties.Resources.icons8_ajouter_un_utilisateur_homme_48;
+            this.pictureBox2.Location = new System.Drawing.Point(49, 303);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(88, 76);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::FKM_2022.Properties.Resources.Logo_SFBT_1070;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // ajouterBurauxPayeurs
             // 
@@ -275,13 +275,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ajouterPerso";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -14,7 +14,7 @@ namespace FKM_2022.crudAlgoClasses
         private string conString = "Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True";
         public bool loginuser(string userName ,string passWord)
         {
-            string sql = "SELECT COUNT(*) FROM CompteFKM WHERE nomDutilisateur=@username and mot_de_pass =HASHBYTES('MD5',@password)";
+            string sql = "SELECT COUNT(*) FROM CompteFKM WHERE nomDutilisateur=@username and mot_de_pass =HASHBYTES('MD5',@password) and valide=1";
             SqlConnection con = new SqlConnection(conString); // making connection
             SqlCommand command = new SqlCommand(sql, con);
             command.Parameters.AddWithValue("@username", userName);

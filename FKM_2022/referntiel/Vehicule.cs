@@ -1,12 +1,7 @@
 ﻿using FKM_2022.CRUDforms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FKM_2022.referntiel
@@ -34,7 +29,7 @@ namespace FKM_2022.referntiel
             img.Width = 60;
             img.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
-        
+
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -44,7 +39,7 @@ namespace FKM_2022.referntiel
             }
             else
             {
-                uperPannel.Visible=false;
+                uperPannel.Visible = false;
             }
         }
 
@@ -55,24 +50,24 @@ namespace FKM_2022.referntiel
 
         private void roundBtn3_Click(object sender, EventArgs e)
         {
-           
-            
-                dataGridView1.SelectAll();
-                DataObject data = dataGridView1.GetClipboardContent();
-                if (data != null) Clipboard.SetDataObject(data);
-                Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
-                xlapp.Visible = true;
-                Microsoft.Office.Interop.Excel.Workbook xlwbook;
-                Microsoft.Office.Interop.Excel.Worksheet xlsheet;
-                object miseddata = System.Reflection.Missing.Value;
-                xlwbook = xlapp.Workbooks.Add(miseddata);
-                xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
-                Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
-                xlr.Select();
-                xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-                uperPannel.Visible = false;
-            
-            
+
+
+            dataGridView1.SelectAll();
+            DataObject data = dataGridView1.GetClipboardContent();
+            if (data != null) Clipboard.SetDataObject(data);
+            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            xlapp.Visible = true;
+            Microsoft.Office.Interop.Excel.Workbook xlwbook;
+            Microsoft.Office.Interop.Excel.Worksheet xlsheet;
+            object miseddata = System.Reflection.Missing.Value;
+            xlwbook = xlapp.Workbooks.Add(miseddata);
+            xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
+            xlr.Select();
+            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            uperPannel.Visible = false;
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -131,7 +126,7 @@ namespace FKM_2022.referntiel
                     crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
                     string codestring = dataGridView1.Rows[e.RowIndex].Cells["code"].Value.ToString();
                     int code = int.Parse(codestring);
-                    
+
 
                     bool res = cm.archiveVehicule(code);
                     if (res)
@@ -141,7 +136,7 @@ namespace FKM_2022.referntiel
                         dataGridView1.DataSource = cm.selectVehicule();
                     }
                     else
-                        MessageBox.Show("arreur!", "!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("erreur un contrat est active ", "ALERT", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -150,13 +145,13 @@ namespace FKM_2022.referntiel
 
             }
         }
-       
+
 
         private void panel6_Click(object sender, EventArgs e)
         {
             ajouterVehicule av = new ajouterVehicule();
             av.Show();
-            
+
         }
 
         private void Vehicule_Load(object sender, EventArgs e)

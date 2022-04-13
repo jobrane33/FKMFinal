@@ -86,20 +86,6 @@ namespace FKM_2022.CRUDforms
         public ajouterPerso()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
-            using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
-            {
-                SqlCommand sqlCmd = new SqlCommand("SELECT code , designation FROM territoires", sqlConnection);
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = sqlCmd;
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "designation";
-                comboBox1.ValueMember = "code";
-                sqlConnection.Open();
-                
-            }
 
         }
         private bool testNum(string text)
@@ -260,8 +246,10 @@ namespace FKM_2022.CRUDforms
             {
                 crudAlgoClasses.crudMethodes cm = new crudAlgoClasses.crudMethodes();
                 string codeterri = comboBox1.SelectedValue.ToString();
+                string matAgent = comboBox2.SelectedValue.ToString();
+                string matSup = comboBox3.SelectedValue.ToString();
                 int numcodeterri = Int32.Parse(codeterri);
-                bool res=cm.ajoutPersonnels(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text,numcodeterri);
+                bool res=cm.ajoutPersonnels(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text,numcodeterri, matAgent,matSup);
                 if (res)
                 {
                     MessageBox.Show("insertion valider", "valide", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -305,6 +293,55 @@ namespace FKM_2022.CRUDforms
                 return;
             }
             }
+
+        private  void ajouterPerso_Load(object sender, EventArgs e)
+        {
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
+            {
+                SqlCommand sqlCmd = new SqlCommand("SELECT code , designation FROM territoires", sqlConnection);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = sqlCmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                comboBox1.DataSource = dt;
+                comboBox1.DisplayMember = "designation";
+                comboBox1.ValueMember = "code";
+                sqlConnection.Open();
+
+            }
+            using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
+            {
+                SqlCommand sqlCmd = new SqlCommand("select CONCAT(nom,' ',prenom) as superieurHearchique, matricule from personnels p , CompteFKM c  where p.matricule=c.matriculePersonnel and c.type_utilisateur='agentDeSaisie'", sqlConnection);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = sqlCmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                comboBox2.DataSource = dt;
+                comboBox2.DisplayMember = "superieurHearchique";
+                comboBox2.ValueMember = "matricule";
+                sqlConnection.Open();
+                comboBox2.Text = "agent de saisie";
+            }
+            using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
+            {
+                SqlCommand sqlCmd = new SqlCommand("select CONCAT(nom,' ',prenom) as superieurHearchique, matricule from personnels p , CompteFKM c  where p.matricule=c.matriculePersonnel and c.type_utilisateur='adminSup'", sqlConnection);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = sqlCmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                comboBox3.DataSource = dt;
+                comboBox3.DisplayMember = "superieurHearchique";
+                comboBox3.ValueMember = "matricule";
+                sqlConnection.Open();
+                comboBox2.Text = "superieur soucieux de la validation";
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

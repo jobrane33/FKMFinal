@@ -61,10 +61,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.childPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.childPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.sidepanel.SuspendLayout();
@@ -523,14 +523,14 @@
             this.panel4.Size = new System.Drawing.Size(1441, 34);
             this.panel4.TabIndex = 0;
             // 
-            // label1
+            // panel5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(1022, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(419, 34);
+            this.panel5.TabIndex = 12;
             // 
             // label2
             // 
@@ -543,6 +543,15 @@
             this.label2.UseCompatibleTextRendering = true;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            // 
             // childPanel
             // 
             this.childPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -552,15 +561,6 @@
             this.childPanel.Size = new System.Drawing.Size(1441, 1018);
             this.childPanel.TabIndex = 2;
             this.childPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1022, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(419, 34);
-            this.panel5.TabIndex = 12;
             // 
             // Home
             // 

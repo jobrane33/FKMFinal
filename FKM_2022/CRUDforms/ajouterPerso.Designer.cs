@@ -40,6 +40,7 @@ namespace FKM_2022.CRUDforms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@ namespace FKM_2022.CRUDforms
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             exitBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -157,6 +159,8 @@ namespace FKM_2022.CRUDforms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox6);
@@ -173,17 +177,27 @@ namespace FKM_2022.CRUDforms
             this.groupBox1.Text = "ajouter";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(135, 436);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(281, 24);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 444);
+            this.comboBox1.Location = new System.Drawing.Point(135, 395);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(281, 24);
             this.comboBox1.TabIndex = 10;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(135, 396);
+            this.textBox7.Location = new System.Drawing.Point(135, 349);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(281, 22);
             this.textBox7.TabIndex = 6;
@@ -194,7 +208,7 @@ namespace FKM_2022.CRUDforms
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(135, 340);
+            this.textBox6.Location = new System.Drawing.Point(135, 294);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(281, 22);
             this.textBox6.TabIndex = 5;
@@ -205,7 +219,7 @@ namespace FKM_2022.CRUDforms
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(135, 287);
+            this.textBox5.Location = new System.Drawing.Point(135, 237);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(281, 22);
             this.textBox5.TabIndex = 4;
@@ -216,7 +230,7 @@ namespace FKM_2022.CRUDforms
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(135, 233);
+            this.textBox4.Location = new System.Drawing.Point(135, 190);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(281, 22);
             this.textBox4.TabIndex = 3;
@@ -227,7 +241,7 @@ namespace FKM_2022.CRUDforms
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(135, 179);
+            this.textBox3.Location = new System.Drawing.Point(135, 136);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 22);
             this.textBox3.TabIndex = 2;
@@ -238,7 +252,7 @@ namespace FKM_2022.CRUDforms
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 125);
+            this.textBox2.Location = new System.Drawing.Point(135, 90);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(281, 22);
             this.textBox2.TabIndex = 1;
@@ -249,7 +263,7 @@ namespace FKM_2022.CRUDforms
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 73);
+            this.textBox1.Location = new System.Drawing.Point(135, 49);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(281, 22);
             this.textBox1.TabIndex = 0;
@@ -279,6 +293,14 @@ namespace FKM_2022.CRUDforms
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(135, 482);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(281, 24);
+            this.comboBox3.TabIndex = 12;
+            // 
             // ajouterPerso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,6 +317,7 @@ namespace FKM_2022.CRUDforms
             this.Name = "ajouterPerso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ajouterPerso";
+            this.Load += new System.EventHandler(this.ajouterPerso_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -328,5 +351,7 @@ namespace FKM_2022.CRUDforms
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

@@ -1,12 +1,8 @@
 ﻿using FKM_2022.referntiel;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace FKM_2022.crudAlgoClasses
 {
@@ -84,7 +80,7 @@ namespace FKM_2022.crudAlgoClasses
             return success;
         }
         //ajout personnels 
-        public bool ajoutPersonnels(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan, int codeTerr)
+        public bool ajoutPersonnels(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan, int codeTerr, string matSuperieur,string agent)
         {
             bool success = false;
             SqlConnection con = new SqlConnection(conString);
@@ -92,7 +88,7 @@ namespace FKM_2022.crudAlgoClasses
             {
                 string sql = "EXEC	ajoutPersonnls @matricule ='" + matricule + "' ,@nom = '" + nom + "',@prenom = '" + prenom +
                 "',@compteFKM = '" + compteFKM + "',@comptenote = '" + compteNote +
-                "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + "";
+                "',@compteRem = '" + compteRemb + "',@compteCang = '" + comptecan + "',@codeterr = " + codeTerr + ",@matAgent='" + matSuperieur + "',@matSup= '" + agent + "'";
                 SqlCommand command = new SqlCommand(sql, con);
                 MessageBox.Show(sql);
                 con.Open();
@@ -120,7 +116,7 @@ namespace FKM_2022.crudAlgoClasses
             SqlConnection con = new SqlConnection(conString);
             try
             {
-                string sql = "UPDATE [dbo].[personnels] SET archive = 0 WHERE  matricule='" + mat + "'";
+                string sql = "exec  ArchivePerso '" + mat + "'";
                 SqlCommand command = new SqlCommand(sql, con);
                 //command.Parameters.AddWithValue("@mat", mat);
 
@@ -247,36 +243,44 @@ namespace FKM_2022.crudAlgoClasses
         }
         public bool ajoutContrat(string mat, int code, string Fname)
         {
-            bool success = false;
-            MessageBox.Show(nomPrenom);
-            SqlConnection con = new SqlConnection(conString);
-            FileStream fStream = File.OpenRead(Fname);
-            byte[] contents = new byte[fStream.Length];
-            fStream.Read(contents, 0, (int)fStream.Length);
-            fStream.Close();
             try
             {
-                string sql = "EXEC	 [dbo].[stockcontrat] @mat = '" + mat + "', @codeCat = " + code + ", @nomdoc = @content, @user = '" + nomPrenom + "' ";
-                SqlCommand command = new SqlCommand(sql, con);
-                command.Parameters.AddWithValue("@content", contents);
-                con.Open();
-                MessageBox.Show(sql);
-                int rows = command.ExecuteNonQuery();
-                if (rows > 0)
+                bool success = false;
+                MessageBox.Show(nomPrenom);
+                SqlConnection con = new SqlConnection(conString);
+                FileStream fStream = File.OpenRead(Fname);
+                byte[] contents = new byte[fStream.Length];
+                fStream.Read(contents, 0, (int)fStream.Length);
+                fStream.Close();
+                try
                 {
-                    success = true;
+                    string sql = "EXEC	 [dbo].[stockcontrat] @mat = '" + mat + "', @codeCat = " + code + ", @nomdoc = @content, @user = '" + nomPrenom + "' ";
+                    SqlCommand command = new SqlCommand(sql, con);
+                    command.Parameters.AddWithValue("@content", contents);
+                    con.Open();
+                    MessageBox.Show(sql);
+                    int rows = command.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        success = true;
+                    }
+                    else
+                    {
+                        success = false;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    success = false;
+                    ex.ToString();
                 }
+                finally { con.Close(); }
+                return success;
             }
-            catch (Exception ex)
+            catch (System.ArgumentException)
             {
-                ex.ToString();
+                MessageBox.Show("ajoutez un document","ALERT",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
             }
-            finally { con.Close(); }
-            return success;
         }
         public bool updateContrat(string mat, int codecat, string Fname)
         {
@@ -527,40 +531,49 @@ namespace FKM_2022.crudAlgoClasses
         public bool ajoutVehicule(DateTime DateAchat, string montantPret, string Immatriculation, string Puissance, string Marque, DateTime DateMiseEnCirculation, string MontantAchat,
             int codeContratint, string ValeurInitKilometrage, DateTime DatetMiseEnExploitation, string Modele, DateTime DatetMiseHorsExploitation, string Fname)
         {
-            FileStream fStream = File.OpenRead(Fname);
-            byte[] contents = new byte[fStream.Length];
-            fStream.Read(contents, 0, (int)fStream.Length);
-            fStream.Close();
-            bool result = false;
-            string connectionString = "Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True";
-            string query = "EXEC[dbo].[stockVehicule]@montantPret = @mp ,@Immatriculation = @mat ,@DateAchat = @dateA,@Puissance = @chv" +
-                " ,@actif = 1,@Statut ='actif' ,@Marque = @mar,@DateMiseEnCirculation = @dateC,@MontantAchat = @ma,@Contrat_Code = @code" +
-                ",@ValeurInitKilometrage = @km,@Documents = @doc,@DatetMiseEnExploitation = @dateM,@DatetMiseHorsExploitation = @dateMH ,@Modele = @mode";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                cmd.Parameters.Add("@dateA", SqlDbType.Date).Value = DateAchat;
-                cmd.Parameters.Add("@mp", SqlDbType.Decimal).Value = montantPret;
-                cmd.Parameters.Add("@mat", SqlDbType.VarChar).Value = Immatriculation;
-                cmd.Parameters.Add("@chv", SqlDbType.Int).Value = Puissance;
-                cmd.Parameters.Add("@mar", SqlDbType.VarChar).Value = Marque;
-                cmd.Parameters.Add("@dateC", SqlDbType.Date).Value = DateMiseEnCirculation;
-                cmd.Parameters.Add("@ma", SqlDbType.Decimal).Value = MontantAchat;
-                cmd.Parameters.AddWithValue("@code", codeContratint);
-                cmd.Parameters.Add("@km", SqlDbType.Decimal).Value = ValeurInitKilometrage;
-                cmd.Parameters.Add("@dateM", SqlDbType.Date).Value = DatetMiseEnExploitation;
-                cmd.Parameters.Add("@mode", SqlDbType.VarChar).Value = Modele;
-                cmd.Parameters.Add("@dateMH", SqlDbType.Date).Value = DatetMiseHorsExploitation;
-                cmd.Parameters.Add("@doc", SqlDbType.VarBinary).Value = contents;
-                con.Open();
-                int rows = cmd.ExecuteNonQuery();
-                con.Close();
-                if (rows > 0)
+                FileStream fStream = File.OpenRead(Fname);
+                byte[] contents = new byte[fStream.Length];
+                fStream.Read(contents, 0, (int)fStream.Length);
+                fStream.Close();
+                bool result = false;
+                string connectionString = "Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True";
+                string query = "EXEC[dbo].[stockVehicule]@montantPret = @mp ,@Immatriculation = @mat ,@DateAchat = @dateA,@Puissance = @chv" +
+                    " ,@actif = 1,@Statut ='actif' ,@Marque = @mar,@DateMiseEnCirculation = @dateC,@MontantAchat = @ma,@Contrat_Code = @code" +
+                    ",@ValeurInitKilometrage = @km,@Documents = @doc,@DatetMiseEnExploitation = @dateM,@DatetMiseHorsExploitation = @dateMH ,@Modele = @mode";
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    result = true;
+                    cmd.Parameters.Add("@dateA", SqlDbType.Date).Value = DateAchat;
+                    cmd.Parameters.Add("@mp", SqlDbType.Decimal).Value = montantPret;
+                    cmd.Parameters.Add("@mat", SqlDbType.VarChar).Value = Immatriculation;
+                    cmd.Parameters.Add("@chv", SqlDbType.Int).Value = Puissance;
+                    cmd.Parameters.Add("@mar", SqlDbType.VarChar).Value = Marque;
+                    cmd.Parameters.Add("@dateC", SqlDbType.Date).Value = DateMiseEnCirculation;
+                    cmd.Parameters.Add("@ma", SqlDbType.Decimal).Value = MontantAchat;
+                    cmd.Parameters.AddWithValue("@code", codeContratint);
+                    cmd.Parameters.Add("@km", SqlDbType.Decimal).Value = ValeurInitKilometrage;
+                    cmd.Parameters.Add("@dateM", SqlDbType.Date).Value = DatetMiseEnExploitation;
+                    cmd.Parameters.Add("@mode", SqlDbType.VarChar).Value = Modele;
+                    cmd.Parameters.Add("@dateMH", SqlDbType.Date).Value = DatetMiseHorsExploitation;
+                    cmd.Parameters.Add("@doc", SqlDbType.VarBinary).Value = contents;
+                    con.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (rows > 0)
+                    {
+                        result = true;
+                    }
+                    return result;
                 }
-                return result;
+            }
+            catch (System.ArgumentException ex)
+            {
+                ex.ToString();
+                MessageBox.Show("vous devaiz abouter un document PDF de la voiture ", "ALERT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         public void telechargerPDFVehicule(string file, int code)
@@ -596,7 +609,7 @@ namespace FKM_2022.crudAlgoClasses
                 }
                 con.Close();
             }
-          
+
         }
         public bool archiveVehicule(int code)
         {
@@ -630,5 +643,5 @@ namespace FKM_2022.crudAlgoClasses
             return success;
         }
     }
-    
+
 }

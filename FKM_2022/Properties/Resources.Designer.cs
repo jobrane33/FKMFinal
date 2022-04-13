@@ -63,6 +63,16 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _277682556_1489791951415844_764564338250588887_n {
+            get {
+                object obj = ResourceManager.GetObject("277682556_1489791951415844_764564338250588887_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconPDF {
             get {
                 object obj = ResourceManager.GetObject("iconPDF", resourceCulture);
@@ -436,6 +446,26 @@ namespace FKM_2022.Properties {
         internal static System.Drawing.Bitmap icons8_user_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_visible_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-visible-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_visible_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-visible-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

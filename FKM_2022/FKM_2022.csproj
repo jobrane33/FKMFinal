@@ -111,6 +111,12 @@
     <Compile Include="benifinciere\signlePageForms\ConsultationQuinzaines.Designer.cs">
       <DependentUpon>ConsultationQuinzaines.cs</DependentUpon>
     </Compile>
+    <Compile Include="benifinciere\signlePageForms\DemandesDeRetrait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="benifinciere\signlePageForms\DemandesDeRetrait.Designer.cs">
+      <DependentUpon>DemandesDeRetrait.cs</DependentUpon>
+    </Compile>
     <Compile Include="benifinciere\userHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="exploitation\ValidationQuanzaine.resx">
       <DependentUpon>ValidationQuanzaine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exploitation\ValidationQuanzaineSuperieur.resx">
+      <DependentUpon>ValidationQuanzaineSuperieur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PDFviewers\ContratPDFViewer.resx">
       <DependentUpon>ContratPDFViewer.cs</DependentUpon>
@@ -577,6 +586,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-case-cochée-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\277682556_1489791951415844_764564338250588887_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-visible-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-visible-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,13 +29,28 @@ namespace FKM_2022.referntiel
         public void userInterfaceSittings()
         {
             
-            if (type.Equals("superieur herchique"))
+            if (type.Equals("admin"))
             {
-                this.button1.Hide();
-                openSildperso(new ValidationQuanzaine());
+                this.button10.Hide();
+                //openSildperso(new ValidationQuanzaine());
             }
-            
-            
+            else if (type.Equals("adminSup"))
+            {
+               this.button18.Hide();
+                this.button1.Hide();
+            }
+            else if (type.Equals("comptable"))
+            {
+                button1.Hide();
+                button18.Hide();
+                button11.Hide();
+                button13.Hide();
+                button14.Hide();
+                button15.Hide();
+                button16.Hide();
+                button17.Hide();
+                button19.Hide();
+            }
         }
         public void openSildperso(object Form)
         {

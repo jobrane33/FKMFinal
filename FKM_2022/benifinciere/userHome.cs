@@ -15,12 +15,10 @@ namespace FKM_2022.benifinciere
     public partial class userHome : Form
     {
         private string matricule = connection.getMatricule;
+        private string nomPrenom = connection.getNomPrenom; 
         public userHome()
         {
             InitializeComponent();
-            fullScreen();
-            label1.Text = matricule;
-
         }
         private void fullScreen()
         {
@@ -57,6 +55,22 @@ namespace FKM_2022.benifinciere
         private void button18_Click(object sender, EventArgs e)
         {
             openSildbenificiere(new AjouterQuizaines());
+        }
+        public void refresh()
+        {
+            openSildbenificiere(new AjouterQuizaines());
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+           openSildbenificiere(new ConsultationQuinzaines());
+        }
+
+        private void userHome_Load(object sender, EventArgs e)
+        {
+            fullScreen();
+            label1.Text = "bonjour  "+nomPrenom +"  date du connection : "+DateTime.Now.ToString();
         }
     }
 }

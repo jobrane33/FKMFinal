@@ -1,14 +1,8 @@
 ﻿using FKM_2022.crudAlgoClasses;
 using FKM_2022.CRUDforms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Windows.Forms;
 
@@ -29,20 +23,21 @@ namespace FKM_2022.referntiel
 
         }
 
-        
+
         private void panel6_MouseClick(object sender, MouseEventArgs e)
         {
             ajouterPerso perso = new ajouterPerso();
-            
+
             perso.Show();
-            
+
             //uperPannel.Hide();
             perso.buttonvalider = true;
             perso.buttonmodifier = false;
         }
         private void disablearchive()
         {
-            if (checkBox1.Checked) {
+            if (checkBox1.Checked)
+            {
                 dataGridView1.Columns["supprimer"].Visible = false;
             }
             else
@@ -64,7 +59,7 @@ namespace FKM_2022.referntiel
 
         private void roundBtn3_Click(object sender, EventArgs e)
         {
-            
+
             dataGridView1.SelectAll();
             DataObject data = dataGridView1.GetClipboardContent();
             if (data != null) Clipboard.SetDataObject(data);
@@ -100,21 +95,21 @@ namespace FKM_2022.referntiel
                 if (dialogResult == DialogResult.Yes)
                 {
                     string mat = dataGridView1.Rows[e.RowIndex].Cells["mat"].Value.ToString();
-                    
-                    bool res =cm.archiverPersonnel(mat);
+
+                    bool res = cm.archiverPersonnel(mat);
                     if (res)
                     {
-                        MessageBox.Show("insertion complete", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+                        MessageBox.Show("archivé avec success", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         DataTable dt = cm.selectPersonnels(1);
                         dataGridView1.DataSource = dt;
 
                     }
                     else
                     {
-                        MessageBox.Show("erreur", "Some title", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("contrat active !!!", "up contrat est active ! ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -145,7 +140,7 @@ namespace FKM_2022.referntiel
         private void roundBtn4_Click(object sender, EventArgs e)
         {
             int archive;
-            if(checkBox1.Checked)
+            if (checkBox1.Checked)
                 archive = 0;
             else archive = 1;
             crudMethodes cm = new crudAlgoClasses.crudMethodes();
@@ -170,37 +165,37 @@ namespace FKM_2022.referntiel
 
         private void roundBtn6_Click(object sender, EventArgs e)
         {
-           
 
-           
+
+
         }
 
-      
+
 
         //pour filtrer les personnels
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            var archive=0;
+            var archive = 0;
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
-            if (textBox2.Text != string.Empty )
+            if (textBox2.Text != string.Empty)
             {
                 if (checkBox1.Checked)
                 {
-                     archive = 0;
+                    archive = 0;
                 }
                 else
                 {
-                     archive = 1;
+                    archive = 1;
                 }
-                    dt = cm.filtrePerso(comboBox1.Text, textBox2.Text,archive);
-                    
-                    //MessageBox.Show(dt.ToString());
-                    dataGridView1.DataSource = dt;
+                dt = cm.filtrePerso(comboBox1.Text, textBox2.Text, archive);
+
+                //MessageBox.Show(dt.ToString());
+                dataGridView1.DataSource = dt;
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("introuvable", "vide", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    textBox2.Text=String.Empty;
+                    textBox2.Text = String.Empty;
                     dt2 = cm.selectPersonnels(archive);
                     dataGridView1.DataSource = dt2;
                 }
@@ -227,7 +222,7 @@ namespace FKM_2022.referntiel
             crudMethodes cm = new crudMethodes();
             DataTable dt = cm.selectPersonnels(archive);
             dataGridView1.DataSource = dt;
-            
+
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

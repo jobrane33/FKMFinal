@@ -52,10 +52,11 @@ namespace FKM_2022.referntiel
             
             if (result)
             {
+                
                 type = login.usertype(customtextbox1.Texts, customtextbox2.Texts);
                 nomPrenom = login.nomPrenomUser(customtextbox1.Texts);
                 matricule = login.matricule(customtextbox1.Texts);
-                if (type.Equals("benifisiere"))
+                if (type.Equals("benifisiere") || type.Equals("agentDeSaisie"))
                 {
                     benifinciere.userHome user = new benifinciere.userHome();
                     this.Hide();
@@ -75,6 +76,24 @@ namespace FKM_2022.referntiel
 
         }
 
-        
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            
+            if (customtextbox2.PasswordChar)
+            {
+                customtextbox2.PasswordChar = false;
+            }
+            else
+            {
+                customtextbox2.PasswordChar = true;
+                
+            }
+        }
+
+        private void roundBtn1_Click(object sender, EventArgs e)
+        {
+            customtextbox1.Texts= String.Empty;
+            customtextbox2.Texts= String.Empty;
+        }
     }
 }

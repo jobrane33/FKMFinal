@@ -22,7 +22,7 @@ namespace FKM_2022.crudAlgoClasses
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.Add("@refQ", SqlDbType.VarChar).Value = refQuinzaine;
                 cmd.Parameters.Add("@sommekm", SqlDbType.Int).Value = sommeKM;
-                cmd.Parameters.Add("@mat", SqlDbType.VarChar).Value = matricule;
+                cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
                 cmd.Parameters.Add("@userRec", SqlDbType.VarChar).Value = userREC;
                 MessageBox.Show(sql);
                 con.Open();
@@ -233,7 +233,7 @@ namespace FKM_2022.crudAlgoClasses
             {
                 
 
-                String sql = "select referanceQuinzaine , NbreKilometreSociete , sommeKilometresQuinzaine,NouvelIndex, ancienIndex  from Quinzaines where SuperieurhearchiqueDevalidation =@mat and validationSupperieur=0";
+                String sql = "select referanceQuinzaine , NbreKilometreSociete , sommeKilometresQuinzaine,NouvelIndex, ancienIndex  from Quinzaines where SuperieurhearchiqueDevalidation =@mat and validationSupperieur=0 and valide=1";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
                 //MessageBox.Show(sql);
@@ -295,6 +295,34 @@ namespace FKM_2022.crudAlgoClasses
             {
                 return "0";
             }
+        }
+        public bool rejectQunzaineSup(string referanceQuinzaine)
+        {
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "EXEC	[dbo].[refuserQunzaine] @ref ='"+referanceQuinzaine+"'";
+                MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, con);
+                command.Parameters.Add("@reference", SqlDbType.VarChar).Value = referanceQuinzaine;
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
         }
 
     }

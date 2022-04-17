@@ -99,6 +99,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="benifinciere\crudpopups\ajoutDemandeRetrait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="benifinciere\crudpopups\ajoutDemandeRetrait.Designer.cs">
+      <DependentUpon>ajoutDemandeRetrait.cs</DependentUpon>
+    </Compile>
     <Compile Include="benifinciere\signlePageForms\AjouterQuizaines.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="benifinciere\signlePageForms\ConsultationQuinzaines.Designer.cs">
       <DependentUpon>ConsultationQuinzaines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="benifinciere\signlePageForms\demandeRetrait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="benifinciere\signlePageForms\demandeRetrait.Designer.cs">
+      <DependentUpon>demandeRetrait.cs</DependentUpon>
     </Compile>
     <Compile Include="benifinciere\signlePageForms\DemandesDeRetrait.cs">
       <SubType>Form</SubType>
@@ -287,11 +299,17 @@
     <Compile Include="selfmadecomp\RoundBtn.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="benifinciere\crudpopups\ajoutDemandeRetrait.resx">
+      <DependentUpon>ajoutDemandeRetrait.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="benifinciere\signlePageForms\AjouterQuizaines.resx">
       <DependentUpon>AjouterQuizaines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="benifinciere\signlePageForms\ConsultationQuinzaines.resx">
       <DependentUpon>ConsultationQuinzaines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="benifinciere\signlePageForms\demandeRetrait.resx">
+      <DependentUpon>demandeRetrait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="benifinciere\userHome.resx">
       <DependentUpon>userHome.cs</DependentUpon>
@@ -595,6 +613,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-visible-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-effacer-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chéquier-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-annuler-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ok-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

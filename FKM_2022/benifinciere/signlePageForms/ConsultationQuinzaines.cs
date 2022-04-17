@@ -40,7 +40,7 @@ namespace FKM_2022.benifinciere.signlePageForms
         {
             using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
             {
-                SqlCommand sqlCmd = new SqlCommand("(select matricule ,concat(nom,' ',prenom,' ',matricule) as perso  from personnels where superieurHerchiqueMatricule='" + matriculeUser + "') union ( select matricule , concat(nom,' ',prenom,' ',matricule) as perso from personnels where matricule='" + matriculeUser + "')", sqlConnection);
+                SqlCommand sqlCmd = new SqlCommand("(select matricule ,concat(nom,' ',prenom,' ',matricule) as perso  from personnels where matriculeAgentDesaisie='" + matriculeUser + "') union ( select matricule , concat(nom,' ',prenom,' ',matricule) as perso from personnels where matricule='" + matriculeUser + "')", sqlConnection);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = sqlCmd;
                 DataTable dt2 = new DataTable();
@@ -73,6 +73,10 @@ namespace FKM_2022.benifinciere.signlePageForms
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                 }
                 else if(dataGridView1.Rows[i].Cells[dataGridView1.Columns["statut"].Index].Value.ToString().Equals("valider par le services d'assurance"))
+                {
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                }
+                else if (dataGridView1.Rows[i].Cells[dataGridView1.Columns["statut"].Index].Value.ToString().Equals("Rejetée par le superieeur héarchique"))
                 {
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
                 }

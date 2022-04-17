@@ -86,7 +86,7 @@ namespace FKM_2022.CRUDforms
         public ajouterPerso()
         {
             InitializeComponent();
-
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
         private bool testNum(string text)
         {

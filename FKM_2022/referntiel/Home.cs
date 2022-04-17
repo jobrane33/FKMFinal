@@ -50,6 +50,9 @@ namespace FKM_2022.referntiel
                 button16.Hide();
                 button17.Hide();
                 button19.Hide();
+            }else if (type.Equals("testadmin"))
+            {
+
             }
         }
         public void openSildperso(object Form)

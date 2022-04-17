@@ -36,6 +36,7 @@
             this.observation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uperPannel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -49,8 +50,6 @@
             this.roundBtn4 = new FKM_2022.selfmadecomp.RoundBtn();
             this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
             this.filledPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.uperPannel.SuspendLayout();
@@ -89,12 +88,11 @@
             this.date,
             this.observation,
             this.kilometrage});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 180);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 359);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1441, 800);
+            this.dataGridView1.Size = new System.Drawing.Size(1441, 621);
             this.dataGridView1.TabIndex = 5;
             // 
             // jour
@@ -155,6 +153,15 @@
             this.uperPannel.Size = new System.Drawing.Size(1441, 180);
             this.uperPannel.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(621, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "label1";
+            // 
             // roundBtn1
             // 
             this.roundBtn1.BackColor = System.Drawing.Color.DarkSlateBlue;
@@ -178,7 +185,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(29, 49);
+            this.radioButton2.Location = new System.Drawing.Point(198, 124);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(159, 24);
             this.radioButton2.TabIndex = 6;
@@ -323,19 +330,6 @@
             this.pictureBox5.TabIndex = 19;
             this.pictureBox5.TabStop = false;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(621, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "label1";
-            // 
             // AjouterQuizaines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,7 +355,6 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel filledPanel;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel uperPannel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox3;

@@ -72,5 +72,10 @@ namespace FKM_2022.benifinciere
             fullScreen();
             label1.Text = "bonjour  "+nomPrenom +"  date du connection : "+DateTime.Now.ToString();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            openSildbenificiere(new demandeRetrait());
+        }
     }
 }

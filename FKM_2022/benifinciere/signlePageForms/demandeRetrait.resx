@@ -117,16 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="jour.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="observation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="kilometrage.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAU5JREFUSEvd
+        1b0uREEYxvGDSERWKGhIZCutG1BoaV2ASJQiEclqFHQal6Cj4Q4UGhF6ER+JSChUPgoNifB/mDeZTF47
+        55xs5Ul+2Tnz8c7uzGa3+JeZxQO+2njGCmolV1zuwusGKict5hnHbWhvoVLSYh6l9iZpMY+l1iZpMU+c
+        JuxOSl18WswzhTi2ydPPUyZewSqy8RYtQznHB3T2c/DmZuMtekQ/lrCDHlzAm5uNt0hWMYRJLIQ+Tzbe
+        ItGn6IZyBW+OZOMtEh1NHxrYDn3yjhZGUSpxUfMGFZjHIobxCo2toVLS4rKJLuhiL6GjWofG7J2f4Pi3
+        2T5pcdnDfvR8gN3QtthYNjYx5xrTsFh/NnGRv3xiAnFsLJsyfzg3UMZglx3Tb9II3MzgHumi2At00b04
+        C30xXbbGOpJBnMKK69s0gI5GmxzhEFHxovgGvCT5ad+vTdIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

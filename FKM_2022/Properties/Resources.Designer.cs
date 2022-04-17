@@ -113,6 +113,16 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_annuler_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-annuler-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_annuler_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-annuler-48", resourceCulture);
@@ -163,6 +173,16 @@ namespace FKM_2022.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_chéquier_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-chéquier-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_chercher_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-chercher-24", resourceCulture);
@@ -206,6 +226,16 @@ namespace FKM_2022.Properties {
         internal static System.Drawing.Bitmap icons8_documents_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-documents-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_effacer_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-effacer-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +356,16 @@ namespace FKM_2022.Properties {
         internal static System.Drawing.Bitmap icons8_mettre_à_jour_la_rotation_à_gauche_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-mettre-à-jour-la-rotation-à-gauche-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ok_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ok-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

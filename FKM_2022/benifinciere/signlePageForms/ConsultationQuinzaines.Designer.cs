@@ -48,7 +48,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.referanceQuinzaine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libsommeKilometresQuinzaine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matricule = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@
             this.ancienIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.update = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();

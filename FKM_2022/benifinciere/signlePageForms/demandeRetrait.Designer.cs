@@ -45,9 +45,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.uperPannel = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +62,6 @@
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.a = new System.Windows.Forms.DataGridViewButtonColumn();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -237,6 +237,24 @@
             this.pictureBox7.TabIndex = 19;
             this.pictureBox7.TabStop = false;
             // 
+            // roundBtn1
+            // 
+            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BorderRadius = 40;
+            this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.FlatAppearance.BorderSize = 0;
+            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn1.ForeColor = System.Drawing.Color.White;
+            this.roundBtn1.Location = new System.Drawing.Point(881, 23);
+            this.roundBtn1.Name = "roundBtn1";
+            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn1.TabIndex = 18;
+            this.roundBtn1.Text = "Export";
+            this.roundBtn1.TextColor = System.Drawing.Color.White;
+            this.roundBtn1.UseVisualStyleBackColor = false;
+            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
+            // 
             // panel6
             // 
             this.panel6.BackgroundImage = global::FKM_2022.Properties.Resources.icons8_add_64__1_;
@@ -267,6 +285,41 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
+            // 
+            // roundBtn7
+            // 
+            this.roundBtn7.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn7.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn7.BorderRadius = 40;
+            this.roundBtn7.BorderSize = 0;
+            this.roundBtn7.FlatAppearance.BorderSize = 0;
+            this.roundBtn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn7.ForeColor = System.Drawing.Color.White;
+            this.roundBtn7.Location = new System.Drawing.Point(605, 23);
+            this.roundBtn7.Name = "roundBtn7";
+            this.roundBtn7.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn7.TabIndex = 12;
+            this.roundBtn7.Text = "imprimer";
+            this.roundBtn7.TextColor = System.Drawing.Color.White;
+            this.roundBtn7.UseVisualStyleBackColor = false;
+            // 
+            // roundBtn3
+            // 
+            this.roundBtn3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn3.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn3.BorderRadius = 40;
+            this.roundBtn3.BorderSize = 0;
+            this.roundBtn3.FlatAppearance.BorderSize = 0;
+            this.roundBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn3.ForeColor = System.Drawing.Color.White;
+            this.roundBtn3.Location = new System.Drawing.Point(327, 23);
+            this.roundBtn3.Name = "roundBtn3";
+            this.roundBtn3.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn3.TabIndex = 8;
+            this.roundBtn3.Text = "Visualiser";
+            this.roundBtn3.TextColor = System.Drawing.Color.White;
+            this.roundBtn3.UseVisualStyleBackColor = false;
+            this.roundBtn3.Click += new System.EventHandler(this.roundBtn3_Click);
             // 
             // filledPanel
             // 
@@ -396,59 +449,6 @@
             this.a.ReadOnly = true;
             this.a.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.a.Text = "selectionner";
-            // 
-            // roundBtn1
-            // 
-            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BorderRadius = 40;
-            this.roundBtn1.BorderSize = 0;
-            this.roundBtn1.FlatAppearance.BorderSize = 0;
-            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(881, 23);
-            this.roundBtn1.Name = "roundBtn1";
-            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn1.TabIndex = 18;
-            this.roundBtn1.Text = "Export";
-            this.roundBtn1.TextColor = System.Drawing.Color.White;
-            this.roundBtn1.UseVisualStyleBackColor = false;
-            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
-            // 
-            // roundBtn7
-            // 
-            this.roundBtn7.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn7.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn7.BorderRadius = 40;
-            this.roundBtn7.BorderSize = 0;
-            this.roundBtn7.FlatAppearance.BorderSize = 0;
-            this.roundBtn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn7.ForeColor = System.Drawing.Color.White;
-            this.roundBtn7.Location = new System.Drawing.Point(605, 23);
-            this.roundBtn7.Name = "roundBtn7";
-            this.roundBtn7.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn7.TabIndex = 12;
-            this.roundBtn7.Text = "imprimer";
-            this.roundBtn7.TextColor = System.Drawing.Color.White;
-            this.roundBtn7.UseVisualStyleBackColor = false;
-            // 
-            // roundBtn3
-            // 
-            this.roundBtn3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BorderRadius = 40;
-            this.roundBtn3.BorderSize = 0;
-            this.roundBtn3.FlatAppearance.BorderSize = 0;
-            this.roundBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn3.ForeColor = System.Drawing.Color.White;
-            this.roundBtn3.Location = new System.Drawing.Point(327, 23);
-            this.roundBtn3.Name = "roundBtn3";
-            this.roundBtn3.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn3.TabIndex = 8;
-            this.roundBtn3.Text = "Visualiser";
-            this.roundBtn3.TextColor = System.Drawing.Color.White;
-            this.roundBtn3.UseVisualStyleBackColor = false;
-            this.roundBtn3.Click += new System.EventHandler(this.roundBtn3_Click);
             // 
             // demandeRetrait
             // 

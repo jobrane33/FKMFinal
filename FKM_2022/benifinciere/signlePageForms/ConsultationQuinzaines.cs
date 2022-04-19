@@ -20,6 +20,7 @@ namespace FKM_2022.benifinciere.signlePageForms
         public ConsultationQuinzaines()
         {
             InitializeComponent();
+            dataGridView1.RowTemplate.Height = 40;
         }
 
         private void label4_Click(object sender, EventArgs e)

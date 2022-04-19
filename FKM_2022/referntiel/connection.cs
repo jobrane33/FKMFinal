@@ -21,8 +21,8 @@ namespace FKM_2022.referntiel
         public connection()
         {
             InitializeComponent();
-            customtextbox1.Texts = "aziz_zitoun";
-            customtextbox2.Texts = "123456_aziz";
+            customtextbox1.Texts = "jobrane_bensalah";
+            customtextbox2.Texts = "123";
         }
         public static string gettypeuser
         {

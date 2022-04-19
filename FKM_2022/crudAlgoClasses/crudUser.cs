@@ -490,9 +490,86 @@ namespace FKM_2022.crudAlgoClasses
             {
 
 
-                String sql = "select CodeDemande , cast(Montant as decimal(10,3)) as Montant " +
-                    ",demandeur , observation ,recDateCreation,Status from demandesRetrait";
+                String sql = "select CodeDemande , cast(Montant as decimal(10,3)) as Montant ,demandeur , observation ,recDateCreation,Status from demandesRetrait order by recDateCreation desc";
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                //MessageBox.Show(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable DemandesAvaliderAdmin(string matricule)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+                String sql = "select CodeDemande ,cast(Montant as decimal(10,3)) as Montant, demandeur , Status , typeRetrait , recDateCreation , observation from demandesRetrait where suphearchique=@mat ";
+                // MessageBox.Show(sql);
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                cmd.Parameters.Add("@mat", SqlDbType.VarChar).Value = matricule;
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable filtrageDemandesRetraitAdmin(string matricule)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+
+                String sql = "select CodeDemande , cast(Montant as decimal(10,3)) as Montant ,demandeur , observation ,recDateCreation,Status from demandesRetrait where Actif=1 and Personnel_matricule=@mat";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                //cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                //MessageBox.Show(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable selectConsultationAdminQunzaine()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+
+                String sql = "select* from Quinzaines";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
                 //MessageBox.Show(sql);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();

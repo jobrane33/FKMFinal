@@ -10,11 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FKM_2022.benifinciere.signlePageForms;
+using FKM_2022.exploitation;
 namespace FKM_2022.PDFviewers
 {
     public partial class DemandeRetraitPDFViewer : Form
     {
         int code = demandeRetrait.getCodeforPDF;
+
         public DemandeRetraitPDFViewer()
         {
             InitializeComponent();
@@ -26,6 +28,10 @@ namespace FKM_2022.PDFviewers
             System.Data.SqlClient.SqlConnection con = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True");
             con.Open();
 
+            if (code == 0)
+            {
+                code = DemandeRetrait.getcodeDemandeForAdmin;
+            }
             //MessageBox.Show(test);
             using (SqlCommand command = new SqlCommand("select Document from demandesRetrait where CodeDemande=" + code + "", con))
             {

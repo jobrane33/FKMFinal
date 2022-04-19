@@ -80,7 +80,7 @@ namespace FKM_2022.crudAlgoClasses
             return success;
         }
         //ajout personnels 
-        public bool ajoutPersonnels(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan, int codeTerr, string matSuperieur,string agent)
+        public bool ajoutPersonnels(string matricule, string nom, string prenom, string compteFKM, string compteNote, string compteRemb, string comptecan, int codeTerr, string matSuperieur, string agent)
         {
             bool success = false;
             SqlConnection con = new SqlConnection(conString);
@@ -278,7 +278,7 @@ namespace FKM_2022.crudAlgoClasses
             }
             catch (System.ArgumentException)
             {
-                MessageBox.Show("ajoutez un document","ALERT",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("ajoutez un document", "ALERT", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -642,6 +642,7 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
-    }
+        
 
+    }
 }

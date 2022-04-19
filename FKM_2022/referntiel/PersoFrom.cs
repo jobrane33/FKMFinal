@@ -89,6 +89,7 @@ namespace FKM_2022.referntiel
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "supprimer")
             {
                 DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("attention", "ce champ va etre deteruit", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Error);

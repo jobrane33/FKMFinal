@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -324,7 +325,194 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
+        public bool ajouterDemandeRetrait(float Montant , string fileName, string obsevation , string typeRetrait, string personnel_matricule, string user)
+        {
+            try
+            {
+                bool success = false;
+                SqlConnection con = new SqlConnection(conString);
+                FileStream fStream = File.OpenRead(fileName);
+                byte[] contents = new byte[fStream.Length];
+                fStream.Read(contents, 0, (int)fStream.Length);
+                fStream.Close();
+                try
+                {
+                    string sql = "EXEC	[dbo].[ajoutDemandes] @montantDemander = @montant, @document =@content , @observation = @observation , @typeDeRetrait = @typeDeRetrait, @personnel_mat = @mat, @user = @user";
+                    SqlCommand command = new SqlCommand(sql, con);
+                    command.Parameters.AddWithValue("@content", contents);
+                    command.Parameters.Add("@montant", SqlDbType.Float).Value = Montant;
+                    command.Parameters.Add("@observation", SqlDbType.VarChar).Value = obsevation;
+                    command.Parameters.Add("@typeDeRetrait", SqlDbType.VarChar).Value = typeRetrait;
+                    command.Parameters.Add("@mat", SqlDbType.NVarChar).Value = personnel_matricule;
+                    command.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
+                    con.Open();
+                    MessageBox.Show(sql);
+                    int rows = command.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        success = true;
+                    }
+                    else
+                    {
+                        success = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                }
+                finally { con.Close(); }
+                return success;
+            }
+            catch (System.ArgumentException)
+            {
+                bool success = false;
+                SqlConnection con = new SqlConnection(conString);
+                try
+                {
+                    string sql = "EXEC	[dbo].[ajoutDemandes] @montantDemander = @montant, @document =null , @observation = @observation , @typeDeRetrait = @typeDeRetrait, @personnel_mat = @mat, @user = @user";
+                    SqlCommand command = new SqlCommand(sql, con);
+                    //command.Parameters.AddWithValue("@content", contents);
+                    command.Parameters.Add("@montant", SqlDbType.Float).Value = Montant;
+                    command.Parameters.Add("@observation", SqlDbType.VarChar).Value = obsevation;
+                    command.Parameters.Add("@typeDeRetrait", SqlDbType.VarChar).Value = typeRetrait;
+                    command.Parameters.Add("@mat", SqlDbType.NVarChar).Value = personnel_matricule;
+                    command.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
+                    con.Open();
+                    MessageBox.Show(sql);
+                    int rows = command.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        success = true;
+                    }
+                    else
+                    {
+                        success = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                }
+                finally { con.Close(); }
+                return success;
+            }
+        }
+        public DataTable afficheDemandes(string user)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+
+                String sql = "select CodeDemande , cast(Montant as decimal(10,3)) as Montant " +
+                    ",demandeur , observation ,recDateCreation,Status from demandesRetrait where Actif=1 and recUser= @user";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add("@user", SqlDbType.NVarChar).Value = user;
+                //MessageBox.Show(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable filtrageDemandesRetrait( string user , string matricule )
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+
+                String sql = "select CodeDemande , cast(Montant as decimal(10,3)) as Montant " +
+                    ",demandeur , observation ,recDateCreation,Status from demandesRetrait where Actif=1 and recUser= @user and Personnel_matricule like '%"+matricule+"%'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add("@user", SqlDbType.NVarChar).Value = user;
+                //cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                //MessageBox.Show(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public bool archiveDelamandeRetrait(string code)
+        {
+
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "update demandesRetrait set Actif = 0 where CodeDemande ="+code+"";
+                MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, con);
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        //update demandesRetrait set Actif = 0 where CodeDemande =
+        public DataTable afficheDemandesAdmin()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+
+                String sql = "select CodeDemande , cast(Montant as decimal(10,3)) as Montant " +
+                    ",demandeur , observation ,recDateCreation,Status from demandesRetrait";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //MessageBox.Show(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
 
     }
+    
+
 }
+
+
 

@@ -41,22 +41,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.uperPannel = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.roundBtn4 = new FKM_2022.selfmadecomp.RoundBtn();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn2 = new FKM_2022.selfmadecomp.RoundBtn();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +57,11 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.a = new System.Windows.Forms.DataGridViewButtonColumn();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -76,10 +70,8 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.uperPannel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.filledPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -137,6 +129,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label3
             // 
@@ -173,8 +166,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -187,34 +178,15 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Location = new System.Drawing.Point(914, 0);
+            this.label1.Location = new System.Drawing.Point(1182, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.Size = new System.Drawing.Size(37, 16);
             this.label1.TabIndex = 19;
-            this.label1.Text = "rechercher :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBox2.Location = new System.Drawing.Point(991, 0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 22);
-            this.textBox2.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Location = new System.Drawing.Point(1204, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 16);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "--";
+            this.label1.Text = "filter :";
             // 
             // comboBox1
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "code",
@@ -225,6 +197,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(195, 24);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
@@ -241,76 +214,28 @@
             // 
             this.uperPannel.AutoScroll = true;
             this.uperPannel.BackColor = System.Drawing.Color.AliceBlue;
-            this.uperPannel.Controls.Add(this.pictureBox8);
-            this.uperPannel.Controls.Add(this.roundBtn4);
             this.uperPannel.Controls.Add(this.pictureBox7);
             this.uperPannel.Controls.Add(this.roundBtn1);
             this.uperPannel.Controls.Add(this.panel6);
             this.uperPannel.Controls.Add(this.pictureBox6);
-            this.uperPannel.Controls.Add(this.pictureBox5);
             this.uperPannel.Controls.Add(this.pictureBox4);
             this.uperPannel.Controls.Add(this.roundBtn7);
             this.uperPannel.Controls.Add(this.roundBtn3);
-            this.uperPannel.Controls.Add(this.roundBtn2);
             this.uperPannel.Dock = System.Windows.Forms.DockStyle.Top;
             this.uperPannel.Location = new System.Drawing.Point(0, 95);
             this.uperPannel.Name = "uperPannel";
             this.uperPannel.Size = new System.Drawing.Size(1441, 89);
             this.uperPannel.TabIndex = 4;
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::FKM_2022.Properties.Resources.icons8_annuler_30;
-            this.pictureBox8.Location = new System.Drawing.Point(1129, 32);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 21;
-            this.pictureBox8.TabStop = false;
-            // 
-            // roundBtn4
-            // 
-            this.roundBtn4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn4.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn4.BorderRadius = 40;
-            this.roundBtn4.BorderSize = 0;
-            this.roundBtn4.FlatAppearance.BorderSize = 0;
-            this.roundBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn4.ForeColor = System.Drawing.Color.White;
-            this.roundBtn4.Location = new System.Drawing.Point(963, 23);
-            this.roundBtn4.Name = "roundBtn4";
-            this.roundBtn4.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn4.TabIndex = 20;
-            this.roundBtn4.Text = "Export";
-            this.roundBtn4.TextColor = System.Drawing.Color.White;
-            this.roundBtn4.UseVisualStyleBackColor = false;
-            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(917, 32);
+            this.pictureBox7.Location = new System.Drawing.Point(1037, 32);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(21, 22);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 19;
             this.pictureBox7.TabStop = false;
-            // 
-            // roundBtn1
-            // 
-            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BorderRadius = 40;
-            this.roundBtn1.BorderSize = 0;
-            this.roundBtn1.FlatAppearance.BorderSize = 0;
-            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(739, 23);
-            this.roundBtn1.Name = "roundBtn1";
-            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn1.TabIndex = 18;
-            this.roundBtn1.Text = "Export";
-            this.roundBtn1.TextColor = System.Drawing.Color.White;
-            this.roundBtn1.UseVisualStyleBackColor = false;
             // 
             // panel6
             // 
@@ -326,83 +251,22 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::FKM_2022.Properties.Resources.icons8_chercher_24;
-            this.pictureBox6.Location = new System.Drawing.Point(453, 32);
+            this.pictureBox6.Location = new System.Drawing.Point(483, 32);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(21, 22);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 14;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::FKM_2022.Properties.Resources.icons8_sauvegarder_24;
-            this.pictureBox5.Location = new System.Drawing.Point(190, 32);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 13;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::FKM_2022.Properties.Resources.icons8_impression_24;
-            this.pictureBox4.Location = new System.Drawing.Point(684, 32);
+            this.pictureBox4.Location = new System.Drawing.Point(761, 32);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(21, 22);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
-            // 
-            // roundBtn7
-            // 
-            this.roundBtn7.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn7.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn7.BorderRadius = 40;
-            this.roundBtn7.BorderSize = 0;
-            this.roundBtn7.FlatAppearance.BorderSize = 0;
-            this.roundBtn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn7.ForeColor = System.Drawing.Color.White;
-            this.roundBtn7.Location = new System.Drawing.Point(515, 23);
-            this.roundBtn7.Name = "roundBtn7";
-            this.roundBtn7.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn7.TabIndex = 12;
-            this.roundBtn7.Text = "imprimer";
-            this.roundBtn7.TextColor = System.Drawing.Color.White;
-            this.roundBtn7.UseVisualStyleBackColor = false;
-            // 
-            // roundBtn3
-            // 
-            this.roundBtn3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BorderRadius = 40;
-            this.roundBtn3.BorderSize = 0;
-            this.roundBtn3.FlatAppearance.BorderSize = 0;
-            this.roundBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn3.ForeColor = System.Drawing.Color.White;
-            this.roundBtn3.Location = new System.Drawing.Point(276, 23);
-            this.roundBtn3.Name = "roundBtn3";
-            this.roundBtn3.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn3.TabIndex = 8;
-            this.roundBtn3.Text = "Visualiser";
-            this.roundBtn3.TextColor = System.Drawing.Color.White;
-            this.roundBtn3.UseVisualStyleBackColor = false;
-            // 
-            // roundBtn2
-            // 
-            this.roundBtn2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn2.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn2.BorderRadius = 40;
-            this.roundBtn2.BorderSize = 0;
-            this.roundBtn2.FlatAppearance.BorderSize = 0;
-            this.roundBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn2.ForeColor = System.Drawing.Color.White;
-            this.roundBtn2.Location = new System.Drawing.Point(34, 23);
-            this.roundBtn2.Name = "roundBtn2";
-            this.roundBtn2.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn2.TabIndex = 7;
-            this.roundBtn2.Text = "enregistrer";
-            this.roundBtn2.TextColor = System.Drawing.Color.White;
-            this.roundBtn2.UseVisualStyleBackColor = false;
             // 
             // filledPanel
             // 
@@ -436,7 +300,7 @@
             this.date,
             this.status,
             this.supprimer,
-            this.update});
+            this.a});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
@@ -454,20 +318,22 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1441, 807);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // code
             // 
-            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.code.DataPropertyName = "code";
+            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.code.DataPropertyName = "CodeDemande";
             this.code.HeaderText = "code";
             this.code.MinimumWidth = 6;
             this.code.Name = "code";
             this.code.ReadOnly = true;
+            this.code.Width = 214;
             // 
             // montant
             // 
             this.montant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.montant.DataPropertyName = "montant";
+            this.montant.DataPropertyName = "Montant";
             this.montant.HeaderText = "Montant";
             this.montant.MinimumWidth = 6;
             this.montant.Name = "montant";
@@ -484,21 +350,22 @@
             // 
             // perso
             // 
-            this.perso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.perso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.perso.DataPropertyName = "observation";
             this.perso.HeaderText = "observation";
             this.perso.MinimumWidth = 6;
             this.perso.Name = "perso";
             this.perso.ReadOnly = true;
+            this.perso.Width = 107;
             // 
             // date
             // 
-            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.date.DataPropertyName = "recDateCreation";
             this.date.HeaderText = "date";
             this.date.MinimumWidth = 6;
             this.date.Name = "date";
             this.date.ReadOnly = true;
+            this.date.Width = 213;
             // 
             // status
             // 
@@ -520,15 +387,68 @@
             this.supprimer.Text = "supprimer";
             this.supprimer.UseColumnTextForButtonValue = true;
             // 
-            // update
+            // a
             // 
-            this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.update.HeaderText = "update";
-            this.update.MinimumWidth = 6;
-            this.update.Name = "update";
-            this.update.ReadOnly = true;
-            this.update.Text = "update";
-            this.update.UseColumnTextForButtonValue = true;
+            this.a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.a.HeaderText = "selectionner pour affichage";
+            this.a.MinimumWidth = 6;
+            this.a.Name = "a";
+            this.a.ReadOnly = true;
+            this.a.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.a.Text = "selectionner";
+            // 
+            // roundBtn1
+            // 
+            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BorderRadius = 40;
+            this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.FlatAppearance.BorderSize = 0;
+            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn1.ForeColor = System.Drawing.Color.White;
+            this.roundBtn1.Location = new System.Drawing.Point(881, 23);
+            this.roundBtn1.Name = "roundBtn1";
+            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn1.TabIndex = 18;
+            this.roundBtn1.Text = "Export";
+            this.roundBtn1.TextColor = System.Drawing.Color.White;
+            this.roundBtn1.UseVisualStyleBackColor = false;
+            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
+            // 
+            // roundBtn7
+            // 
+            this.roundBtn7.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn7.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn7.BorderRadius = 40;
+            this.roundBtn7.BorderSize = 0;
+            this.roundBtn7.FlatAppearance.BorderSize = 0;
+            this.roundBtn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn7.ForeColor = System.Drawing.Color.White;
+            this.roundBtn7.Location = new System.Drawing.Point(605, 23);
+            this.roundBtn7.Name = "roundBtn7";
+            this.roundBtn7.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn7.TabIndex = 12;
+            this.roundBtn7.Text = "imprimer";
+            this.roundBtn7.TextColor = System.Drawing.Color.White;
+            this.roundBtn7.UseVisualStyleBackColor = false;
+            // 
+            // roundBtn3
+            // 
+            this.roundBtn3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn3.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn3.BorderRadius = 40;
+            this.roundBtn3.BorderSize = 0;
+            this.roundBtn3.FlatAppearance.BorderSize = 0;
+            this.roundBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn3.ForeColor = System.Drawing.Color.White;
+            this.roundBtn3.Location = new System.Drawing.Point(327, 23);
+            this.roundBtn3.Name = "roundBtn3";
+            this.roundBtn3.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn3.TabIndex = 8;
+            this.roundBtn3.Text = "Visualiser";
+            this.roundBtn3.TextColor = System.Drawing.Color.White;
+            this.roundBtn3.UseVisualStyleBackColor = false;
+            this.roundBtn3.Click += new System.EventHandler(this.roundBtn3_Click);
             // 
             // demandeRetrait
             // 
@@ -539,6 +459,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "demandeRetrait";
             this.Text = "PersoFrom";
+            this.Load += new System.EventHandler(this.demandeRetrait_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -550,10 +471,8 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.uperPannel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.filledPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -572,24 +491,18 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel uperPannel;
         private System.Windows.Forms.Panel filledPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private selfmadecomp.RoundBtn roundBtn3;
-        private selfmadecomp.RoundBtn roundBtn2;
         private selfmadecomp.RoundBtn roundBtn7;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel6;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private selfmadecomp.RoundBtn roundBtn4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private selfmadecomp.RoundBtn roundBtn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
@@ -599,7 +512,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
-        private System.Windows.Forms.DataGridViewButtonColumn update;
+        private System.Windows.Forms.DataGridViewButtonColumn a;
     }
 }
     

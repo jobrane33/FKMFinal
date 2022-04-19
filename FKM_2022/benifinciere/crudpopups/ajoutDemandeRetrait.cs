@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FKM_2022.referntiel;
@@ -17,6 +19,8 @@ namespace FKM_2022.benifinciere.crudpopups
     {
         private string filename=string.Empty;
         private string matricule = connection.getMatricule;
+        private string nomPrenom = connection.getNomPrenom;
+        crudAlgoClasses.crudUser cru = new crudAlgoClasses.crudUser();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
          (
@@ -34,8 +38,13 @@ namespace FKM_2022.benifinciere.crudpopups
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
             roundBtn1.Enabled = true;
-            roundBtn2.Enabled = true;
             pictureBox4.Hide();
+            var CurrentCultureInfo = new CultureInfo("en", false);
+            CurrentCultureInfo.NumberFormat.NumberDecimalSeparator = ".";
+            CurrentCultureInfo.NumberFormat.CurrencyDecimalSeparator = ".";
+            Thread.CurrentThread.CurrentUICulture = CurrentCultureInfo;
+            Thread.CurrentThread.CurrentCulture = CurrentCultureInfo;
+            CultureInfo.DefaultThreadCurrentCulture = CurrentCultureInfo;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -182,7 +191,7 @@ namespace FKM_2022.benifinciere.crudpopups
                 {
                     using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
                     {
-                        SqlCommand sqlCmd = new SqlCommand("select max (TauxRepartion) from Quinzaines where matriculePerso='" + comboBox2.SelectedValue.ToString() + "')", sqlConnection);
+                        SqlCommand sqlCmd = new SqlCommand("select max (TauxRepartion) from Quinzaines where matriculePerso='" + comboBox2.SelectedValue.ToString() + "'", sqlConnection);
                         SqlDataAdapter da = new SqlDataAdapter();
                         da.SelectCommand = sqlCmd;
                         DataTable dt = new DataTable();
@@ -200,6 +209,56 @@ namespace FKM_2022.benifinciere.crudpopups
 
             
             }
+
+        private void roundBtn1_Click(object sender, EventArgs e)
+        {
+            if (customtextbox1.Texts == String.Empty ||  customtextbox3.Texts == String.Empty )
+            {
+                MessageBox.Show("voudriez-vous svp remplir toutes les zones de texte", "champ vide !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else
+            {
+
+                float outputValue = 0;
+                bool isNumber = false;
+                isNumber = float.TryParse(customtextbox1.Texts, out outputValue);
+                if (!isNumber)
+                {
+                    MessageBox.Show("les taux doivent être numerique !", "erreur de saisie !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                    ci.NumberFormat.NumberDecimalSeparator = ".";
+                    float montant = float.Parse(customtextbox1.Texts, ci);
+                    string typeRetrait = comboBox1.Text;
+                    string observation = customtextbox3.Texts;
+                    string pesoMat = comboBox2.SelectedValue.ToString();
+                    bool sucess = cru.ajouterDemandeRetrait(montant, filename, observation, typeRetrait, pesoMat,  nomPrenom);
+                    if (sucess)
+                    {
+                        MessageBox.Show("insertion complet", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("erreur", "erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
         }
+
+        private void customtextbox1_Leave(object sender, EventArgs e)
+        {
+            if (customtextbox1.Texts.Contains(','))
+            {
+                //var indexOf_ = customtextbox1.Texts.IndexOf(',');
+               customtextbox1.Texts = customtextbox1.Texts.Replace(',', '.');
+            }
+        }
+    }
     }
 

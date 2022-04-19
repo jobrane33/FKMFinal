@@ -1,6 +1,6 @@
-﻿namespace FKM_2022.PDF_viewers
+﻿namespace FKM_2022.PDFviewers
 {
-    partial class ContratPDFViewer
+    partial class DemandeRetraitPDFViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContratPDFViewer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemandeRetraitPDFViewer));
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.SuspendLayout();
@@ -40,18 +40,14 @@
             this.axAcroPDF1.Location = new System.Drawing.Point(0, 0);
             this.axAcroPDF1.Name = "axAcroPDF1";
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
-            this.axAcroPDF1.Size = new System.Drawing.Size(859, 593);
+            this.axAcroPDF1.Size = new System.Drawing.Size(734, 496);
             this.axAcroPDF1.TabIndex = 0;
             // 
-            // ContratPDFViewer
+            // DemandeRetraitPDFViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 593);
+            this.ClientSize = new System.Drawing.Size(734, 496);
             this.Controls.Add(this.axAcroPDF1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "demandeRetraitPDFViewer";
-            this.Text = "demandeRetraitPDFViewer";
+            this.Name = "DemandeRetraitPDFViewer";
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);
 

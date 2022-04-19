@@ -354,6 +354,8 @@ namespace FKM_2022.benifinciere.signlePageForms
                             string referance = lastValidatedQuinzaineRef.Substring(0, indexof_);
                             int index2 = comboBox3.Items.IndexOf(referance);
                             comboBox3.Text = comboBox3.Items[index2 + 1].ToString();
+                            radioButton1.Checked = false;
+                            radioButton2.Checked = true;
                         }
                         else
                         {
@@ -361,49 +363,10 @@ namespace FKM_2022.benifinciere.signlePageForms
                             
                         }
                     }
-                }
-                
-                //DataTable dt2 = new DataTable();
-                //string refQuaineaine = comboBox3.Text + "/" + referanceQunzaineUser + "/" + DateTime.Now.Year.ToString();
-                //dt2 = cru.selectDetailsQuinzaines(refQuaineaine);
-
-                //dataGridView1.DataSource = dt2;
-
-                //if (dataGridView1.Rows.Count != 0)
-                //{
-                //    dataGridView1.DataSource = dt;
-                //}
-                //else if (dataGridView1.Rows.Count == 0)
-                //{
-                //    MessageBox.Show("vous douvez saise la quinzaine dabord", "pas de details", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    dt = selectCalendrierQuinzaine();
-                //    dataGridView1.DataSource = dt;
-                //    radioButton1.Checked = false;
-                //    radioButton2.Checked = true;
-                //}
+                }           
             }
-
-            //    DataTable dt2 = new DataTable();
-
-
-            //    string refQuaineaine = comboBox3.Text + "/" + referanceQunzaineUser + "/" + DateTime.Now.Year.ToString();
-            //    dt2 = cru.selectDetailsQuinzaines(refQuaineaine);
-
-            //    dataGridView1.DataSource = dt2;
-
-            //    if (dataGridView1.Rows.Count != 0)
-            //    {
-            //        dataGridView1.DataSource = dt2;
-            //    }
-            //    else if (dataGridView1.Rows.Count == 0)
-            //    {
-            //        MessageBox.Show("vous douvez saise la quinzaine dabord", "pas de details ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        dt = selectCalendrierQuinzaine();
-            //        dataGridView1.DataSource = dt;
-            //        radioButton1.Checked = false;
-            //        radioButton2.Checked = true;
-            //    }
-
+            radioButton1.Checked = false;
+            radioButton2.Checked = true;
         }
 
         private void roundBtn2_Click(object sender, EventArgs e)

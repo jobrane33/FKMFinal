@@ -341,7 +341,7 @@ namespace FKM_2022.benifinciere.signlePageForms
             if (index != 0)
             {
                 if (result)
-                   
+
                 {
                     string newref = comboBox3.Items[index - 1].ToString() + "/" + referanceQunzaineUser + "/" + DateTime.Now.Year.ToString();
                     if (cru.selectallQuinzaines(newref) != "1")
@@ -360,13 +360,19 @@ namespace FKM_2022.benifinciere.signlePageForms
                         else
                         {
                             comboBox3.Text = "janvier Quinzaine 1";
-                            
+
                         }
                     }
-                }           
+                }
             }
             radioButton1.Checked = false;
             radioButton2.Checked = true;
+
+            Random rd = new Random();
+            for (int i = 0; i < dataGridView1.Rows.Count ; i++)
+            {   
+                dataGridView1.Rows[i].Cells[dataGridView1.Columns["kilometrage"].Index].Value = rd.Next(40, 120); ;
+            }
         }
 
         private void roundBtn2_Click(object sender, EventArgs e)
@@ -499,6 +505,7 @@ namespace FKM_2022.benifinciere.signlePageForms
                     dataGridView1.DataSource = dt;
                     radioButton1.Checked = false;
                     radioButton2.Checked = true;
+                    
                 }
             }
             else if (radioButton2.Checked)
@@ -521,8 +528,9 @@ namespace FKM_2022.benifinciere.signlePageForms
                 string refQuaineaine = comboBox3.Text + "/" + referanceQunzaineUser + "/" + DateTime.Now.Year.ToString();
                 if (cru.selectallQuinzaines(refQuaineaine) == "0")
                 {
-                    bool result = cru.reinitialiserQuinzaine(refQuaineaine);
+                    
                     bool resultdetails = cru.reinitialiserDetailsQuinzaine(refQuaineaine);
+                    bool result = cru.reinitialiserQuinzaine(refQuaineaine);
                     if (result && resultdetails)
                     {
                         MessageBox.Show("la quinzaine est réinitialiser", "fait", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -566,16 +574,30 @@ namespace FKM_2022.benifinciere.signlePageForms
                 label1.Text = matricule.ToString();
 
             }
+            Random rd = new Random();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[dataGridView1.Columns["kilometrage"].Index].Value = rd.Next(40, 120); ;
+            }
+
 
 
 
         }
+
+
+
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             dt = selectCalendrierQuinzaine();
             dataGridView1.DataSource = dt;
+            Random rd = new Random();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[dataGridView1.Columns["kilometrage"].Index].Value = rd.Next(40, 120); ;
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)

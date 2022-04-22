@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FKM_2022.crudAlgoClasses
@@ -232,9 +228,9 @@ namespace FKM_2022.crudAlgoClasses
             SqlConnection conn = new SqlConnection(conString);
             try
             {
-                
 
-                String sql = "select referanceQuinzaine , NbreKilometreSociete , sommeKilometresQuinzaine,NouvelIndex, ancienIndex  from Quinzaines where SuperieurhearchiqueDevalidation =@mat and validationSupperieur=0 and valide=1";
+
+                String sql = "select referanceQuinzaine  ,cast(MontantFraisKM as decimal(10,3)) as MontantFraisKM,matriculePerso, sommeKilometresQuinzaine,NouvelIndex, ancienIndex  from Quinzaines where SuperieurhearchiqueDevalidation =@mat and validationSupperieur=0 and valide=1";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
                 //MessageBox.Show(sql);
@@ -303,7 +299,7 @@ namespace FKM_2022.crudAlgoClasses
             SqlConnection con = new SqlConnection(conString);
             try
             {
-                string sql = "EXEC	[dbo].[refuserQunzaine] @ref ='"+referanceQuinzaine+"'";
+                string sql = "EXEC	[dbo].[refuserQunzaine] @ref ='" + referanceQuinzaine + "'";
                 MessageBox.Show(sql);
                 SqlCommand command = new SqlCommand(sql, con);
                 command.Parameters.Add("@reference", SqlDbType.VarChar).Value = referanceQuinzaine;
@@ -325,7 +321,7 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
-        public bool ajouterDemandeRetrait(float Montant , string fileName, string obsevation , string typeRetrait, string personnel_matricule, string user)
+        public bool ajouterDemandeRetrait(float Montant, string fileName, string obsevation, string typeRetrait, string personnel_matricule, string user)
         {
             try
             {
@@ -425,7 +421,7 @@ namespace FKM_2022.crudAlgoClasses
             }
             return dt;
         }
-        public DataTable filtrageDemandesRetrait( string user , string matricule )
+        public DataTable filtrageDemandesRetrait(string user, string matricule)
         {
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection(conString);
@@ -434,7 +430,7 @@ namespace FKM_2022.crudAlgoClasses
 
 
                 String sql = "select CodeDemande , cast(Montant as decimal(10,3)) as Montant " +
-                    ",demandeur , observation ,recDateCreation,Status from demandesRetrait where Actif=1 and recUser= @user and Personnel_matricule like '%"+matricule+"%'";
+                    ",demandeur , observation ,recDateCreation,Status from demandesRetrait where Actif=1 and recUser= @user and Personnel_matricule like '%" + matricule + "%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.Add("@user", SqlDbType.NVarChar).Value = user;
                 //cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
@@ -460,7 +456,7 @@ namespace FKM_2022.crudAlgoClasses
             SqlConnection con = new SqlConnection(conString);
             try
             {
-                string sql = "update demandesRetrait set Actif = 0 where CodeDemande ="+code+"";
+                string sql = "update demandesRetrait set Actif = 0 where CodeDemande =" + code + "";
                 MessageBox.Show(sql);
                 SqlCommand command = new SqlCommand(sql, con);
                 con.Open();
@@ -514,7 +510,7 @@ namespace FKM_2022.crudAlgoClasses
             try
             {
 
-                String sql = "select CodeDemande ,cast(Montant as decimal(10,3)) as Montant, demandeur , Status , typeRetrait , recDateCreation , observation from demandesRetrait where suphearchique=@mat ";
+                String sql = "select CodeDemande ,cast(Montant as decimal(10,3)) as Montant, demandeur , Status , typeRetrait , recDateCreation , observation from demandesRetrait where suphearchique=@mat and valideSuperieur=0";
                 // MessageBox.Show(sql);
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -585,11 +581,168 @@ namespace FKM_2022.crudAlgoClasses
             }
             return dt;
         }
+        public bool validerDemandeAdmin(string code, string matricule)
+        {
 
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "exec [dbo].[validerDemande] @code ,@mat";
+                MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, con);
+                command.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                command.Parameters.Add("@code", SqlDbType.Int).Value = code;
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+
+        public bool refuserDemandeAdmin(string code, string matricule)
+        {
+
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "exec [dbo].[RejeterDemande] @code ,@mat";
+                MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, con);
+                command.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                command.Parameters.Add("@code", SqlDbType.Int).Value = code;
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public bool insertionBonQZ(string referance, string montant, string matricule, string matUser)
+        {
+
+            bool success = false;
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "exec [dbo].[GenerateBonQ] @ref , @mat , @montant ,@matUser";
+                MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, con);
+                command.Parameters.Add("@montant", SqlDbType.Float).Value = montant;
+                command.Parameters.Add("@ref", SqlDbType.VarChar).Value = referance;
+                command.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                command.Parameters.Add("@matUser", SqlDbType.NVarChar).Value = matUser;
+                con.Open();
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public bool stockPDFBonQZ(string Fname, string referance)
+        {
+            try
+            {
+                bool success = false;
+                SqlConnection con = new SqlConnection(conString);
+                FileStream fStream = File.OpenRead(Fname);
+                byte[] contents = new byte[fStream.Length];
+                fStream.Read(contents, 0, (int)fStream.Length);
+                fStream.Close();
+                try
+                {
+                    string sql = "update BonApayerQunzaine set document=@content where referanceQunzaine=@ref";
+                    SqlCommand command = new SqlCommand(sql, con);
+                    command.Parameters.AddWithValue("@content", contents);
+                    command.Parameters.AddWithValue("@ref", referance);
+                    con.Open();
+                    MessageBox.Show(sql);
+                    int rows = command.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        success = true;
+                    }
+                    else
+                    {
+                        success = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                }
+                finally { con.Close(); }
+                return success;
+            }
+            catch (System.ArgumentException)
+            {
+                MessageBox.Show("ajoutez un document", "ALERT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        public string[] getvaluesForBOnQZ(string referance)
+        {
+            string sql = "select code,referanceQunzaine,nomPersonnel,mantant,dateGeneration,recDteCreation from BonApayerQunzaine  where referanceQunzaine=@ref";
+            SqlConnection con = new SqlConnection(conString); // making connection
+            SqlCommand command = new SqlCommand(sql, con);
+            command.Parameters.AddWithValue("@ref", referance);
+            con.Open ();
+            SqlDataReader myReader = command.ExecuteReader();
+            
+            if (myReader.Read())
+            {
+                 string[] values = {myReader["referanceQunzaine"].ToString(), myReader["nomPersonnel"].ToString(), myReader["mantant"].ToString(), myReader["dateGeneration"].ToString(), myReader["recDteCreation"].ToString(), myReader["code"].ToString() };
+                con.Close();
+                return values;
+            }
+            else
+            {
+                string[] Emptyarray = {};
+                con.Close();
+                return Emptyarray;   
+            }
+            
+        }
     }
-    
+
 
 }
+
 
 
 

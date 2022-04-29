@@ -18,6 +18,7 @@ namespace FKM_2022.referntiel
         public static string type = String.Empty;
         public static string nomPrenom = String.Empty;
         public static string matricule = String.Empty;
+        public static string territoire = string.Empty; 
         public connection()
         {
             InitializeComponent();
@@ -39,6 +40,11 @@ namespace FKM_2022.referntiel
             get { return matricule; }
             set { type = value; }
         }
+        public static string getTerritoire
+        {
+            get { return territoire; }
+            set { type = value; }
+        }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -57,6 +63,7 @@ namespace FKM_2022.referntiel
                 type = login.usertype(customtextbox1.Texts, customtextbox2.Texts);
                 nomPrenom = login.nomPrenomUser(customtextbox1.Texts);
                 matricule = login.matricule(customtextbox1.Texts);
+                territoire = login.territoire(customtextbox1.Texts);
                 if (type.Equals("benifisiere") || type.Equals("agentDeSaisie"))
                 {
                     benifinciere.userHome user = new benifinciere.userHome();

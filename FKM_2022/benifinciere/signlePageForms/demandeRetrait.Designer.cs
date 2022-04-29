@@ -53,6 +53,7 @@
             this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.demandeur = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +62,6 @@
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.a = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();

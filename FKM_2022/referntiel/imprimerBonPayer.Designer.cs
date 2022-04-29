@@ -1,6 +1,6 @@
-﻿namespace FKM_2022.exploitation
+﻿namespace FKM_2022.referntiel
 {
-    partial class ValidationDemandeRetrait
+    partial class imprimerBonPayer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(imprimerBonPayer));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -43,27 +47,26 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.uperPannel = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.Rejeter = new FKM_2022.selfmadecomp.RoundBtn();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
-            this.roundBtn3 = new FKM_2022.selfmadecomp.RoundBtn();
             this.filledPanel = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Jour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateJour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.topPanelGrid = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.demandeur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeRetrait = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recDateCreation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.referance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomPersonnel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mantant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recDteCreation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.territoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -75,9 +78,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.filledPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.topPanelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +112,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(114, 24);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(386, 71);
+            this.panel5.Size = new System.Drawing.Size(557, 71);
             this.panel5.TabIndex = 4;
             // 
             // label3
@@ -119,15 +122,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(0, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(312, 46);
+            this.label3.Size = new System.Drawing.Size(449, 46);
             this.label3.TabIndex = 7;
-            this.label3.Text = "demande retrait";
+            this.label3.Text = "Imprission Bon a payer";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::FKM_2022.Properties.Resources.icons8_menu_arrondi_48__2_;
-            this.pictureBox3.Location = new System.Drawing.Point(344, 26);
+            this.pictureBox3.Location = new System.Drawing.Point(515, 26);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -146,7 +149,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::FKM_2022.Properties.Resources.icons8_chéquier_100;
+            this.pictureBox1.Image = global::FKM_2022.Properties.Resources.icons8_impression_48;
             this.pictureBox1.Location = new System.Drawing.Point(34, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 71);
@@ -209,40 +212,53 @@
             // 
             this.uperPannel.AutoScroll = true;
             this.uperPannel.BackColor = System.Drawing.Color.AliceBlue;
-            this.uperPannel.Controls.Add(this.checkBox1);
             this.uperPannel.Controls.Add(this.pictureBox4);
-            this.uperPannel.Controls.Add(this.panel6);
-            this.uperPannel.Controls.Add(this.pictureBox6);
-            this.uperPannel.Controls.Add(this.Rejeter);
-            this.uperPannel.Controls.Add(this.pictureBox5);
             this.uperPannel.Controls.Add(this.roundBtn1);
-            this.uperPannel.Controls.Add(this.roundBtn3);
+            this.uperPannel.Controls.Add(this.label2);
+            this.uperPannel.Controls.Add(this.panel6);
             this.uperPannel.Dock = System.Windows.Forms.DockStyle.Top;
             this.uperPannel.Location = new System.Drawing.Point(0, 95);
             this.uperPannel.Name = "uperPannel";
             this.uperPannel.Size = new System.Drawing.Size(1441, 89);
             this.uperPannel.TabIndex = 4;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(4, 68);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(126, 20);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.Text = "selectionner tout";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::FKM_2022.Properties.Resources.icons8_tick_24;
-            this.pictureBox4.Location = new System.Drawing.Point(438, 33);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(785, 44);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 20;
             this.pictureBox4.TabStop = false;
+            // 
+            // roundBtn1
+            // 
+            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BorderRadius = 40;
+            this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.FlatAppearance.BorderSize = 0;
+            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn1.ForeColor = System.Drawing.Color.White;
+            this.roundBtn1.Location = new System.Drawing.Point(629, 26);
+            this.roundBtn1.Name = "roundBtn1";
+            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn1.TabIndex = 19;
+            this.roundBtn1.Text = "Imprimer";
+            this.roundBtn1.TextColor = System.Drawing.Color.White;
+            this.roundBtn1.UseVisualStyleBackColor = false;
+            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(861, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 38);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "label2";
             // 
             // panel6
             // 
@@ -273,85 +289,11 @@
             this.panel8.Size = new System.Drawing.Size(99, 89);
             this.panel8.TabIndex = 18;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::FKM_2022.Properties.Resources.icons8_rendez_vous_périodique_50;
-            this.pictureBox6.Location = new System.Drawing.Point(885, 33);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 23;
-            this.pictureBox6.TabStop = false;
-            // 
-            // Rejeter
-            // 
-            this.Rejeter.BackColor = System.Drawing.Color.Red;
-            this.Rejeter.BackgroudColor = System.Drawing.Color.Red;
-            this.Rejeter.BorderRadius = 40;
-            this.Rejeter.BorderSize = 0;
-            this.Rejeter.FlatAppearance.BorderSize = 0;
-            this.Rejeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Rejeter.ForeColor = System.Drawing.Color.White;
-            this.Rejeter.Location = new System.Drawing.Point(510, 23);
-            this.Rejeter.Name = "Rejeter";
-            this.Rejeter.Size = new System.Drawing.Size(150, 40);
-            this.Rejeter.TabIndex = 20;
-            this.Rejeter.Text = "Rejeter";
-            this.Rejeter.TextColor = System.Drawing.Color.White;
-            this.Rejeter.UseVisualStyleBackColor = false;
-            this.Rejeter.Click += new System.EventHandler(this.Rejeter_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::FKM_2022.Properties.Resources.icons8_effacer_48;
-            this.pictureBox5.Location = new System.Drawing.Point(666, 33);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 22;
-            this.pictureBox5.TabStop = false;
-            // 
-            // roundBtn1
-            // 
-            this.roundBtn1.BackColor = System.Drawing.Color.LimeGreen;
-            this.roundBtn1.BackgroudColor = System.Drawing.Color.LimeGreen;
-            this.roundBtn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.roundBtn1.BorderRadius = 40;
-            this.roundBtn1.BorderSize = 0;
-            this.roundBtn1.FlatAppearance.BorderSize = 0;
-            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(269, 23);
-            this.roundBtn1.Name = "roundBtn1";
-            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn1.TabIndex = 19;
-            this.roundBtn1.Text = "valider";
-            this.roundBtn1.TextColor = System.Drawing.Color.White;
-            this.roundBtn1.UseVisualStyleBackColor = false;
-            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
-            // 
-            // roundBtn3
-            // 
-            this.roundBtn3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn3.BorderRadius = 40;
-            this.roundBtn3.BorderSize = 0;
-            this.roundBtn3.FlatAppearance.BorderSize = 0;
-            this.roundBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn3.ForeColor = System.Drawing.Color.White;
-            this.roundBtn3.Location = new System.Drawing.Point(730, 23);
-            this.roundBtn3.Name = "roundBtn3";
-            this.roundBtn3.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn3.TabIndex = 21;
-            this.roundBtn3.Text = "refresh";
-            this.roundBtn3.TextColor = System.Drawing.Color.White;
-            this.roundBtn3.UseVisualStyleBackColor = false;
-            this.roundBtn3.Click += new System.EventHandler(this.roundBtn3_Click);
-            // 
             // filledPanel
             // 
             this.filledPanel.AutoScroll = true;
-            this.filledPanel.Controls.Add(this.dataGridView1);
+            this.filledPanel.Controls.Add(this.dataGridView2);
+            this.filledPanel.Controls.Add(this.topPanelGrid);
             this.filledPanel.Controls.Add(this.uperPannel);
             this.filledPanel.Controls.Add(this.panel1);
             this.filledPanel.Controls.Add(this.panel4);
@@ -361,26 +303,22 @@
             this.filledPanel.Size = new System.Drawing.Size(1441, 1018);
             this.filledPanel.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridView2
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.checkbox,
-            this.code,
-            this.montant,
-            this.demandeur,
-            this.Status,
-            this.typeRetrait,
-            this.recDateCreation,
-            this.observation});
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Jour,
+            this.dateJour,
+            this.kilometrage,
+            this.dataGridViewTextBoxColumn7});
+            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -388,12 +326,12 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 184);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 586);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -401,12 +339,100 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(1441, 405);
+            this.dataGridView2.TabIndex = 7;
+            // 
+            // Jour
+            // 
+            this.Jour.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Jour.DataPropertyName = "Jour";
+            this.Jour.HeaderText = "Jour";
+            this.Jour.MinimumWidth = 6;
+            this.Jour.Name = "Jour";
+            // 
+            // dateJour
+            // 
+            this.dateJour.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateJour.DataPropertyName = "dateDesJours";
+            this.dateJour.HeaderText = "date jour";
+            this.dateJour.MinimumWidth = 6;
+            this.dateJour.Name = "dateJour";
+            // 
+            // kilometrage
+            // 
+            this.kilometrage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.kilometrage.DataPropertyName = "kilometre";
+            this.kilometrage.HeaderText = "kilometrage";
+            this.kilometrage.MinimumWidth = 6;
+            this.kilometrage.Name = "kilometrage";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "observation";
+            this.dataGridViewTextBoxColumn7.HeaderText = "observation";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // topPanelGrid
+            // 
+            this.topPanelGrid.Controls.Add(this.dataGridView1);
+            this.topPanelGrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanelGrid.Location = new System.Drawing.Point(0, 184);
+            this.topPanelGrid.Name = "topPanelGrid";
+            this.topPanelGrid.Size = new System.Drawing.Size(1441, 402);
+            this.topPanelGrid.TabIndex = 6;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.checkbox,
+            this.referance,
+            this.nomPersonnel,
+            this.mantant,
+            this.recDteCreation,
+            this.territoire});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1441, 807);
+            this.dataGridView1.Size = new System.Drawing.Size(1441, 402);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // checkbox
             // 
@@ -415,76 +441,56 @@
             this.checkbox.Name = "checkbox";
             this.checkbox.Width = 125;
             // 
-            // code
+            // referance
             // 
-            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.code.DataPropertyName = "CodeDemande";
-            this.code.HeaderText = "Code";
-            this.code.MinimumWidth = 6;
-            this.code.Name = "code";
+            this.referance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.referance.DataPropertyName = "referanceQunzaine";
+            this.referance.HeaderText = "referance";
+            this.referance.MinimumWidth = 6;
+            this.referance.Name = "referance";
             // 
-            // montant
+            // nomPersonnel
             // 
-            this.montant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.montant.DataPropertyName = "Montant";
-            this.montant.HeaderText = "montant";
-            this.montant.MinimumWidth = 6;
-            this.montant.Name = "montant";
+            this.nomPersonnel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomPersonnel.DataPropertyName = "nomPersonnel";
+            this.nomPersonnel.HeaderText = "nomPersonnel";
+            this.nomPersonnel.MinimumWidth = 6;
+            this.nomPersonnel.Name = "nomPersonnel";
             // 
-            // demandeur
+            // mantant
             // 
-            this.demandeur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.demandeur.DataPropertyName = "demandeur";
-            this.demandeur.HeaderText = "demandeur";
-            this.demandeur.MinimumWidth = 6;
-            this.demandeur.Name = "demandeur";
+            this.mantant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mantant.DataPropertyName = "mantant";
+            this.mantant.HeaderText = "mantant";
+            this.mantant.MinimumWidth = 6;
+            this.mantant.Name = "mantant";
             // 
-            // Status
+            // recDteCreation
             // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
+            this.recDteCreation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.recDteCreation.DataPropertyName = "recDteCreation";
+            this.recDteCreation.HeaderText = "date creation";
+            this.recDteCreation.MinimumWidth = 6;
+            this.recDteCreation.Name = "recDteCreation";
             // 
-            // typeRetrait
+            // territoire
             // 
-            this.typeRetrait.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.typeRetrait.DataPropertyName = "typeRetrait";
-            this.typeRetrait.HeaderText = "typeRetrait";
-            this.typeRetrait.MinimumWidth = 6;
-            this.typeRetrait.Name = "typeRetrait";
+            this.territoire.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.territoire.DataPropertyName = "territoire";
+            this.territoire.HeaderText = "territoire";
+            this.territoire.MinimumWidth = 6;
+            this.territoire.Name = "territoire";
             // 
-            // recDateCreation
-            // 
-            this.recDateCreation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.recDateCreation.DataPropertyName = "recDateCreation";
-            this.recDateCreation.HeaderText = "recDateCreation";
-            this.recDateCreation.MinimumWidth = 6;
-            this.recDateCreation.Name = "recDateCreation";
-            // 
-            // observation
-            // 
-            this.observation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.observation.DataPropertyName = "observation";
-            this.observation.HeaderText = "observation";
-            this.observation.MinimumWidth = 6;
-            this.observation.Name = "observation";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // ValidationDemandeRetrait
+            // imprimerBonPayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1441, 1018);
             this.Controls.Add(this.filledPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ValidationDemandeRetrait";
+            this.Name = "imprimerBonPayer";
             this.Text = "PersoFrom";
-            this.Load += new System.EventHandler(this.ValidationDemandeRetrait_Load);
+            this.Load += new System.EventHandler(this.imprimerBonPayer_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -499,9 +505,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.filledPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.topPanelGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -522,27 +528,26 @@
         private System.Windows.Forms.Panel filledPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private selfmadecomp.RoundBtn Rejeter;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private selfmadecomp.RoundBtn roundBtn1;
-        private selfmadecomp.RoundBtn roundBtn3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel topPanelGrid;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkbox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn demandeur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeRetrait;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recDateCreation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observation;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomPersonnel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mantant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recDteCreation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn territoire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateJour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kilometrage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label label2;
+        private selfmadecomp.RoundBtn roundBtn1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 
-       
+        
     }

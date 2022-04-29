@@ -290,7 +290,12 @@ namespace FKM_2022.benifinciere.signlePageForms
             try
             {
 
-                String sql = "(SELECT date , jour from CalendrierQuinzaine where  codeQuinzaine ='" + comboBox3.Text + "' and jour <> 'sunday' and MONTH(date)=" + month + " EXCEPT SELECT  dateJourFerier , nomDUjour from joursFeriers where MONTH(dateJourFerier)=" + month + ") UNION ( SELECT dateJourFerier, nomDUjour from joursFeriers where  MONTH(dateJourFerier)=" + month + " EXCEPT SELECT date, jour from CalendrierQuinzaine where  codeQuinzaine = '" + comboBox3.Text + "' and jour  <> 'sunday' and MONTH(date)=" + month + ")";
+                String sql = "(SELECT date , jour from CalendrierQuinzaine where " +
+                    " codeQuinzaine ='" + comboBox3.Text + "' and jour <> 'Dimanche' and MONTH(date)=" + month + " " +
+                    "EXCEPT SELECT  dateJourFerier , nomDUjour from joursFeriers where MONTH(dateJourFerier)=" + month + ") UNION" +
+                    " ( SELECT dateJourFerier, nomDUjour from joursFeriers where  MONTH(dateJourFerier)=" + month + "" +
+                    " EXCEPT SELECT date, jour from CalendrierQuinzaine where  codeQuinzaine = '" + comboBox3.Text + "' " +
+                    "and jour  <> 'Dimanche' and MONTH(date)=" + month + ")";
                 // MessageBox.Show(sql);
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -401,13 +406,12 @@ namespace FKM_2022.benifinciere.signlePageForms
                     return;
                 }
             }
-
             bool res = false;
             string refQuaineaine = comboBox3.Text + "/" + referanceQunzaineUser + "/" + DateTime.Now.Year.ToString();
             bool result = cru.ajoutQuinzaine(refQuaineaine, sum, referanceQunzaineUser, user);
             if (result)
             {
-                MessageBox.Show("done");
+                MessageBox.Show("Quinzaine ajoutee avec success","Alert",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 for (int i = 0; i < dataGridView1.Rows.Count; ++i)
                 {
                     try
@@ -415,9 +419,7 @@ namespace FKM_2022.benifinciere.signlePageForms
                         var KM = Convert.ToInt32(dataGridView1.Rows[i].Cells[dataGridView1.Columns["kilometrage"].Index].Value);
                         DateTime datejour = Convert.ToDateTime(dataGridView1.Rows[i].Cells[dataGridView1.Columns["date"].Index].Value?.ToString());
                         var jour = dataGridView1.Rows[i].Cells[dataGridView1.Columns["jour"].Index].Value.ToString();
-
                         res = cru.stockKilometrages(KM, refQuaineaine, jour, datejour);
-
                     }
 
                     catch (System.NullReferenceException)
@@ -430,13 +432,9 @@ namespace FKM_2022.benifinciere.signlePageForms
                         return;
                     }
                 }
-                if (res)
+                if (!res)
                 {
-                    MessageBox.Show("well tested ");
-
-                }
-                else
-                {
+                    //MessageBox.Show("well tested ");
                     MessageBox.Show("somthing went wrong");
                 }
             }
@@ -534,6 +532,7 @@ namespace FKM_2022.benifinciere.signlePageForms
                     if (result && resultdetails)
                     {
                         MessageBox.Show("la quinzaine est réinitialiser", "fait", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        radioButton2.Checked = true;
                     }
                     else
                     {

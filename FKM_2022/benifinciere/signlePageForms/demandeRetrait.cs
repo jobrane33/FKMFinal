@@ -68,6 +68,16 @@ namespace FKM_2022.benifinciere.signlePageForms
                 dt = cru.afficheDemandes(nomPrenom);
                 dataGridView1.DataSource = dt;
             }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                bool test = row.Cells[dataGridView1.Columns["status"].Index].Value.ToString().Contains("Demande Valider par") || row.Cells[dataGridView1.Columns["status"].Index].Value.ToString().Contains("Demande Rejeter par");
+                if (test)
+                {
+                    //row.Cells[dataGridView1.Columns["supprimer"].Index].Visible = false;
+                    row.ReadOnly = true;
+                }
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

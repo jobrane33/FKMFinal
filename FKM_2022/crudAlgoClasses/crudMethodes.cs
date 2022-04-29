@@ -642,7 +642,63 @@ namespace FKM_2022.crudAlgoClasses
             finally { con.Close(); }
             return success;
         }
-        
 
+        public bool ajoutJour(string jour,string date,string observation)
+        {
+            bool success = false;
+
+            SqlConnection con = new SqlConnection(conString);
+            try
+            {
+                string sql = "exec AjoutJour @date, @observation ,@NomJour";
+
+                SqlCommand command = new SqlCommand(sql, con);
+                command.Parameters.Add("@date", SqlDbType.Date).Value = date;
+                command.Parameters.Add("@observation", SqlDbType.VarChar).Value = observation;
+                command.Parameters.Add("@NomJour", SqlDbType.VarChar).Value = jour;
+                con.Open();
+                //MessageBox.Show(sql);
+                int rows = command.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally { con.Close(); }
+            return success;
+        }
+        public DataTable selectJoursFerier()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+
+                String sql = "select* from joursFeriers where year(dateJourFerier)="+DateTime.Now.Year.ToString();
+                // MessageBox.Show(sql);
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
     }
 }

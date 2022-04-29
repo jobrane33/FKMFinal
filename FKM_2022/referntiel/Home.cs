@@ -578,5 +578,10 @@ namespace FKM_2022.referntiel
         {
 
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            openSildperso(new imprimerBonPayer());
+        }
     }
 }

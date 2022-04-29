@@ -42,7 +42,7 @@ namespace FKM_2022.CRUDforms
             CultureInfo.DefaultThreadCurrentCulture = CurrentCultureInfo;
             using (SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-MOT8LB0;Initial Catalog=FKM;Integrated Security=True"))
             {
-                SqlCommand sqlCmd = new SqlCommand("select code , libelle from contratsVoitures ", sqlConnection);
+                SqlCommand sqlCmd = new SqlCommand("select code , libelle from contratsVoitures --where Actif=1 ", sqlConnection);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = sqlCmd;
                 DataTable dt = new DataTable();

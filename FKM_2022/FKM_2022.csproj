@@ -177,6 +177,12 @@
     <Compile Include="CRUDforms\ajouterVehicule.Designer.cs">
       <DependentUpon>ajouterVehicule.cs</DependentUpon>
     </Compile>
+    <Compile Include="CRUDforms\AjoutJoursFeriers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDforms\AjoutJoursFeriers.Designer.cs">
+      <DependentUpon>AjoutJoursFeriers.cs</DependentUpon>
+    </Compile>
     <Compile Include="exploitation\BonEssence.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,12 @@
     <Compile Include="PDFviewers\DemandeRetraitPDFViewer .Designer.cs">
       <DependentUpon>DemandeRetraitPDFViewer .cs</DependentUpon>
     </Compile>
+    <Compile Include="PDFviewers\PrintPDFBon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDFviewers\PrintPDFBon.Designer.cs">
+      <DependentUpon>PrintPDFBon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="referntiel\BureauPayeur.cs">
@@ -268,6 +280,12 @@
     </Compile>
     <Compile Include="referntiel\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="referntiel\imprimerBonPayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="referntiel\imprimerBonPayer.Designer.cs">
+      <DependentUpon>imprimerBonPayer.cs</DependentUpon>
     </Compile>
     <Compile Include="referntiel\JoursFériers.cs">
       <SubType>Form</SubType>
@@ -341,6 +359,9 @@
     <EmbeddedResource Include="CRUDforms\ajouterVehicule.resx">
       <DependentUpon>ajouterVehicule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CRUDforms\AjoutJoursFeriers.resx">
+      <DependentUpon>AjoutJoursFeriers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="exploitation\BonEssence.resx">
       <DependentUpon>BonEssence.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +392,9 @@
     <EmbeddedResource Include="PDFviewers\DemandeRetraitPDFViewer .resx">
       <DependentUpon>DemandeRetraitPDFViewer .cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PDFviewers\PrintPDFBon.resx">
+      <DependentUpon>PrintPDFBon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -396,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="referntiel\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="referntiel\imprimerBonPayer.resx">
+      <DependentUpon>imprimerBonPayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="referntiel\JoursFériers.resx">
       <DependentUpon>JoursFériers.cs</DependentUpon>
@@ -638,6 +665,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-ok-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-1-jour-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -718,7 +718,7 @@ namespace FKM_2022.crudAlgoClasses
         public string[] getvaluesForBOnQZ(string referance)
         {
             string sql = "select code,referanceQunzaine,nomPersonnel,mantant,dateGeneration,recDteCreation from BonApayerQunzaine  where referanceQunzaine=@ref";
-            SqlConnection con = new SqlConnection(conString); // making connection
+            SqlConnection con = new SqlConnection(conString);
             SqlCommand command = new SqlCommand(sql, con);
             command.Parameters.AddWithValue("@ref", referance);
             con.Open ();
@@ -735,9 +735,57 @@ namespace FKM_2022.crudAlgoClasses
                 string[] Emptyarray = {};
                 con.Close();
                 return Emptyarray;   
-            }
-            
+            }  
         }
+        public DataTable selectBonApayer()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+                String sql = "select referanceQunzaine, nomPersonnel, mantant , recDteCreation, designation from BonApayerQunzaine";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                //MessageBox.Show(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        public DataTable selectDetailsQunzaines(string refQunzaine)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(conString);
+            try
+            {
+                String sql = "select jour , dateDesJours , observation,kilometre from detailsQuinzaine where refQuinzaine=@ref";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add("@ref", SqlDbType.NVarChar).Value = refQunzaine;
+                //MessageBox.Show(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
     }
 
 

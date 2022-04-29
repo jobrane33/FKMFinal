@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FKM_2022.CRUDforms;
+using FKM_2022.crudAlgoClasses;
 
 namespace FKM_2022.referntiel
 {
@@ -17,14 +19,19 @@ namespace FKM_2022.referntiel
             InitializeComponent();
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
         private void JoursFériers_Load(object sender, EventArgs e)
         {
+            crudMethodes cm = new crudMethodes();
+            DataTable dt = new DataTable();
+            dt = cm.selectJoursFerier();
+            dataGridView1.DataSource = dt;
+        }
+
+        private void panel6_Click(object sender, EventArgs e)
+        {
+            AjoutJoursFeriers newDay = new AjoutJoursFeriers();
             
+            newDay.Show();
         }
     }
 }

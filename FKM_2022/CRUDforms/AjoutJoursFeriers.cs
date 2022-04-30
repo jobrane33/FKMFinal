@@ -69,7 +69,7 @@ namespace FKM_2022.CRUDforms
             else
             {
                 crudMethodes cm = new crudMethodes();
-                bool result = cm.ajoutJour(customtextbox5.Texts.ToString(), date, dayName);
+                bool result = cm.ajoutJour(dayName, date, customtextbox5.Texts.ToString());
                 if (result)
                 {
                     MessageBox.Show("Jour ajouter avec success", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);

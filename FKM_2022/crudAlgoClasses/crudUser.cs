@@ -737,15 +737,15 @@ namespace FKM_2022.crudAlgoClasses
                 return Emptyarray;   
             }  
         }
-        public DataTable selectBonApayer()
+        public DataTable selectBonApayer(string designation)
         {
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection(conString);
             try
             {
-                String sql = "select referanceQunzaine, nomPersonnel, mantant , recDteCreation, designation from BonApayerQunzaine";
+                String sql = "select referance, nomPersonnel, mantant , recDteCreationQ, designation from BonApayerQunzaine where designation =@designation";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                //cmd.Parameters.Add("@mat", SqlDbType.NVarChar).Value = matricule;
+                cmd.Parameters.Add("@designation", SqlDbType.NVarChar).Value = designation;
                 //MessageBox.Show(sql);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();

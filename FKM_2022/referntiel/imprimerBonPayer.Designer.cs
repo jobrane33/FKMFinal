@@ -48,7 +48,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.uperPannel = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -61,6 +60,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.topPanelGrid = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.roundBtn1 = new FKM_2022.selfmadecomp.RoundBtn();
             this.checkbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.referance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomPersonnel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -231,24 +231,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 20;
             this.pictureBox4.TabStop = false;
-            // 
-            // roundBtn1
-            // 
-            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundBtn1.BorderRadius = 40;
-            this.roundBtn1.BorderSize = 0;
-            this.roundBtn1.FlatAppearance.BorderSize = 0;
-            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundBtn1.ForeColor = System.Drawing.Color.White;
-            this.roundBtn1.Location = new System.Drawing.Point(629, 26);
-            this.roundBtn1.Name = "roundBtn1";
-            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
-            this.roundBtn1.TabIndex = 19;
-            this.roundBtn1.Text = "Imprimer";
-            this.roundBtn1.TextColor = System.Drawing.Color.White;
-            this.roundBtn1.UseVisualStyleBackColor = false;
-            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
             // 
             // label2
             // 
@@ -434,6 +416,24 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
+            // roundBtn1
+            // 
+            this.roundBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BackgroudColor = System.Drawing.Color.MediumSlateBlue;
+            this.roundBtn1.BorderRadius = 40;
+            this.roundBtn1.BorderSize = 0;
+            this.roundBtn1.FlatAppearance.BorderSize = 0;
+            this.roundBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundBtn1.ForeColor = System.Drawing.Color.White;
+            this.roundBtn1.Location = new System.Drawing.Point(629, 26);
+            this.roundBtn1.Name = "roundBtn1";
+            this.roundBtn1.Size = new System.Drawing.Size(150, 40);
+            this.roundBtn1.TabIndex = 19;
+            this.roundBtn1.Text = "Imprimer";
+            this.roundBtn1.TextColor = System.Drawing.Color.White;
+            this.roundBtn1.UseVisualStyleBackColor = false;
+            this.roundBtn1.Click += new System.EventHandler(this.roundBtn1_Click);
+            // 
             // checkbox
             // 
             this.checkbox.HeaderText = "checkbox";
@@ -444,7 +444,7 @@
             // referance
             // 
             this.referance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.referance.DataPropertyName = "referanceQunzaine";
+            this.referance.DataPropertyName = "referance";
             this.referance.HeaderText = "referance";
             this.referance.MinimumWidth = 6;
             this.referance.Name = "referance";
@@ -468,7 +468,7 @@
             // recDteCreation
             // 
             this.recDteCreation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.recDteCreation.DataPropertyName = "recDteCreation";
+            this.recDteCreation.DataPropertyName = "recDteCreationQ";
             this.recDteCreation.HeaderText = "date creation";
             this.recDteCreation.MinimumWidth = 6;
             this.recDteCreation.Name = "recDteCreation";
@@ -476,7 +476,7 @@
             // territoire
             // 
             this.territoire.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.territoire.DataPropertyName = "territoire";
+            this.territoire.DataPropertyName = "designation";
             this.territoire.HeaderText = "territoire";
             this.territoire.MinimumWidth = 6;
             this.territoire.Name = "territoire";
@@ -534,12 +534,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel topPanelGrid;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkbox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn referance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomPersonnel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mantant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recDteCreation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn territoire;
         private System.Windows.Forms.DataGridViewTextBoxColumn Jour;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateJour;
         private System.Windows.Forms.DataGridViewTextBoxColumn kilometrage;
@@ -547,6 +541,12 @@
         private System.Windows.Forms.Label label2;
         private selfmadecomp.RoundBtn roundBtn1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkbox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomPersonnel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mantant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recDteCreation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn territoire;
     }
 
         

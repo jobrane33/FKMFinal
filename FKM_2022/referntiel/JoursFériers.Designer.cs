@@ -47,13 +47,13 @@
             this.roundBtn7 = new FKM_2022.selfmadecomp.RoundBtn();
             this.filledPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDUjour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateJourFerier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modifier = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();

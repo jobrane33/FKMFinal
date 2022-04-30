@@ -28,7 +28,7 @@ namespace FKM_2022.referntiel
         {
             crudAlgoClasses.crudUser cru = new crudAlgoClasses.crudUser();
             DataTable dt = new DataTable();
-            dt= cru.selectBonApayer();
+            dt= cru.selectBonApayer(territoireBon);
             dataGridView1.DataSource = dt;
         }
 

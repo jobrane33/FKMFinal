@@ -60,20 +60,20 @@ namespace FKM_2022.referntiel
         private void roundBtn3_Click(object sender, EventArgs e)
         {
 
-            dataGridView1.SelectAll();
-            DataObject data = dataGridView1.GetClipboardContent();
-            if (data != null) Clipboard.SetDataObject(data);
-            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
-            xlapp.Visible = true;
-            Microsoft.Office.Interop.Excel.Workbook xlwbook;
-            Microsoft.Office.Interop.Excel.Worksheet xlsheet;
-            object miseddata = System.Reflection.Missing.Value;
-            xlwbook = xlapp.Workbooks.Add(miseddata);
-            xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
-            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
-            xlr.Select();
-            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-            uperPannel.Visible = false;
+            //dataGridView1.SelectAll();
+            //DataObject data = dataGridView1.GetClipboardContent();
+            //if (data != null) Clipboard.SetDataObject(data);
+            //Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            //xlapp.Visible = true;
+            //Microsoft.Office.Interop.Excel.Workbook xlwbook;
+            //Microsoft.Office.Interop.Excel.Worksheet xlsheet;
+            //object miseddata = System.Reflection.Missing.Value;
+            //xlwbook = xlapp.Workbooks.Add(miseddata);
+            //xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
+            //Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
+            //xlr.Select();
+            //xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            //uperPannel.Visible = false;
         }
 
         private void PersoFrom_Load(object sender, EventArgs e)

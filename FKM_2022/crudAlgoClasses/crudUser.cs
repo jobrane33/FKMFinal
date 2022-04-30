@@ -686,7 +686,7 @@ namespace FKM_2022.crudAlgoClasses
                 fStream.Close();
                 try
                 {
-                    string sql = "update BonApayerQunzaine set document=@content where referanceQunzaine=@ref";
+                    string sql = "update BonApayerQunzaine set document=@content where referance=@ref";
                     SqlCommand command = new SqlCommand(sql, con);
                     command.Parameters.AddWithValue("@content", contents);
                     command.Parameters.AddWithValue("@ref", referance);
@@ -717,7 +717,7 @@ namespace FKM_2022.crudAlgoClasses
         }
         public string[] getvaluesForBOnQZ(string referance)
         {
-            string sql = "select code,referanceQunzaine,nomPersonnel,mantant,dateGeneration,recDteCreation from BonApayerQunzaine  where referanceQunzaine=@ref";
+            string sql = "select code,referance,nomPersonnel,mantant,dateGeneration,recDteCreationQ from BonApayerQunzaine  where referance=@ref";
             SqlConnection con = new SqlConnection(conString);
             SqlCommand command = new SqlCommand(sql, con);
             command.Parameters.AddWithValue("@ref", referance);
@@ -726,7 +726,7 @@ namespace FKM_2022.crudAlgoClasses
             
             if (myReader.Read())
             {
-                 string[] values = {myReader["referanceQunzaine"].ToString(), myReader["nomPersonnel"].ToString(), myReader["mantant"].ToString(), myReader["dateGeneration"].ToString(), myReader["recDteCreation"].ToString(), myReader["code"].ToString() };
+                 string[] values = {myReader["referance"].ToString(), myReader["nomPersonnel"].ToString(), myReader["mantant"].ToString(), myReader["dateGeneration"].ToString(), myReader["recDteCreationQ"].ToString(), myReader["code"].ToString() };
                 con.Close();
                 return values;
             }
